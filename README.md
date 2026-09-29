@@ -15,6 +15,16 @@ Marginalia does **not** automate literary judgment. It gives editors and LLM-ass
 workflows a contract that prevents fluent synthesis from erasing attribution, uncertainty,
 access gaps, or publication constraints.
 
+## Inspiration
+
+Marginalia grew out of the annotated edition of T. S. Eliot's *The Waste Land* by Ethan
+Mollick and collaborators. That project showed how an LLM-assisted reading edition can make a
+difficult poem approachable; Marginalia adapts the idea for other poems while adding an
+explicit source-and-evidence discipline so commentary stays traceable to real scholarship.
+
+- Reading edition: <https://the-waste-land.netlify.app/>
+- Source repository: <https://github.com/emollick/wasteland-annotated>
+
 Two poems are published so far:
 
 - **W. B. Yeats, "The Song of Wandering Aengus"** (`corpora/yeats-song-of-wandering-aengus/`)
