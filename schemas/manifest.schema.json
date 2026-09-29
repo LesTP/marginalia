@@ -36,6 +36,22 @@
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9_-]*$"
     },
+    "witnessPresentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {"type": "string", "minLength": 1},
+        "show_author": {"type": "boolean"},
+        "show_issued": {"type": "boolean"},
+        "stanza_line_indents": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "enlarged_initial": {"type": "boolean"}
+      }
+    },
     "textView": {
       "type": "object",
       "required": ["id", "label", "description", "type"],
@@ -49,7 +65,8 @@
           "enum": ["canonical-target", "editorial-derivation"]
         },
         "derived_from": {"$ref": "#/$defs/stableKey"},
-        "historical_forms": {"type": "boolean"}
+        "historical_forms": {"type": "boolean"},
+        "witness_presentation": {"$ref": "#/$defs/witnessPresentation"}
       },
       "allOf": [
         {

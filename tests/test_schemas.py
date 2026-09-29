@@ -110,6 +110,13 @@ def test_manifest_schema_accepts_complete_text_views() -> None:
                     "description": "The controlling historical transcription.",
                     "type": "canonical-target",
                     "historical_forms": True,
+                    "witness_presentation": {
+                        "heading": "Printed witness heading.",
+                        "show_author": True,
+                        "show_issued": True,
+                        "stanza_line_indents": [2, 4],
+                        "enlarged_initial": True,
+                    },
                 },
                 {
                     "id": "modernized",
@@ -137,6 +144,28 @@ def test_manifest_schema_accepts_complete_text_views() -> None:
     malformed_historical_forms["presentation"]["texts"][0]["historical_forms"] = "yes"
     assert validator.validate_record(
         malformed_historical_forms,
+        "corpus.yaml",
+        "corpus-manifest",
+    )
+
+    malformed_indent = deepcopy(manifest)
+    malformed_indent["presentation"]["texts"][0]["witness_presentation"][
+        "stanza_line_indents"
+    ] = [0, 2]
+    assert validator.validate_record(malformed_indent, "corpus.yaml", "corpus-manifest")
+
+    duplicate_indent = deepcopy(manifest)
+    duplicate_indent["presentation"]["texts"][0]["witness_presentation"][
+        "stanza_line_indents"
+    ] = [2, 2]
+    assert validator.validate_record(duplicate_indent, "corpus.yaml", "corpus-manifest")
+
+    unknown_witness_property = deepcopy(manifest)
+    unknown_witness_property["presentation"]["texts"][0]["witness_presentation"][
+        "running_title"
+    ] = "Poems"
+    assert validator.validate_record(
+        unknown_witness_property,
         "corpus.yaml",
         "corpus-manifest",
     )

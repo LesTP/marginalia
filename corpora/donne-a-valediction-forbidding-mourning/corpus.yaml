@@ -11,6 +11,14 @@ presentation:
       description: A transcription of the first printed edition, preserving wording, spelling, punctuation, lineation, and stanza structure with documented typographic normalization.
       type: canonical-target
       historical_forms: true
+      witness_presentation:
+        heading: A Valediction forbidding mourning.
+        show_author: true
+        show_issued: true
+        stanza_line_indents:
+          - 2
+          - 4
+        enlarged_initial: true
     - id: modernized
       label: Modernized text
       description: A conservative editorial reading text that modernizes spelling, typography, and selected punctuation while preserving wording, syntax, lineation, and stanza structure.

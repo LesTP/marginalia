@@ -257,7 +257,8 @@ filters over one continuous note stream.
 - `base_text_annotation` names the base record by `provenance.local_key`.
 - Optional `texts` declares exactly one `canonical-target` view and one or more `editorial-derivation` views; `default_text` selects the initial view. Derived views must name the canonical view in `derived_from`.
 - Every derived view requires a matching `target.display_selectors` entry on every annotation. Display selectors do not change annotation identity, and the validator resolves them independently while requiring aligned nonblank lines and stanza boundaries.
-- A text view may set `historical_forms: true` to display period spelling with a vendored OFL font (IM FELL English) for that view only; other views and all notes use the reading serif.
+- A text view may set `historical_forms: true` to display period spelling with vendored IM FELL English Roman and Italic faces for that view only; other views and all notes use the reading serif.
+- Optional `witness_presentation` metadata may supply an exact printed heading, request source-backed author and issued-year display, indent selected one-based lines within each stanza, and enlarge the first initial. These are DOM/CSS presentation instructions: stored text, selectors, copied text, and annotation identity remain unchanged.
 - `default_mode` may be `plain`, `lens`, `pathway`, `all`, or `sources`; omission means `plain`.
 - Each lens supplies an ID, label, description, and annotation tag.
 - Each pathway supplies a short introductory annotation and ordered steps; a step may contain one or more existing annotations.
@@ -306,8 +307,8 @@ consulted locally to write paraphrased, cited notes but must not be redistribute
 paraphrases and citation records that depend on them are tracked and published.
 
 Everything else is safe to publish: the poem texts are public domain (Donne, 1633; Yeats,
-1899), and the bundled fonts (Libre Caslon; IM FELL English) are under the SIL Open Font
-License, with their `OFL.txt` files kept alongside them.
+1899), and the bundled fonts (Libre Caslon; IM FELL English Roman and Italic) are under the
+SIL Open Font License, with their `OFL.txt` files kept alongside them.
 
 ## Examples
 

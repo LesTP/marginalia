@@ -30,7 +30,10 @@ DONNE_MANIFEST = (
     / "donne-a-valediction-forbidding-mourning"
     / "corpus.yaml"
 )
-FONT_SHA256 = "fe9705bbde51af802719246d4608d08d37bde956ab99d9a590da996a5221a24c"
+FONT_SHA256 = {
+    "IMFeENrm28P.ttf": "fe9705bbde51af802719246d4608d08d37bde956ab99d9a590da996a5221a24c",
+    "IMFeENit28P.ttf": "47cd75dce54b1f2e0831359d22d5e688f519d68ae45706b664fd310fd0e3ccf7",
+}
 
 
 def _write_yaml(path: Path, data: dict) -> None:
@@ -83,8 +86,8 @@ def _dual_text_yeats(tmp_path: Path) -> Path:
 def test_builds_yeats_review_model() -> None:
     model = build_review_model(YEATS_MANIFEST)
 
-    assert model["corpus"]["source_count"] == 8
-    assert model["corpus"]["annotation_count"] == 12
+    assert model["corpus"]["source_count"] == 10
+    assert model["corpus"]["annotation_count"] == 13
     assert model["corpus"]["authors"] == ["W. B. Yeats"]
     assert len(model["poem"]["lines"]) == 24
     assert [
@@ -129,8 +132,22 @@ def test_builds_donne_review_model() -> None:
         "edition-faithful",
         "modernized",
     ]
-    assert model["texts"][0]["historical_forms"] is True
-    assert "historical_forms" not in model["texts"][1]
+    faithful, modernized = model["texts"]
+    assert faithful["historical_forms"] is True
+    assert "historical_forms" not in modernized
+    assert faithful["witness_presentation"] == {
+        "heading": "A Valediction forbidding mourning.",
+        "show_author": True,
+        "show_issued": True,
+        "stanza_line_indents": [2, 4],
+        "enlarged_initial": True,
+        "author": "John Donne",
+        "issued": "1633",
+    }
+    assert "witness_presentation" not in modernized
+    assert model["corpus"]["base_witness"]["issued"] == "1633"
+    assert [line["stanza_line"] for line in faithful["lines"]] == list(range(1, 5)) * 9
+    assert faithful["lines"][0]["text"] == "AS virtuous men passe mildly away,"
     assert all("ſ" not in line["text"] for text in model["texts"] for line in text["lines"])
     assert model["presentation"]["default_state"] == {
         "text": "edition-faithful",
@@ -147,28 +164,54 @@ def test_donne_embeds_scoped_historical_font_and_complete_license() -> None:
     rendered = render_review_html(build_review_model(DONNE_MANIFEST))
     matches = re.findall(r'data:font/ttf;base64,([^\"]+)', rendered)
 
-    assert len(matches) == 1
-    embedded = base64.b64decode(matches[0], validate=True)
-    packaged = (
-        resources.files("reference_corpus")
-        .joinpath("web", "fonts", "IMFeENrm28P.ttf")
-        .read_bytes()
-    )
+    assert len(matches) == 2
+    embedded = [base64.b64decode(match, validate=True) for match in matches]
+    packaged = [
+        resources.files("reference_corpus").joinpath("web", "fonts", name).read_bytes()
+        for name in FONT_SHA256
+    ]
     license_text = (
         resources.files("reference_corpus")
         .joinpath("web", "fonts", "OFL.txt")
         .read_text(encoding="utf-8")
     )
     assert embedded == packaged
-    assert hashlib.sha256(embedded).hexdigest() == FONT_SHA256
-    assert "IM FELL English Roman by Igino Marini" in rendered
+    assert [hashlib.sha256(data).hexdigest() for data in embedded] == list(FONT_SHA256.values())
+    assert "IM FELL English Roman and Italic by Igino Marini" in rendered
     assert "SIL Open Font License 1.1" in rendered
     assert html_escape(license_text, quote=False) in rendered
     assert '.poem-lines--historical-forms .poem-line__text' in rendered
     assert 'font-feature-settings: "hist" 1, "liga" 1' in rendered
     assert 'text.historical_forms === true' in rendered
     assert 'classList.toggle("poem-lines--historical-forms"' in rendered
+    assert 'id="witness-presentation"' in rendered
+    assert "renderWitnessPresentation(text)" in rendered
+    assert "line.stanza_line" in rendered
+    assert "poem-line--witness-indent" in rendered
+    assert "poem-line--enlarged-initial" in rendered
+    assert "font-style: italic" in rendered
     assert "https://fonts." not in rendered
+
+
+def test_published_donne_page_uses_exact_packaged_fonts_and_witness_contract() -> None:
+    published = DONNE_MANIFEST.with_name("review.html").read_text(encoding="utf-8")
+    matches = re.findall(r'data:font/ttf;base64,([^\"]+)', published)
+    embedded = [base64.b64decode(match, validate=True) for match in matches]
+    packaged = [
+        resources.files("reference_corpus").joinpath("web", "fonts", name).read_bytes()
+        for name in FONT_SHA256
+    ]
+
+    assert embedded == packaged
+    assert [hashlib.sha256(data).hexdigest() for data in embedded] == list(FONT_SHA256.values())
+    assert "IM FELL English Roman and Italic by Igino Marini" in published
+    assert "SIL OPEN FONT LICENSE Version 1.1" in published
+    assert "witness_presentation" in published
+    assert "line.stanza_line" in published
+    assert "poem-line--witness-indent" in published
+    assert "poem-line--enlarged-initial" in published
+    assert "masthead--witness" in published
+    assert "https://fonts." not in published
 
 
 def test_builds_dual_text_review_model(tmp_path: Path) -> None:

@@ -19,6 +19,15 @@ presentation:
       type: canonical-target
       # Optional presentation-only historical glyph shaping; stored text is unchanged.
       historical_forms: true
+      # Optional source-backed witness heading and verse layout.
+      witness_presentation:
+        heading: Printed witness heading.
+        show_author: true
+        show_issued: true
+        stanza_line_indents:
+          - 2
+          - 4
+        enlarged_initial: true
     - id: modernized
       label: Modernized text
       description: A conservative editorial reading text derived from the edition-faithful transcription.

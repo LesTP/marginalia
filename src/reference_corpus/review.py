@@ -30,9 +30,11 @@ _ASSETS = {
     "script": "review.js",
     "historical_style": "historical-forms.css",
 }
-_FONT_FILE = ("fonts", "IMFeENrm28P.ttf")
+_FONT_ROMAN_FILE = ("fonts", "IMFeENrm28P.ttf")
+_FONT_ITALIC_FILE = ("fonts", "IMFeENit28P.ttf")
 _FONT_LICENSE = ("fonts", "OFL.txt")
-_FONT_DATA_MARKER = "@@IM_FELL_ENGLISH_DATA@@"
+_FONT_ROMAN_DATA_MARKER = "@@IM_FELL_ENGLISH_ROMAN_DATA@@"
+_FONT_ITALIC_DATA_MARKER = "@@IM_FELL_ENGLISH_ITALIC_DATA@@"
 _FONT_ATTRIBUTION_MARKER = "@@REVIEW_FONT_ATTRIBUTION@@"
 
 
@@ -108,14 +110,51 @@ def _presentation_source(source: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def _presentation_lines(base_index: Any) -> list[dict[str, Any]]:
-    return [
-        {
-            "number": line.number,
-            "text": line.text,
-            "stanza_start": line.stanza_start,
-        }
-        for line in base_index.lines
-    ]
+    lines: list[dict[str, Any]] = []
+    stanza_line = 0
+    for line in base_index.lines:
+        stanza_line = 1 if line.stanza_start else stanza_line + 1
+        lines.append(
+            {
+                "number": line.number,
+                "text": line.text,
+                "stanza_start": line.stanza_start,
+                "stanza_line": stanza_line,
+            }
+        )
+    return lines
+
+
+def _resolved_witness_presentation(
+    view: Mapping[str, Any],
+    base_source: Mapping[str, Any],
+) -> dict[str, Any] | None:
+    configured = view.get("witness_presentation")
+    if configured is None:
+        return None
+
+    resolved = dict(configured)
+    if configured.get("show_author"):
+        authors = [
+            contributor["name"]
+            for contributor in base_source["contributors"]
+            if contributor["role"] == "author"
+        ]
+        if not authors:
+            raise ReviewError(
+                f"text {view['id']!r}: witness presentation requests an author, "
+                "but the base witness has none"
+            )
+        resolved["author"] = ", ".join(authors)
+    if configured.get("show_issued"):
+        issued = base_source.get("issued")
+        if not issued:
+            raise ReviewError(
+                f"text {view['id']!r}: witness presentation requests an issued date, "
+                "but the base witness has none"
+            )
+        resolved["issued"] = issued
+    return resolved
 
 
 def _text_views(
@@ -167,14 +206,16 @@ def _text_views(
                 raise ReviewError(f"text {text_id!r}: {error}") from error
             provenance_note = f"Editorial derivation: {view['description']}"
         indexes[text_id] = text_index
-        views.append(
-            {
-                **view,
-                "derived_from": view.get("derived_from"),
-                "provenance_note": provenance_note,
-                "lines": _presentation_lines(text_index),
-            }
-        )
+        rendered_view = {
+            **view,
+            "derived_from": view.get("derived_from"),
+            "provenance_note": provenance_note,
+            "lines": _presentation_lines(text_index),
+        }
+        witness_presentation = _resolved_witness_presentation(view, base_source)
+        if witness_presentation is not None:
+            rendered_view["witness_presentation"] = witness_presentation
+        views.append(rendered_view)
     return views, indexes, presentation["default_text"], canonical_id
 
 
@@ -381,6 +422,7 @@ def build_review_model(manifest_path: str | Path) -> dict[str, Any]:
             "base_witness": {
                 "title": base_source["title"],
                 "citation": base_source["citation"],
+                "issued": base_source.get("issued"),
             },
         },
         "poem": {
@@ -424,18 +466,25 @@ def _historical_font_assets(model: Mapping[str, Any]) -> tuple[str, str]:
     if not any(text.get("historical_forms") is True for text in model.get("texts", [])):
         return "", ""
 
-    font_bytes = _asset_resource(*_FONT_FILE).read_bytes()
-    font_data = base64.b64encode(font_bytes).decode("ascii")
+    font_payloads = {
+        _FONT_ROMAN_DATA_MARKER: base64.b64encode(
+            _asset_resource(*_FONT_ROMAN_FILE).read_bytes()
+        ).decode("ascii"),
+        _FONT_ITALIC_DATA_MARKER: base64.b64encode(
+            _asset_resource(*_FONT_ITALIC_FILE).read_bytes()
+        ).decode("ascii"),
+    }
     stylesheet = _asset_text("historical_style")
-    if _FONT_DATA_MARKER not in stylesheet:
-        raise ReviewError(f"historical font stylesheet is missing marker {_FONT_DATA_MARKER}")
-    stylesheet = stylesheet.replace(_FONT_DATA_MARKER, font_data)
+    for marker, font_data in font_payloads.items():
+        if marker not in stylesheet:
+            raise ReviewError(f"historical font stylesheet is missing marker {marker}")
+        stylesheet = stylesheet.replace(marker, font_data)
 
     license_text = _asset_resource(*_FONT_LICENSE).read_text(encoding="utf-8")
     attribution = (
         '<section class="font-attribution" aria-labelledby="font-attribution-heading">\n'
         '      <p id="font-attribution-heading" class="font-attribution__credit">'
-        'IM FELL English Roman by Igino Marini, Copyright (c) 2010. '
+        'IM FELL English Roman and Italic by Igino Marini, Copyright (c) 2010. '
         'Licensed under the SIL Open Font License 1.1.</p>\n'
         '      <details class="font-attribution__license">\n'
         '        <summary>Font attribution and complete license</summary>\n'

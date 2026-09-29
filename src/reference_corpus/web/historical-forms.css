@@ -1,15 +1,71 @@
 @font-face {
   font-family: "IM FELL English";
-  src: url("data:font/ttf;base64,@@IM_FELL_ENGLISH_DATA@@") format("truetype");
+  src: url("data:font/ttf;base64,@@IM_FELL_ENGLISH_ROMAN_DATA@@") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: block;
+}
+
+@font-face {
+  font-family: "IM FELL English";
+  src: url("data:font/ttf;base64,@@IM_FELL_ENGLISH_ITALIC_DATA@@") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+}
+
+.witness-presentation {
+  margin: 0.2rem 0 1.35rem 3.1rem;
+  color: var(--ink);
+  font-family: "IM FELL English", var(--serif);
+  font-feature-settings: "hist" 1, "liga" 1;
+}
+
+.witness-presentation[hidden] {
+  display: none;
+}
+
+.witness-presentation__credit {
+  margin: 0 0 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.witness-presentation__heading {
+  margin: 0;
+  font-family: "IM FELL English", var(--serif);
+  font-size: 1.24rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.25;
 }
 
 .poem-lines--historical-forms .poem-line__text {
   font-family: "IM FELL English", var(--serif);
   font-variant-alternates: historical-forms;
   font-feature-settings: "hist" 1, "liga" 1;
+}
+
+.poem-line--witness-indent .poem-line__text {
+  padding-inline-start: 1.9em;
+}
+
+.poem-line--enlarged-initial .poem-line__text::first-letter {
+  float: left;
+  margin: 0.06em 0.08em 0 -0.04em;
+  font-family: "IM FELL English", var(--serif);
+  font-size: 3.05em;
+  line-height: 0.72;
+}
+
+@media (max-width: 560px) {
+  .witness-presentation {
+    margin-left: 2.65rem;
+  }
+
+  .poem-line--witness-indent .poem-line__text {
+    padding-inline-start: 1em;
+  }
 }
 
 .font-attribution {

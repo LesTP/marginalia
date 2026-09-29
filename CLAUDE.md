@@ -15,8 +15,8 @@ interpretation as mechanically decidable.
 - Define corpus-specific lenses and ordered pathways in the manifest `presentation` block; never hardcode them in the shared renderer.
 - Treat `corpus.yaml` at the repository root as an empty starter, not an umbrella manifest.
 - Keep fictional records under `examples/` and never present them as real scholarship.
-- Treat each corpus's `review.html` as deterministic generated output; edit YAML and rerun the renderer instead of hand-editing HTML.
-- A deliberately named archival HTML snapshot may be retained when requested, but it is immutable and must not replace the canonical generated `review.html` workflow.
+- A corpus may use either the shared generated `review.html` or an explicitly documented hand-authored review shell. For a generated page, edit YAML and rerun the renderer. For a hand-authored shell, preserve its markup/CSS/JavaScript and refresh only its deterministic embedded corpus-data snapshot with `scripts/refresh-review.py`.
+- A deliberately named archival HTML snapshot may be retained when requested, but it is immutable and must not replace the corpus's documented canonical review workflow.
 - Rendering must validate before writing and must remain self-contained, read-only, and free of network runtime dependencies.
 - JSON Schema Draft 2020-12 files are the normative structural contracts.
 - Keep files UTF-8, LF-only, and Unicode NFC.

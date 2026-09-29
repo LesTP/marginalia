@@ -24,6 +24,9 @@ const elements = {
   readingNav: document.getElementById("reading-nav"),
   modeDescription: document.getElementById("mode-description"),
   textSelector: document.getElementById("text-view-selector"),
+  witnessPresentation: document.getElementById("witness-presentation"),
+  witnessCredit: document.getElementById("witness-credit"),
+  witnessHeading: document.getElementById("witness-heading"),
   poem: document.getElementById("poem-lines"),
   witness: document.getElementById("base-witness"),
   readingPanel: document.getElementById("reading-detail"),
@@ -310,12 +313,42 @@ function renderTextSelector() {
   }
 }
 
+function renderWitnessPresentation(text) {
+  const presentation = text.witness_presentation;
+  elements.witnessPresentation.hidden = !presentation;
+  elements.witnessCredit.replaceChildren();
+  elements.witnessHeading.replaceChildren();
+  if (!presentation) {
+    return;
+  }
+
+  const credit = [presentation.author, presentation.issued].filter(Boolean).join(" · ");
+  elements.witnessCredit.textContent = credit;
+  elements.witnessCredit.hidden = !credit;
+  elements.witnessHeading.textContent = presentation.heading || "";
+  elements.witnessHeading.hidden = !presentation.heading;
+}
+
 function renderPoem() {
   const text = activeText();
+  const presentation = text.witness_presentation;
+  const indentedPositions = new Set(presentation?.stanza_line_indents || []);
+  const firstLineNumber = text.lines[0]?.number;
   elements.poem.classList.toggle("poem-lines--historical-forms", text.historical_forms === true);
+  renderWitnessPresentation(text);
   elements.poem.replaceChildren();
   for (const line of text.lines) {
-    const row = makeElement("div", `poem-line${line.stanza_start ? " poem-line--stanza" : ""}`);
+    const classes = ["poem-line"];
+    if (line.stanza_start) {
+      classes.push("poem-line--stanza");
+    }
+    if (indentedPositions.has(line.stanza_line)) {
+      classes.push("poem-line--witness-indent");
+    }
+    if (presentation?.enlarged_initial && line.number === firstLineNumber) {
+      classes.push("poem-line--enlarged-initial");
+    }
+    const row = makeElement("div", classes.join(" "));
     row.dataset.line = String(line.number);
     row.append(
       makeElement("span", "poem-line__number", String(line.number)),

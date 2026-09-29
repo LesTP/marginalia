@@ -18,7 +18,7 @@ work_a_valediction_forbidding_mourning
 
 ## Two Reading Texts
 
-- **1633 text** preserves the printed wording, spelling, capitalization, punctuation, lineation, and nine quatrains. Long s remains ordinary `s` in the stored transcription, selectors, and copied text, while the review page uses IM FELL English's contextual historical forms to display non-final `s` as `ſ`. This is period-appropriate typography rather than a facsimile of Miles Flesher's type. The decorated opening capital is recorded as `AS`; ornamental indentation and catchwords are not encoded.
+- **1633 text** preserves the printed wording, spelling, capitalization, punctuation, lineation, and nine quatrains. Long s remains ordinary `s` in the stored transcription, selectors, and copied text, while the review page uses IM FELL English Roman and Italic with contextual historical forms to display non-final `s` as `ſ`. The presentation also restores the witness heading, source-backed author and year, alternating indentation of lines 2 and 4 in each quatrain, and the enlarged opening `A`. These are presentation-only features: the encoded text remains `AS` without indentation spaces. The result is period-appropriate typography rather than a facsimile of Miles Flesher's type; catchwords and other page furniture are not reproduced.
 - **Modernized text** preserves wording, syntax, lineation, and stanza structure while modernizing spelling and typography. It follows Grierson's punctuation at four points: the colon after `no`, the comma after `less`, the comma after the first `two`, and the semicolon after `run`. It adds the possessive apostrophe in `lovers' love`, but it does not import Grierson's manuscript-supported `and` before `hands`.
 
 Every annotation contains an exact selector for both texts. The validator requires both versions to retain the same line count and stanza boundaries and verifies each highlighted passage independently.
@@ -92,4 +92,4 @@ reference-corpus-render .\corpora\donne-a-valediction-forbidding-mourning\corpus
 python -m pytest
 ```
 
-`review.html` is deterministic generated output. Make editorial changes in the YAML records and rerun the renderer; do not edit the HTML by hand.
+`review.html` is a hand-authored continuous reading shell with a deterministic embedded corpus-data snapshot. Make editorial changes in YAML, then run `python .\scripts\refresh-review.py .\corpora\donne-a-valediction-forbidding-mourning\corpus.yaml`; do not replace the shell with the generic renderer.
