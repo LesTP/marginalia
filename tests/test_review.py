@@ -214,6 +214,24 @@ def test_published_donne_page_uses_exact_packaged_fonts_and_witness_contract() -
     assert "https://fonts." not in published
 
 
+def test_witness_presentation_without_historical_font_keeps_layout_css(tmp_path: Path) -> None:
+    manifest_path = _dual_text_yeats(tmp_path)
+    manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
+    manifest["presentation"]["texts"][0]["witness_presentation"] = {
+        "heading": "Printed witness heading.",
+        "stanza_line_indents": [2],
+        "enlarged_initial": True,
+    }
+    _write_yaml(manifest_path, manifest)
+
+    rendered = render_review_html(build_review_model(manifest_path))
+
+    assert ".witness-presentation {" in rendered
+    assert ".poem-line--witness-indent .poem-line__text" in rendered
+    assert ".poem-line--enlarged-initial .poem-line__text::first-letter" in rendered
+    assert "data:font/ttf;base64," not in rendered
+
+
 def test_builds_dual_text_review_model(tmp_path: Path) -> None:
     manifest = _dual_text_yeats(tmp_path)
 

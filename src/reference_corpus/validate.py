@@ -154,7 +154,7 @@ class CorpusValidator:
         self._check_derived_ids(source_records, annotation_records, diagnostics)
         self._check_annotations(source_records, annotation_records, diagnostics)
         self._check_presentation_and_targets(
-            str(path), manifest, annotation_records, diagnostics
+            str(path), manifest, source_records, annotation_records, diagnostics
         )
         return sorted(diagnostics)
 
@@ -317,6 +317,7 @@ class CorpusValidator:
         self,
         manifest_label: str,
         manifest: Mapping[str, Any],
+        sources: Sequence[tuple[Path, dict[str, Any]]],
         annotations: Sequence[tuple[Path, dict[str, Any]]],
         diagnostics: list[Diagnostic],
     ) -> None:
@@ -407,10 +408,19 @@ class CorpusValidator:
                 diagnostics.append(Diagnostic(str(path), "$.target.exact_text", str(error)))
 
         if presentation is not None and presentation.get("texts"):
+            base_source = next(
+                (
+                    source
+                    for _, source in sources
+                    if source["id"] == base_target["edition_source_id"]
+                ),
+                None,
+            )
             self._check_text_views(
                 manifest_label,
                 presentation,
                 base_entry,
+                base_source,
                 base,
                 annotations,
                 diagnostics,
@@ -421,6 +431,7 @@ class CorpusValidator:
         manifest_label: str,
         presentation: Mapping[str, Any],
         base_entry: tuple[Path, dict[str, Any]],
+        base_source: Mapping[str, Any] | None,
         canonical_base: Any,
         annotations: Sequence[tuple[Path, dict[str, Any]]],
         diagnostics: list[Diagnostic],
@@ -429,6 +440,27 @@ class CorpusValidator:
         views_by_id: dict[str, tuple[int, Mapping[str, Any]]] = {}
         for index, view in enumerate(text_views):
             text_id = view["id"]
+            witness_presentation = view.get("witness_presentation") or {}
+            bibliography = base_source.get("bibliography", {}) if base_source else {}
+            if witness_presentation.get("show_author") and not any(
+                contributor.get("role") == "author"
+                for contributor in bibliography.get("contributors", [])
+            ):
+                diagnostics.append(
+                    Diagnostic(
+                        manifest_label,
+                        f"$.presentation.texts[{index}].witness_presentation.show_author",
+                        "witness presentation requests an author, but the base witness has none",
+                    )
+                )
+            if witness_presentation.get("show_issued") and not bibliography.get("issued"):
+                diagnostics.append(
+                    Diagnostic(
+                        manifest_label,
+                        f"$.presentation.texts[{index}].witness_presentation.show_issued",
+                        "witness presentation requests an issued date, but the base witness has none",
+                    )
+                )
             if text_id in views_by_id:
                 diagnostics.append(
                     Diagnostic(

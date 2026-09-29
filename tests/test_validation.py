@@ -122,6 +122,46 @@ def test_dual_text_view_resolves_all_display_selectors(tmp_path: Path) -> None:
     assert CorpusValidator().validate_manifest(manifest_path) == []
 
 
+def test_witness_presentation_missing_author_is_reported(tmp_path: Path) -> None:
+    manifest_path = _copy_dual_text_yeats(tmp_path)
+    manifest = load_yaml(manifest_path)
+    manifest["presentation"]["texts"][0]["witness_presentation"] = {"show_author": True}
+    _write_yaml(manifest_path, manifest)
+    source_path = manifest_path.parent / "records" / "sources" / "base-text-witness.yaml"
+    source = load_yaml(source_path)
+    for contributor in source["bibliography"]["contributors"]:
+        if contributor["role"] == "author":
+            contributor["role"] = "editor"
+    _write_yaml(source_path, source)
+
+    diagnostics = CorpusValidator().validate_manifest(manifest_path)
+
+    assert any(
+        item.path == "$.presentation.texts[0].witness_presentation.show_author"
+        and "base witness has none" in item.message
+        for item in diagnostics
+    )
+
+
+def test_witness_presentation_missing_issued_date_is_reported(tmp_path: Path) -> None:
+    manifest_path = _copy_dual_text_yeats(tmp_path)
+    manifest = load_yaml(manifest_path)
+    manifest["presentation"]["texts"][0]["witness_presentation"] = {"show_issued": True}
+    _write_yaml(manifest_path, manifest)
+    source_path = manifest_path.parent / "records" / "sources" / "base-text-witness.yaml"
+    source = load_yaml(source_path)
+    source["bibliography"].pop("issued", None)
+    _write_yaml(source_path, source)
+
+    diagnostics = CorpusValidator().validate_manifest(manifest_path)
+
+    assert any(
+        item.path == "$.presentation.texts[0].witness_presentation.show_issued"
+        and "base witness has none" in item.message
+        for item in diagnostics
+    )
+
+
 def test_missing_display_selector_is_reported(tmp_path: Path) -> None:
     manifest_path = _copy_dual_text_yeats(tmp_path)
     annotation_path = manifest_path.parent / "records" / "annotations" / "future-vow.yaml"
