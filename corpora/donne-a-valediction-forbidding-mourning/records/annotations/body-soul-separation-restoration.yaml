@@ -1,0 +1,167 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_aab3f96fe5226aeb
+title: Separation and the Promise of Restoration
+provenance:
+  local_key: body-soul-separation-restoration
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-29"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "1-36"
+  exact_text: |-
+    AS virtuous men passe mildly away,
+    And whisper to their soules, to goe,
+    Whilst some of their sad friends doe say,
+    The breath goes now, and some say, no.
+
+    So let us melt, and make no noise,
+    No teare-floods, nor sigh-tempests move,
+    T'were prophanation of our joyes
+    To tell the layetie our love.
+
+    Moving of th'earth brings harmes and feares,
+    Men reckon what it did and meant,
+    But trepidation of the spheares,
+    Though greater farre, is innocent.
+
+    Dull sublunary lovers love
+    (Whose soule is sense) cannot admit
+    Absence, because it doth remove
+    Those things which elemented it.
+
+    But we by a love, so much refin'd,
+    That our selves know not what it is,
+    Inter-assured of the mind,
+    Care lesse; eyes, lips, hands to misse.
+
+    Our two soules therefore, which are one,
+    Though I must goe, endure not yet
+    A breach, but an expansion,
+    Like gold to ayery thinnesse beate.
+
+    If they be two; they are two so
+    As stiffe twin compasses are two,
+    Thy soule the fixt foot, makes no show
+    To move, but doth, if th'other doe.
+
+    And though it in the center sit,
+    Yet when the other far doth rome,
+    It leanes, and hearkens after it,
+    And growes erect, as that comes home.
+
+    Such wilt thou be to mee, who must
+    Like th'other foot, obliquely runne,
+    Thy firmnes makes my circle just,
+    And makes me end, where I begunne.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        As virtuous men pass mildly away,
+        And whisper to their souls, to go,
+        Whilst some of their sad friends do say,
+        The breath goes now, and some say, no:
+
+        So let us melt, and make no noise,
+        No tear-floods, nor sigh-tempests move,
+        'Twere profanation of our joys
+        To tell the laity our love.
+
+        Moving of th'earth brings harms and fears,
+        Men reckon what it did and meant,
+        But trepidation of the spheres,
+        Though greater far, is innocent.
+
+        Dull sublunary lovers' love
+        (Whose soul is sense) cannot admit
+        Absence, because it doth remove
+        Those things which elemented it.
+
+        But we by a love, so much refined,
+        That ourselves know not what it is,
+        Inter-assured of the mind,
+        Care less, eyes, lips, hands to miss.
+
+        Our two souls therefore, which are one,
+        Though I must go, endure not yet
+        A breach, but an expansion,
+        Like gold to airy thinness beat.
+
+        If they be two, they are two so
+        As stiff twin compasses are two,
+        Thy soul the fixed foot, makes no show
+        To move, but doth, if th'other do.
+
+        And though it in the center sit,
+        Yet when the other far doth roam,
+        It leans, and hearkens after it,
+        And grows erect, as that comes home.
+
+        Such wilt thou be to me, who must
+        Like th'other foot, obliquely run;
+        Thy firmness makes my circle just,
+        And makes me end, where I begun.
+annotation_type: thematic
+claim:
+  body: >-
+    The poem asks readers to understand temporary bodily separation through a union that persists when bodies part. The deathbed opening, the contrast between sense-bound and inwardly assured love, the declaration that two souls are one, and the final return belong to one arc. John Freccero argues that Donne reverses the familiar comparison between marriage and body-soul union: as death separates body and soul without cancelling their promised reunion at resurrection, the voyager's departure does not dissolve the lovers' bond, and coming home restores embodied presence. This reading explains why mourning is forbidden without pretending that absence is unreal.
+  epistemic_status: attributed-interpretation
+  editorial_confidence:
+    level: unassessed
+    rationale: The textual sequence and cited Freccero passages are directly available, but the unified theological interpretation remains one scholar's reading rather than established consensus.
+  contested: false
+  attributions:
+    - scholar: John Freccero
+      position: >-
+        Freccero reads the poem through Christian body-and-soul theology: departure corresponds to death and separation, persistent union to the continuing relation of soul and body, and return to resurrection and restored embodied presence.
+      evidence_ids:
+        - ev_body_soul_freccero_frame
+        - ev_body_soul_freccero_resurrection
+        - ev_body_soul_freccero_recap
+evidence:
+  - id: ev_body_soul_poem
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: The poem proceeds from virtuous death through sense-bound love, bodily absence, “two souls...one,” and final homecoming.
+    citation:
+      locator: pp. 193-194, lines 1-36
+      citation_text: "Donne, Poems (1633), 193-94."
+  - id: ev_body_soul_freccero_frame
+    source_id: src_d0ac9779e429149d
+    relationship: supports
+    use: direct-evidence
+    summary: Freccero makes body-and-soul separation and reunion the model for the lovers' departure and return, reversing the more familiar analogy from marriage to body and soul.
+    citation:
+      locator: pp. 337-338
+      citation_text: "Freccero, 'Donne's Valediction,' 337-38."
+  - id: ev_body_soul_freccero_resurrection
+    source_id: src_d0ac9779e429149d
+    relationship: supports
+    use: direct-evidence
+    summary: Freccero argues that resurrection, rather than merely ordinary or cosmic recurrence, governs the final analogy, and uses breath and spirit to explain separation followed by restoration.
+    citation:
+      locator: pp. 353-360
+      citation_text: "Freccero, 'Donne's Valediction,' 353-60."
+  - id: ev_body_soul_freccero_recap
+    source_id: src_d0ac9779e429149d
+    relationship: supports
+    use: direct-evidence
+    summary: Freccero's conclusion recapitulates the poem as physical separation, continuing spiritual union, and eventual restored union.
+    citation:
+      locator: pp. 372-376
+      citation_text: "Freccero, 'Donne's Valediction,' 372-76."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-29"
+  notes: The synthesis, attribution, and evidentiary limits were reviewed by the human editor.
+tags:
+  - lens-form-argument
+  - lens-bodies-souls
+  - separation
+  - resurrection
+  - return

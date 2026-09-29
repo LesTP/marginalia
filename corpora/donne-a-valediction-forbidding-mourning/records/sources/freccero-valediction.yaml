@@ -21,7 +21,7 @@ source_type: journal-article
 quality:
   authority: peer-reviewed-scholarship
   peer_review_status: peer-reviewed
-  rationale: A peer-reviewed scholarly essay in ELH that reads the poem's compass conceit within Renaissance and Neoplatonic cosmology.
+  rationale: A peer-reviewed scholarly essay in ELH that develops an integrated reading of the poem's body-and-soul theology, alchemical language, and compass conceit within Renaissance and Neoplatonic cosmology.
 access:
   state: fully-consulted
   consulted_on: "2026-09-28"
@@ -33,4 +33,5 @@ rights:
   quotation: limited
   reproduction: prohibited
   notes: The essay is under copyright (ELH, Johns Hopkins University Press). The corpus paraphrases with short attributed phrases and does not reproduce the text; users should confirm rights before quoting.
-notes: Freccero reads the twin compasses as fusing linear and circular motion, glosses "just" as a pun on a true circle and the virtuous man, and links "obliquely runne" and "far doth rome" to planetary motion.
+notes: >-
+  Freccero relates the lovers' separation and return to body-and-soul theology, resurrection, and pneuma; reads melting, elemental composition, refinement, and beaten gold through alchemical dissolution and conjunction; and places the twin compasses within Renaissance and Neoplatonic models of linear motion, circular return, and restored union.

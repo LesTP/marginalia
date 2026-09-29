@@ -1,0 +1,139 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_4d48e09e53d9982a
+title: From Melting to Beaten Gold
+provenance:
+  local_key: alchemical-chain
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-29"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "5-24"
+  exact_text: |-
+    So let us melt, and make no noise,
+    No teare-floods, nor sigh-tempests move,
+    T'were prophanation of our joyes
+    To tell the layetie our love.
+
+    Moving of th'earth brings harmes and feares,
+    Men reckon what it did and meant,
+    But trepidation of the spheares,
+    Though greater farre, is innocent.
+
+    Dull sublunary lovers love
+    (Whose soule is sense) cannot admit
+    Absence, because it doth remove
+    Those things which elemented it.
+
+    But we by a love, so much refin'd,
+    That our selves know not what it is,
+    Inter-assured of the mind,
+    Care lesse; eyes, lips, hands to misse.
+
+    Our two soules therefore, which are one,
+    Though I must goe, endure not yet
+    A breach, but an expansion,
+    Like gold to ayery thinnesse beate.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        So let us melt, and make no noise,
+        No tear-floods, nor sigh-tempests move,
+        'Twere profanation of our joys
+        To tell the laity our love.
+
+        Moving of th'earth brings harms and fears,
+        Men reckon what it did and meant,
+        But trepidation of the spheres,
+        Though greater far, is innocent.
+
+        Dull sublunary lovers' love
+        (Whose soul is sense) cannot admit
+        Absence, because it doth remove
+        Those things which elemented it.
+
+        But we by a love, so much refined,
+        That ourselves know not what it is,
+        Inter-assured of the mind,
+        Care less, eyes, lips, hands to miss.
+
+        Our two souls therefore, which are one,
+        Though I must go, endure not yet
+        A breach, but an expansion,
+        Like gold to airy thinness beat.
+annotation_type: historical-context
+claim:
+  body: >-
+    The poem returns to material transformation across these stanzas: the lovers “melt”; bodily presence “elemented” ordinary love; their own love is “refin'd”; and their one soul expands like beaten gold. Grierson's gloss of “elemented” as “composed” supplies the lexical hinge. John Freccero reads the sequence through Renaissance alchemy, in which dissolution can separate spirit from body without annihilating either, refinement prepares a purer conjunction, and gold gives restored union a durable material form. The value of the reading is the chain: physical separation becomes a refining passage toward renewed union rather than a series of unrelated decorative images.
+  epistemic_status: attributed-interpretation
+  editorial_confidence:
+    level: unassessed
+    rationale: The four textual anchors and cited commentary are directly available, but their unification as an alchemical process remains an attributed interpretation rather than established consensus.
+  contested: false
+  attributions:
+    - scholar: Herbert J. C. Grierson
+      position: Grierson glosses “elemented” as “composed” and relates “those things” to the bodily parts named in line 20.
+      evidence_ids:
+        - ev_chain_grierson_elemented
+    - scholar: John Freccero
+      position: >-
+        Freccero reads “melt,” “refin'd,” and beaten gold as an alchemical pattern in which spirit and body are separated, purified, and reunited without destroying their underlying union.
+      evidence_ids:
+        - ev_chain_freccero_elements_refinement
+        - ev_chain_freccero_melt_reunion
+        - ev_chain_freccero_gold_process
+evidence:
+  - id: ev_chain_poem
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: Lines 5-24 supply the linked terms “melt,” “elemented,” “refin'd,” and beaten gold.
+    citation:
+      locator: pp. 193-194, lines 5-24
+      citation_text: "Donne, Poems (1633), 193-94."
+  - id: ev_chain_grierson_elemented
+    source_id: src_95a01a8318fcf5d6
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Grierson explains “elemented” as “composed” and connects “those things” to the physical list of eyes, lips, and hands.
+    citation:
+      locator: vol. II, p. 49, note to line 16
+      citation_text: "Grierson, commentary on 'A Valediction,' 2:49."
+  - id: ev_chain_freccero_elements_refinement
+    source_id: src_d0ac9779e429149d
+    relationship: supports
+    use: direct-evidence
+    summary: Freccero places refinement, elemental composition, and the relation of body and spirit in an alchemical framework.
+    citation:
+      locator: "pp. 362-364, 374"
+      citation_text: "Freccero, 'Donne's Valediction,' 362-64, 374."
+  - id: ev_chain_freccero_melt_reunion
+    source_id: src_d0ac9779e429149d
+    relationship: supports
+    use: direct-evidence
+    summary: Freccero reads melting as separation or dissolution without annihilation and argues that alchemical death points toward reunion.
+    citation:
+      locator: pp. 365-368
+      citation_text: "Freccero, 'Donne's Valediction,' 365-68."
+  - id: ev_chain_freccero_gold_process
+    source_id: src_d0ac9779e429149d
+    relationship: supports
+    use: direct-evidence
+    summary: Freccero reads the beaten-gold image as recapitulating refinement, separation, and recombination.
+    citation:
+      locator: pp. 370-372
+      citation_text: "Freccero, 'Donne's Valediction,' 370-72."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-29"
+  notes: The synthesis, attribution, and evidentiary limits were reviewed by the human editor.
+tags:
+  - lens-form-argument
+  - lens-bodies-souls
+  - lens-geometry-cosmology
+  - alchemy
+  - gold

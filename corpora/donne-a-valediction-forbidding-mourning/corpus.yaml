@@ -70,6 +70,7 @@ presentation:
           label: A breach becomes an expansion
           annotation_keys:
             - beaten-gold
+            - alchemical-chain
         - id: twin-compasses-return
           label: The compasses and return
           annotation_keys:
@@ -87,6 +88,8 @@ annotations:
   - records/annotations/earthly-celestial-motion.yaml
   - records/annotations/refined-love.yaml
   - records/annotations/beaten-gold.yaml
+  - records/annotations/alchemical-chain.yaml
   - records/annotations/twin-compasses-return.yaml
+  - records/annotations/body-soul-separation-restoration.yaml
   - records/annotations/and-hands-variant.yaml
   - records/annotations/guided-reading.yaml

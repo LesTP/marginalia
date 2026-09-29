@@ -42,7 +42,11 @@ claim:
     level: unassessed
     rationale: The distinction and bodily list are explicit, while the account of their relationship is an editorial synthesis informed by Grierson's lexical note.
   contested: false
-  attributions: []
+  attributions:
+    - scholar: Herbert J. C. Grierson
+      position: Grierson glosses “elemented” as “composed” and connects the phrase to the eyes, lips, and hands named in line 20.
+      evidence_ids:
+        - ev_elemented
 evidence:
   - id: ev_refined_love
     source_id: src_d933303080412160

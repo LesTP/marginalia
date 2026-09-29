@@ -127,7 +127,7 @@ def test_builds_donne_review_model() -> None:
         model["corpus"]["annotation_count"],
         model["corpus"]["authors"],
         len(model["poem"]["lines"]),
-    ) == (4, 10, ["John Donne"], 36)
+    ) == (4, 12, ["John Donne"], 36)
     assert [text["id"] for text in model["texts"]] == [
         "edition-faithful",
         "modernized",
@@ -149,6 +149,70 @@ def test_builds_donne_review_model() -> None:
     assert [line["stanza_line"] for line in faithful["lines"]] == list(range(1, 5)) * 9
     assert faithful["lines"][0]["text"] == "AS virtuous men passe mildly away,"
     assert all("ſ" not in line["text"] for text in model["texts"] for line in text["lines"])
+
+    annotations = {item["local_key"]: item for item in model["annotations"]}
+    body_soul = annotations["body-soul-separation-restoration"]
+    alchemy = annotations["alchemical-chain"]
+    assert body_soul["target"]["line_range"] == {"start": 1, "end": 36}
+    assert alchemy["target"]["line_range"] == {"start": 5, "end": 24}
+    body_soul_modernized = body_soul["target"]["fragments_by_text"]["modernized"]
+    alchemy_modernized = alchemy["target"]["fragments_by_text"]["modernized"]
+    assert (len(body_soul_modernized), body_soul_modernized[0]["line"], body_soul_modernized[-1]["line"]) == (36, 1, 36)
+    assert (len(alchemy_modernized), alchemy_modernized[0]["line"], alchemy_modernized[-1]["line"]) == (20, 5, 24)
+    assert body_soul["review"] == {
+        "state": "human-reviewed",
+        "reviewer": "LesTP",
+        "reviewed_on": "2026-09-29",
+        "notes": "The synthesis, attribution, and evidentiary limits were reviewed by the human editor.",
+    }
+    body_soul_attribution = body_soul["claim"]["attributions"][0]
+    assert body_soul_attribution["scholar"] == "John Freccero"
+    assert body_soul_attribution["evidence_ids"] == [
+        "ev_body_soul_freccero_frame",
+        "ev_body_soul_freccero_resurrection",
+        "ev_body_soul_freccero_recap",
+    ]
+    assert {
+        attribution["scholar"]: attribution["evidence_ids"]
+        for attribution in alchemy["claim"]["attributions"]
+    } == {
+        "Herbert J. C. Grierson": ["ev_chain_grierson_elemented"],
+        "John Freccero": [
+            "ev_chain_freccero_elements_refinement",
+            "ev_chain_freccero_melt_reunion",
+            "ev_chain_freccero_gold_process",
+        ],
+    }
+    assert annotations["refined-love"]["claim"]["attributions"][0]["evidence_ids"] == [
+        "ev_elemented"
+    ]
+    assert "ev_freccero_greatyear" in annotations["twin-compasses-return"]["claim"][
+        "attributions"
+    ][0]["evidence_ids"]
+    assert "ev_freccero_conge" not in {
+        evidence["id"] for evidence in annotations["quiet-passing"]["evidence"]
+    }
+    assert "ev_freccero_melt" not in {
+        evidence["id"] for evidence in annotations["no-noise-profanation"]["evidence"]
+    }
+
+    lenses = {
+        lens["id"]: lens["annotation_keys"] for lens in model["presentation"]["lenses"]
+    }
+    assert "body-soul-separation-restoration" in lenses["form-argument"]
+    assert "body-soul-separation-restoration" in lenses["bodies-souls"]
+    assert "body-soul-separation-restoration" not in lenses["geometry-cosmology"]
+    assert "alchemical-chain" in lenses["form-argument"]
+    assert "alchemical-chain" in lenses["bodies-souls"]
+    assert "alchemical-chain" in lenses["geometry-cosmology"]
+
+    pathway = model["presentation"]["pathways"][0]
+    beaten_gold_step = next(step for step in pathway["steps"] if step["id"] == "beaten-gold")
+    assert beaten_gold_step["annotation_keys"] == ["beaten-gold", "alchemical-chain"]
+    assert "body-soul-separation-restoration" not in {
+        key for step in pathway["steps"] for key in step["annotation_keys"]
+    }
+
     assert model["presentation"]["default_state"] == {
         "text": "edition-faithful",
         "mode": "pathway",

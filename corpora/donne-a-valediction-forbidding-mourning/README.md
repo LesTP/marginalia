@@ -1,8 +1,8 @@
 # A Valediction: Forbidding Mourning
 
-A compact annotated reading of John Donne's 36-line poem for a general audience. This corpus presents two aligned reading texts: an edition-faithful transcription of the 1633 first edition and a conservative modernized text derived from it. Both remain editorial drafts.
+A compact annotated reading of John Donne's 36-line poem for a general audience. This corpus presents two aligned reading texts: an edition-faithful transcription of the 1633 first edition and a conservative modernized text derived from it. The corpus contains 12 annotation records, including 10 reader-facing notes.
 
-All annotations are `draft`. The source locations and access states have been checked, but neither transcription nor the interpretive wording is `editorially-approved` until a human editor reviews it.
+All annotation records are `human-reviewed`; none is yet `editorially-approved`. The new contextual syntheses explicitly attribute Freccero's body-and-soul and alchemical readings rather than presenting them as scholarly consensus.
 
 ## Base Witness
 
@@ -37,18 +37,19 @@ Every annotation contains an exact selector for both texts. The validator requir
 | Donne, *Poems* (1633) | Controlling base witness | Fully consulted | Printed pages 193-194 and relevant scan metadata |
 | Grierson, *The Poems of John Donne*, vol. I (1912) | Critical text and variant apparatus | Excerpt consulted | Title matter, editorial-method preface, poem on page 49, and immediate apparatus |
 | Grierson, *The Poems of John Donne*, vol. II (1912) | Poem-specific commentary | Excerpt consulted | Title matter and commentary on pages 49-50 |
+| Freccero, *Donne's "Valediction: Forbidding Mourning"* (1963) | Peer-reviewed poem-specific interpretation | Fully consulted | Body and soul, resurrection, alchemy, cosmology, and the compass conceit; limited quotation, no reproduction |
 
-The Grierson volumes were consulted through Project Gutenberg ebooks 48688 and 48772. Claims attributed by Grierson to another scholar remain reported evidence unless that scholar's original work is obtained.
+The Grierson volumes were consulted through Project Gutenberg ebooks 48688 and 48772. Claims attributed by Grierson to another scholar remain reported evidence unless that scholar's original work is obtained. Freccero's complete essay was consulted from page images supplied by the editor; the corpus paraphrases its arguments and identifies them as attributed interpretations.
 
 ## Guided Reading
 
-The generated page presents six ordered sections:
+The reading page presents six ordered sections:
 
 1. A quiet model for parting.
 2. Why display would profane the love.
 3. Earthquake and celestial motion.
 4. What physical absence removes.
-5. A breach becomes an expansion.
+5. A breach becomes an expansion, followed by the alchemical chain from melting to beaten gold.
 6. The compasses and return.
 
 The sequence follows the poem's own stanza order. It is an editorial route, not a claim of scholarly consensus.
@@ -78,7 +79,7 @@ Until those sources are obtained, the corpus does not treat their arguments as d
 - The corpus controls its text from one copy of the 1633 edition and does not yet collate another physical copy.
 - No manuscript witness has been inspected directly.
 - The modernized text is an editorial derivation, not a critical edition.
-- Most interpretive notes are explicitly editorial syntheses grounded in the poem; modern scholarship has not yet been added.
+- The historical syntheses currently lean heavily on Freccero's 1963 interpretation; additional modern scholarship is needed to establish later agreement, revision, or dissent.
 - Grierson's attribution of the astronomical gloss to Chambers is recorded as reported evidence.
 - Rights fields document the working assessment used by this project and are not legal advice.
 
@@ -88,7 +89,7 @@ From the repository root:
 
 ```powershell
 reference-corpus-validate .\corpora\donne-a-valediction-forbidding-mourning\corpus.yaml
-reference-corpus-render .\corpora\donne-a-valediction-forbidding-mourning\corpus.yaml
+python .\scripts\refresh-review.py .\corpora\donne-a-valediction-forbidding-mourning\corpus.yaml
 python -m pytest
 ```
 

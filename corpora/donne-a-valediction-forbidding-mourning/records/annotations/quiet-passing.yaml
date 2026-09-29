@@ -27,7 +27,7 @@ target:
 annotation_type: thematic
 claim:
   body: >-
-    The opening imagines death so gentle that the surrounding friends cannot agree on the instant it occurs. By choosing this nearly imperceptible departure as his first comparison, the speaker makes quietness—not denial of feeling—the standard for the lovers' separation. John Freccero places the poem in the tradition of the congé d'amour, the lover's leave-taking that consoles the beloved by insisting the two remain one; Donne's distinctive move is to transpose that consolation onto the Christian promise of resurrection rather than an ordinary reunion.
+    The opening imagines death so gentle that the surrounding friends cannot agree on the instant it occurs. By choosing this nearly imperceptible departure as his first comparison, the speaker makes quietness—not denial of feeling—the standard for the lovers' separation.
   epistemic_status: editorial-synthesis
   editorial_confidence:
     level: unassessed
@@ -43,14 +43,6 @@ evidence:
     citation:
       locator: p. 193, lines 1-4
       citation_text: "Donne, Poems (1633), 193."
-  - id: ev_freccero_conge
-    source_id: src_d0ac9779e429149d
-    relationship: contextualizes
-    use: direct-evidence
-    summary: Freccero identifies the poem's genre as the congé d'amour, a lover's leave-taking that claims the two are not truly parted, which Donne recasts through the Christian Resurrection.
-    citation:
-      locator: pp. 353-355
-      citation_text: "Freccero, 'Donne's Valediction,' 353-55."
 review:
   state: human-reviewed
   reviewer: LesTP

@@ -51,7 +51,7 @@ claim:
   epistemic_status: attributed-interpretation
   editorial_confidence:
     level: unassessed
-    rationale: The described movements follow the poem's sequence and compass geometry; the cosmological reading is attributed to Freccero, whose essay was consulted in part.
+    rationale: The described movements follow the poem's sequence and compass geometry; the cosmological reading is attributed to Freccero, whose complete essay was consulted.
   contested: false
   attributions:
     - scholar: John Freccero
@@ -59,6 +59,7 @@ claim:
       evidence_ids:
         - ev_freccero_compass
         - ev_freccero_oblique
+        - ev_freccero_greatyear
 evidence:
   - id: ev_compasses
     source_id: src_d933303080412160

@@ -27,7 +27,7 @@ target:
 annotation_type: thematic
 claim:
   body: >-
-    The speaker asks the lovers to “melt” apart without theatrical floods of tears or storms of sighs. Calling outsiders “the laity” gives the relationship a private, almost sacred knowledge: public display would expose something the uninitiated cannot fully understand. John Freccero hears an alchemical sense in “melt”: pure gold melts quietly and evenly because its spirit is perfectly joined to its body, unlike base metals that melt noisily, so the lovers are asked to part as gold does—without noise.
+    The speaker asks the lovers to “melt” apart without theatrical floods of tears or storms of sighs. Calling outsiders “the laity” gives the relationship a private, almost sacred knowledge: public display would expose something the uninitiated cannot fully understand.
   epistemic_status: editorial-synthesis
   editorial_confidence:
     level: unassessed
@@ -43,14 +43,6 @@ evidence:
     citation:
       locator: p. 193, lines 5-8
       citation_text: "Donne, Poems (1633), 193."
-  - id: ev_freccero_melt
-    source_id: src_d0ac9779e429149d
-    relationship: contextualizes
-    use: direct-evidence
-    summary: Freccero reads “melt” as alchemical liquefaction and contrasts the quiet, even melting of pure gold with the noisy melting of base metals, grounding the stanza's “make no noise.”
-    citation:
-      locator: pp. 365-367
-      citation_text: "Freccero, 'Donne's Valediction,' 365-67."
 review:
   state: human-reviewed
   reviewer: LesTP
