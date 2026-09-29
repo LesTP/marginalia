@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "IM FELL English";
+  src: url("data:font/ttf;base64,@@IM_FELL_ENGLISH_DATA@@") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+.poem-lines--historical-forms .poem-line__text {
+  font-family: "IM FELL English", var(--serif);
+  font-variant-alternates: historical-forms;
+  font-feature-settings: "hist" 1, "liga" 1;
+}
+
+.font-attribution {
+  max-width: 48rem;
+}
+
+.font-attribution__credit {
+  margin: 0;
+}
+
+.font-attribution__license {
+  margin-top: 0.55rem;
+}
+
+.font-attribution__license summary {
+  color: var(--moon);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.font-attribution__license pre {
+  max-height: 18rem;
+  overflow: auto;
+  margin: 0.75rem 0 0;
+  padding: 0.8rem;
+  background: rgba(23, 34, 31, 0.055);
+  border: 1px solid var(--rule);
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}

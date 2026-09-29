@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reference-corpus.local/schemas/annotation.schema.json",
+  "title": "Literary annotation record",
+  "description": "A passage-level claim with explicit epistemic status, evidence, citations, attribution, and editorial review.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "provenance",
+    "target",
+    "annotation_type",
+    "claim",
+    "evidence",
+    "review"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"$ref": "vocabularies.schema.json#/$defs/schemaVersion"},
+    "record_type": {"const": "annotation"},
+    "id": {"type": "string", "pattern": "^ann_[0-9a-f]{16}$"},
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional public heading for readers. The provenance local_key remains the stable internal identifier."
+    },
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "target": {"$ref": "#/$defs/target"},
+    "annotation_type": {"$ref": "vocabularies.schema.json#/$defs/annotationType"},
+    "annotation_type_detail": {"type": "string", "minLength": 1},
+    "claim": {"$ref": "#/$defs/claim"},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "review": {"$ref": "#/$defs/review"},
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"annotation_type": {"const": "other"}}, "required": ["annotation_type"]},
+      "then": {"required": ["annotation_type_detail"]}
+    }
+  ],
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "required": ["local_key"],
+      "additionalProperties": false,
+      "properties": {
+        "local_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$",
+          "description": "Stable internal key for references and identity; it is not required to serve as public display copy."
+        },
+        "created_by": {"type": "string", "minLength": 1},
+        "created_on": {"type": "string", "format": "date"}
+      }
+    },
+    "locator": {
+      "type": "object",
+      "required": ["scheme", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "scheme": {
+          "type": "string",
+          "enum": ["line", "page", "chapter-section", "act-scene-line", "stanza", "paragraph", "other"]
+        },
+        "value": {"type": "string", "minLength": 1},
+        "detail": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"scheme": {"const": "other"}}, "required": ["scheme"]},
+          "then": {"required": ["detail"]}
+        }
+      ]
+    },
+    "target": {
+      "type": "object",
+      "required": ["work_id", "edition_source_id", "locator", "exact_text"],
+      "additionalProperties": false,
+      "properties": {
+        "work_id": {"type": "string", "pattern": "^work_[a-z0-9][a-z0-9_-]*$"},
+        "edition_source_id": {"type": "string", "pattern": "^src_[0-9a-f]{16}$"},
+        "locator": {"$ref": "#/$defs/locator"},
+        "exact_text": {"type": "string", "minLength": 1},
+        "prefix": {"type": "string"},
+        "suffix": {"type": "string"},
+        "display_selectors": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/displaySelector"}
+        }
+      }
+    },
+    "displaySelector": {
+      "type": "object",
+      "required": ["text_id", "exact_text"],
+      "additionalProperties": false,
+      "properties": {
+        "text_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "exact_text": {"type": "string", "minLength": 1},
+        "prefix": {"type": "string"},
+        "suffix": {"type": "string"}
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["level", "rationale"],
+      "additionalProperties": false,
+      "properties": {
+        "level": {"$ref": "vocabularies.schema.json#/$defs/editorialConfidence"},
+        "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "attribution": {
+      "type": "object",
+      "required": ["scholar", "position", "evidence_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "scholar": {"type": "string", "minLength": 1},
+        "position": {"type": "string", "minLength": 1},
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^ev_[a-z0-9][a-z0-9_-]*$"}
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": ["body", "epistemic_status", "editorial_confidence", "contested", "attributions"],
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Reader-facing explanation that begins with what the passage does and why it matters, then introduces attribution, debate, or uncertainty as needed."
+        },
+        "epistemic_status": {"$ref": "vocabularies.schema.json#/$defs/epistemicStatus"},
+        "editorial_confidence": {"$ref": "#/$defs/confidence"},
+        "contested": {"type": "boolean"},
+        "contestation_note": {"type": "string", "minLength": 1},
+        "attributions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/attribution"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"epistemic_status": {"const": "attributed-interpretation"}},
+            "required": ["epistemic_status"]
+          },
+          "then": {"properties": {"attributions": {"minItems": 1}}}
+        },
+        {
+          "if": {"properties": {"contested": {"const": true}}, "required": ["contested"]},
+          "then": {
+            "required": ["contestation_note"],
+            "properties": {"attributions": {"minItems": 2}}
+          }
+        }
+      ]
+    },
+    "citation": {
+      "type": "object",
+      "required": ["locator"],
+      "additionalProperties": false,
+      "properties": {
+        "locator": {"type": "string", "minLength": 1},
+        "citation_text": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["id", "source_id", "relationship", "use", "summary", "citation"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^ev_[a-z0-9][a-z0-9_-]*$"},
+        "source_id": {"type": "string", "pattern": "^src_[0-9a-f]{16}$"},
+        "relationship": {"$ref": "vocabularies.schema.json#/$defs/evidenceRelationship"},
+        "use": {"$ref": "vocabularies.schema.json#/$defs/evidenceUse"},
+        "summary": {"type": "string", "minLength": 1},
+        "citation": {"$ref": "#/$defs/citation"},
+        "quotation": {"type": "string", "minLength": 1}
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["state"],
+      "additionalProperties": false,
+      "properties": {
+        "state": {"$ref": "vocabularies.schema.json#/$defs/reviewState"},
+        "reviewer": {"type": "string", "minLength": 1},
+        "reviewed_on": {"type": "string", "format": "date"},
+        "notes": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"state": {"enum": ["human-reviewed", "source-verified", "editorially-approved"]}},
+            "required": ["state"]
+          },
+          "then": {"required": ["reviewer", "reviewed_on"]}
+        }
+      ]
+    }
+  }
+}

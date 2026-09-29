@@ -1,0 +1,29 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_0000000000000000 # Replace with --show-derived-id output.
+provenance:
+  scheme: bibliographic-key
+  value: creator-short-title-edition-year
+bibliography:
+  title: Full source title
+  contributors:
+    - name: Scholar or editor name
+      role: author
+  issued: "2025"
+  publisher: Publisher or repository
+  citation: Complete human-readable citation with edition details.
+source_type: monograph
+quality:
+  authority: university-press-scholarship
+  peer_review_status: editorially-reviewed
+  rationale: Explain why this is an appropriate scholarly authority for the claims it supports.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-22"
+  obtained_via: Library, archive, owned copy, or repository.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: Track constraints here; verify them before publication.
+notes: Optional source-level editorial notes.

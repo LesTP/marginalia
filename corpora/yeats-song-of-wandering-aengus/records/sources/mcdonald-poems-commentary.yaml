@@ -1,0 +1,38 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_2da93dbd07af86d4
+provenance:
+  scheme: doi
+  value: 10.4324/9781003047254-80
+  detail: Chapter-level DOI verified through Crossref and the publisher landing page.
+bibliography:
+  title: The Song of Wandering Aengus
+  contributors:
+    - name: Peter McDonald
+      role: author
+  issued: "2020-08-18"
+  publisher: Routledge
+  container_title: The Poems of W. B. Yeats
+  pages: 518-529
+  identifiers:
+    - scheme: DOI
+      value: 10.4324/9781003047254-80
+    - scheme: ISBN
+      value: "9781003047254"
+  canonical_url: https://doi.org/10.4324/9781003047254-80
+  citation: "McDonald, Peter. 'The Song of Wandering Aengus.' In The Poems of W. B. Yeats, pp. 518-529. Routledge, 2020. https://doi.org/10.4324/9781003047254-80."
+source_type: book-chapter
+quality:
+  authority: university-press-scholarship
+  peer_review_status: editorially-reviewed
+  rationale: A modern, poem-specific chapter from a major scholarly publisher and the highest-priority source for expanding this pilot.
+access:
+  state: citation-only
+  scope_note: Crossref metadata and the Routledge landing page were verified, but the chapter text was not available for consultation.
+  obtained_via: Crossref and Routledge bibliographic metadata.
+rights:
+  status: copyrighted
+  quotation: unknown
+  reproduction: prohibited
+  notes: Do not quote or summarize the chapter until a legitimately accessible copy has been consulted.
+notes: "Acquisition priority: high. The record is included to make the most important current scholarship gap explicit."

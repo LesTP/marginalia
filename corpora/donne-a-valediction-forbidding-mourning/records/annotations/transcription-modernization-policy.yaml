@@ -1,0 +1,142 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_4eb04173afdd26d0
+title: How the Two Texts Differ
+provenance:
+  local_key: transcription-modernization-policy
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "1-36"
+  exact_text: |-
+    AS virtuous men passe mildly away,
+    And whisper to their soules, to goe,
+    Whilst some of their sad friends doe say,
+    The breath goes now, and some say, no.
+
+    So let us melt, and make no noise,
+    No teare-floods, nor sigh-tempests move,
+    T'were prophanation of our joyes
+    To tell the layetie our love.
+
+    Moving of th'earth brings harmes and feares,
+    Men reckon what it did and meant,
+    But trepidation of the spheares,
+    Though greater farre, is innocent.
+
+    Dull sublunary lovers love
+    (Whose soule is sense) cannot admit
+    Absence, because it doth remove
+    Those things which elemented it.
+
+    But we by a love, so much refin'd,
+    That our selves know not what it is,
+    Inter-assured of the mind,
+    Care lesse; eyes, lips, hands to misse.
+
+    Our two soules therefore, which are one,
+    Though I must goe, endure not yet
+    A breach, but an expansion,
+    Like gold to ayery thinnesse beate.
+
+    If they be two; they are two so
+    As stiffe twin compasses are two,
+    Thy soule the fixt foot, makes no show
+    To move, but doth, if th'other doe.
+
+    And though it in the center sit,
+    Yet when the other far doth rome,
+    It leanes, and hearkens after it,
+    And growes erect, as that comes home.
+
+    Such wilt thou be to mee, who must
+    Like th'other foot, obliquely runne,
+    Thy firmnes makes my circle just,
+    And makes me end, where I begunne.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        As virtuous men pass mildly away,
+        And whisper to their souls, to go,
+        Whilst some of their sad friends do say,
+        The breath goes now, and some say, no:
+
+        So let us melt, and make no noise,
+        No tear-floods, nor sigh-tempests move,
+        'Twere profanation of our joys
+        To tell the laity our love.
+
+        Moving of th'earth brings harms and fears,
+        Men reckon what it did and meant,
+        But trepidation of the spheres,
+        Though greater far, is innocent.
+
+        Dull sublunary lovers' love
+        (Whose soul is sense) cannot admit
+        Absence, because it doth remove
+        Those things which elemented it.
+
+        But we by a love, so much refined,
+        That ourselves know not what it is,
+        Inter-assured of the mind,
+        Care less, eyes, lips, hands to miss.
+
+        Our two souls therefore, which are one,
+        Though I must go, endure not yet
+        A breach, but an expansion,
+        Like gold to airy thinness beat.
+
+        If they be two, they are two so
+        As stiff twin compasses are two,
+        Thy soul the fixed foot, makes no show
+        To move, but doth, if th'other do.
+
+        And though it in the center sit,
+        Yet when the other far doth roam,
+        It leans, and hearkens after it,
+        And grows erect, as that comes home.
+
+        Such wilt thou be to me, who must
+        Like th'other foot, obliquely run;
+        Thy firmness makes my circle just,
+        And makes me end, where I begun.
+annotation_type: editorial-note
+claim:
+  body: >-
+    The edition-faithful view keeps the 1633 words, spelling, capitalization, punctuation, line order, and stanza divisions while storing long s as ordinary s, expanding no abbreviations, omitting ornamental indentation, and representing the initial decorated capital as “AS.” In the review page, IM FELL English applies contextual historical glyph forms to this view only; the display is period-appropriate rather than a facsimile of Miles Flesher's type, and copied text remains ordinary s. The modernized view changes spelling and typographic conventions line by line while preserving wording, syntax, lineation, and stanza structure. It follows Grierson's punctuation at four points: the colon after “no,” the comma after “lesse,” the comma after the first “two,” and the semicolon after “runne.” It adds the possessive apostrophe in “lovers' love” but does not import Grierson's manuscript-supported “and” before “hands.”
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The policy and line alignment are explicit and mechanically checkable; each modernization intervention has been reviewed, and no formal confidence grade has been assigned.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_policy_pages
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: The printed pages establish the forms preserved by the edition-faithful transcription and reveal typographic features normalized for searchable Unicode text.
+    citation:
+      locator: printed pp. 193-194; scan leaves 208-209
+      citation_text: "Donne, Poems (1633), 193-194."
+  - id: ev_policy_grierson
+    source_id: src_ce7b60f5c415155e
+    relationship: qualifies
+    use: direct-evidence
+    summary: Grierson's text and apparatus expose where an edited reading differs from the 1633 witness, including punctuation, the added “and” in line 20, and manuscript or later-edition variants.
+    citation:
+      locator: vol. I, p. 49 and following variant apparatus
+      citation_text: "Donne, Poems, ed. Grierson, 1:49."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Human review compared every changed form across the two aligned views.
+tags:
+  - lens-text-history
+  - modernization
+  - transcription

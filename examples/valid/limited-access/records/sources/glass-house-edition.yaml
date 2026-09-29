@@ -1,0 +1,31 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_64be35435887eef3
+provenance:
+  scheme: bibliographic-key
+  value: "example:glass-house-authoritative-edition:2023"
+bibliography:
+  title: The Glass House
+  contributors:
+    - name: Rowan Example
+      role: author
+    - name: Mira Editor
+      role: editor
+  issued: "2023"
+  publisher: Example Scholarly Editions
+  edition: Authoritative edition
+  citation: "Example, Rowan. The Glass House. Edited by Mira Editor, Example Scholarly Editions, 2023."
+source_type: critical-edition
+quality:
+  authority: scholarly-edition
+  peer_review_status: editorially-reviewed
+  rationale: The fictional edition supplies the exact target text and stable pagination.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-22"
+  obtained_via: Library copy.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: Use only short quotations when separately justified.

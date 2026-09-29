@@ -1,0 +1,73 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_c1366df981c5d68c
+title: Why the Apples Matter
+provenance:
+  local_key: apple-imagery-debate
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-23"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "13-24"
+  exact_text: |-
+    It had become a glimmering girl
+    With apple blossom in her hair
+    Who called me by my name and ran
+    And faded through the brightening air.
+
+    Though I am old with wandering
+    Through hollow lands and hilly lands,
+    I will find out where she has gone,
+    And kiss her lips and take her hands;
+    And walk among long dappled grass,
+    And pluck till time and times are done,
+    The silver apples of the moon,
+    The golden apples of the sun.
+annotation_type: thematic
+claim:
+  body: "The apple images connect the girl's first appearance—apple blossom in her hair—with the poem's final promise of silver and golden apples, making her both a particular lost beloved and part of a larger world of myth. Margaret Rudd, as reported by Jerome L. Mazzaro, links the girl to Maud Gonne; Mazzaro rejects that explanation as sufficient and argues that Yeats's earlier apple imagery and Celtic mythology provide a broader context."
+  epistemic_status: attributed-interpretation
+  editorial_confidence:
+    level: unassessed
+    rationale: Both positions are available through Mazzaro's directly consulted scholarly note, but Margaret Rudd's book has not yet been consulted independently.
+  contested: true
+  contestation_note: Mazzaro reports that Margaret Rudd identifies the glimmering girl with Maud Gonne through Yeats's apple-blossom description of her; he counters that apple imagery predates their first meeting and belongs to a wider mythological pattern.
+  attributions:
+    - scholar: Margaret Rudd, as reported by Jerome L. Mazzaro
+      position: The glimmering girl and apple blossom are explained through Yeats's description of Maud Gonne.
+      evidence_ids:
+        - ev_mazzaro_reports_rudd
+    - scholar: Jerome L. Mazzaro
+      position: Yeats's earlier apple imagery and reading in Celtic mythology better explain the image than a solely biographical identification.
+      evidence_ids:
+        - ev_mazzaro_argument
+evidence:
+  - id: ev_mazzaro_reports_rudd
+    source_id: src_1c6c6ab9dbcb7c2f
+    relationship: qualifies
+    use: reported-evidence
+    summary: Mazzaro quotes and summarizes Rudd's identification of the girl with Maud Gonne.
+    citation:
+      locator: p. 342, first paragraph
+      citation_text: "Mazzaro, 'Apple Imagery,' 342."
+  - id: ev_mazzaro_argument
+    source_id: src_1c6c6ab9dbcb7c2f
+    relationship: supports
+    use: direct-evidence
+    summary: Mazzaro traces earlier Yeatsian apple imagery and Gaelic mythic associations, concluding that Celtic mythology is the stronger explanation.
+    citation:
+      locator: pp. 342-343
+      citation_text: "Mazzaro, 'Apple Imagery,' 342-343."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Consult Margaret Rudd's Divided Image, page 144, before treating her position as independently verified.
+tags:
+  - lens-myth-folklore
+  - lens-form-imagery
+  - apples
+  - contested-reading

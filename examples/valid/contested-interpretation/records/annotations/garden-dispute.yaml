@@ -1,0 +1,59 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_1d81b620c5a0b6cb
+title: A Garden Between Memory and Prophecy
+provenance:
+  local_key: garden-memory-prophecy-dispute
+  created_by: Example Editor
+  created_on: "2026-09-22"
+target:
+  work_id: work_example_winter_garden
+  edition_source_id: src_961a9b7f77024c55
+  locator:
+    scheme: chapter-section
+    value: "2.4"
+  exact_text: The gate opened on the garden I had not yet lost.
+annotation_type: reception
+claim:
+  body: "The phrase “the garden I had not yet lost” looks backward to a remembered place while also anticipating a future loss, so the scene can feel both retrospective and prophetic. Alex Memory emphasizes recollection; Morgan Future argues that the future-perfect wording points ahead."
+  epistemic_status: attributed-interpretation
+  editorial_confidence:
+    level: moderate
+    rationale: Both positions are supported by directly consulted scholarship, while the final synthesis remains editorial.
+  contested: true
+  contestation_note: Alex Memory emphasizes recollection, while Morgan Future argues that the future-perfect construction makes the scene prophetic.
+  attributions:
+    - scholar: Alex Memory
+      position: The garden condenses a memory that the speaker cannot possess without revising it.
+      evidence_ids:
+        - ev_memory
+    - scholar: Morgan Future
+      position: The phrase "had not yet lost" makes the scene anticipatory and prophetic.
+      evidence_ids:
+        - ev_prophecy
+evidence:
+  - id: ev_memory
+    source_id: src_1347fbe62fb17fc4
+    relationship: supports
+    use: direct-evidence
+    summary: Memory reads the passage through the work's pattern of retrospectively reconstructed spaces.
+    citation:
+      locator: pp. 88-92
+      citation_text: "Memory, Impossible Garden, 88-92."
+  - id: ev_prophecy
+    source_id: src_5788db27acd64ae3
+    relationship: qualifies
+    use: direct-evidence
+    summary: Future argues that the passage's tense projects loss forward rather than simply recalling it.
+    citation:
+      locator: pp. 24-27
+      citation_text: "Future, 'Future Tense,' 24-27."
+review:
+  state: source-verified
+  reviewer: Example Reviewer
+  reviewed_on: "2026-09-22"
+  notes: Both fictional source locators and the attribution boundaries were checked.
+tags:
+  - memory
+  - prophecy
+  - contested-reading

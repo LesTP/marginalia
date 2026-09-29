@@ -1,0 +1,62 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_b76a7bbae8f39a03
+title: Why Display Would Profane the Love
+provenance:
+  local_key: no-noise-profanation
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "5-8"
+  exact_text: |-
+    So let us melt, and make no noise,
+    No teare-floods, nor sigh-tempests move,
+    T'were prophanation of our joyes
+    To tell the layetie our love.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        So let us melt, and make no noise,
+        No tear-floods, nor sigh-tempests move,
+        'Twere profanation of our joys
+        To tell the laity our love.
+annotation_type: thematic
+claim:
+  body: >-
+    The speaker asks the lovers to “melt” apart without theatrical floods of tears or storms of sighs. Calling outsiders “the laity” gives the relationship a private, almost sacred knowledge: public display would expose something the uninitiated cannot fully understand. John Freccero hears an alchemical sense in “melt”: pure gold melts quietly and evenly because its spirit is perfectly joined to its body, unlike base metals that melt noisily, so the lovers are asked to part as gold does—without noise.
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The religious distinction between profanation and laity is present in the stanza; describing the lovers' knowledge as private and quasi-sacred is an editorial synthesis.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_profanation
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: The second stanza rejects exaggerated mourning and uses the religious terms “prophanation” and “layetie.”
+    citation:
+      locator: p. 193, lines 5-8
+      citation_text: "Donne, Poems (1633), 193."
+  - id: ev_freccero_melt
+    source_id: src_d0ac9779e429149d
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Freccero reads “melt” as alchemical liquefaction and contrasts the quiet, even melting of pure gold with the noisy melting of base metals, grounding the stanza's “make no noise.”
+    citation:
+      locator: pp. 365-367
+      citation_text: "Freccero, 'Donne's Valediction,' 365-67."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Close reading reviewed by a human editor.
+tags:
+  - lens-form-argument
+  - lens-bodies-souls
+  - sacred-language

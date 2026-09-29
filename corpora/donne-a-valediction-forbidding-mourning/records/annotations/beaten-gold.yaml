@@ -1,0 +1,54 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_f08cf33fb713d3b3
+title: A Breach Becomes an Expansion
+provenance:
+  local_key: beaten-gold
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "21-24"
+  exact_text: |-
+    Our two soules therefore, which are one,
+    Though I must goe, endure not yet
+    A breach, but an expansion,
+    Like gold to ayery thinnesse beate.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        Our two souls therefore, which are one,
+        Though I must go, endure not yet
+        A breach, but an expansion,
+        Like gold to airy thinness beat.
+annotation_type: formal
+claim:
+  body: The gold comparison changes the meaning of distance. Hammered gold spreads into extreme thinness without ceasing to be continuous matter, so departure becomes expansion rather than rupture. The image gives a physical form to the apparently paradoxical claim that two souls remain one.
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The transformation from breach to expansion and the material behavior assigned to gold are explicit; their role in the argument is an editorial reading.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_beaten_gold
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: Lines 21-24 name the souls as one and replace breach with the expansion of gold beaten thin.
+    citation:
+      locator: p. 194, lines 21-24
+      citation_text: "Donne, Poems (1633), 194."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Close reading reviewed by a human editor.
+tags:
+  - lens-form-argument
+  - lens-bodies-souls
+  - lens-geometry-cosmology
+  - gold

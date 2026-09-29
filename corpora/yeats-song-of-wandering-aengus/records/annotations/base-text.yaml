@@ -1,0 +1,74 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_6faea52693f83798
+provenance:
+  local_key: base-text
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-23"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "1-24"
+  exact_text: |-
+    I went out to the hazel wood,
+    Because a fire was in my head,
+    And cut and peeled a hazel wand,
+    And hooked a berry to a thread;
+    And when white moths were on the wing,
+    And moth-like stars were flickering out,
+    I dropped the berry in a stream
+    And caught a little silver trout.
+
+    When I had laid it on the floor
+    I went to blow the fire a-flame,
+    But something rustled on the floor,
+    And someone called me by my name:
+    It had become a glimmering girl
+    With apple blossom in her hair
+    Who called me by my name and ran
+    And faded through the brightening air.
+
+    Though I am old with wandering
+    Through hollow lands and hilly lands,
+    I will find out where she has gone,
+    And kiss her lips and take her hands;
+    And walk among long dappled grass,
+    And pluck till time and times are done,
+    The silver apples of the moon,
+    The golden apples of the sun.
+annotation_type: editorial-note
+claim:
+  body: This is the corpus base transcription of the poem as printed in the 1899 London edition of The Wind Among the Reeds, pages 15-16.
+  epistemic_status: documented-fact
+  editorial_confidence:
+    level: unassessed
+    rationale: The transcription was checked against page images and a Project Gutenberg transcription; a human editor has reviewed it, and no formal confidence grade has been assigned.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_1899_scan
+    source_id: src_e0b122f22eb15e7b
+    relationship: supports
+    use: direct-evidence
+    summary: The printed page images supply the title, punctuation, lineation, stanza breaks, and wording used here.
+    citation:
+      locator: pp. 15-16; IIIF canvases 31-32
+      citation_text: "Yeats, The Wind Among the Reeds (1899), 15-16."
+  - id: ev_gutenberg_crosscheck
+    source_id: src_5ef421a1a77a9391
+    relationship: qualifies
+    use: direct-evidence
+    summary: The proofread 1903 fourth-edition transcription independently corroborates the poem's words and three-stanza structure.
+    citation:
+      locator: The Song of Wandering Aengus section, corresponding to printed pp. 15-16
+      citation_text: "Yeats, The Wind Among the Reeds, Project Gutenberg ebook 32233."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Source comparison is complete; the record has been reviewed by a human editor.
+tags:
+  - base-text
+  - lens-publication-textual-history

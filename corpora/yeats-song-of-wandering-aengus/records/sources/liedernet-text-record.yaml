@@ -1,0 +1,35 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_21c964fd93d0fe6a
+provenance:
+  scheme: uri
+  value: https://www.lieder.net/lieder/get_text.html?TextId=28583
+  detail: Curated text-author record in the LiederNet Archive.
+bibliography:
+  title: "A mad song [The Song of Wandering Aengus]"
+  contributors:
+    - name: W. B. Yeats
+      role: author
+    - name: Emily Ezust
+      role: editor
+    - name: Garrett Medlock
+      role: editor
+  issued: "2007-05-02"
+  publisher: LiederNet Archive
+  canonical_url: https://www.lieder.net/lieder/get_text.html?TextId=28583
+  citation: "Yeats, W. B. 'A mad song' [The Song of Wandering Aengus]. LiederNet Archive, text 28583, research by Emily Ezust and Garrett Medlock."
+source_type: web-resource
+quality:
+  authority: established-reference
+  peer_review_status: not-peer-reviewed
+  rationale: LiederNet is a long-running specialist archive for song texts; this record identifies its primary-source checking status and publication/title history, but it is not a critical edition.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-23"
+  obtained_via: Public LiederNet text record and editorial notes.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: The underlying Yeats poem is public domain, but the archive's editorial record and translations have separate rights. This corpus paraphrases its metadata.
+notes: The record reports first publication in The Sketch in August 1897, revision and renaming in 1899, a 24-line text, and one check of the author's text against a primary source.

@@ -1,0 +1,53 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_3cad8e591eec562e
+title: How Yeats Described the Poem's Origins
+provenance:
+  local_key: author-framing
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-23"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "7-16"
+  exact_text: |-
+    I dropped the berry in a stream
+    And caught a little silver trout.
+
+    When I had laid it on the floor
+    I went to blow the fire a-flame,
+    But something rustled on the floor,
+    And someone called me by my name:
+    It had become a glimmering girl
+    With apple blossom in her hair
+    Who called me by my name and ran
+    And faded through the brightening air.
+annotation_type: historical-context
+claim:
+  body: "The poem brings together two different imaginative sources: a Greek folk song suggested its basic situation, while Yeats pictured the events taking place in an Ireland inhabited by spirits. Yeats gives this account in the note he appended to the poem, so it describes his own framing of the work rather than proving that every image comes from one recoverable tale."
+  epistemic_status: documented-fact
+  editorial_confidence:
+    level: unassessed
+    rationale: The claim paraphrases Yeats's signed authorial note, checked on the printed pages; a human editor has reviewed it, and no formal confidence grade has been assigned.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_yeats_note_origin
+    source_id: src_e0b122f22eb15e7b
+    relationship: supports
+    use: direct-evidence
+    summary: Yeats names both the Greek folk-song prompt and the Irish imaginative setting in his note to the poem.
+    citation:
+      locator: pp. 88-89, note to The Song of Wandering Aengus
+      citation_text: "Yeats, The Wind Among the Reeds (1899), 88-89."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: The exact printed note has been checked; interpretive consequences remain open.
+tags:
+  - lens-myth-folklore
+  - authorial-note
+  - composition

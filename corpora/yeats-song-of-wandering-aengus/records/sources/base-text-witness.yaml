@@ -1,0 +1,35 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_e0b122f22eb15e7b
+provenance:
+  scheme: archive-id
+  value: "internet-archive:windamongreeds00yeatrich"
+  detail: University of California Libraries scan hosted by Internet Archive.
+bibliography:
+  title: The Wind Among the Reeds
+  contributors:
+    - name: W. B. Yeats
+      role: author
+  issued: "1899"
+  publisher: Elkin Mathews
+  edition: First London edition
+  identifiers:
+    - scheme: Internet Archive identifier
+      value: windamongreeds00yeatrich
+  canonical_url: https://archive.org/details/windamongreeds00yeatrich
+  citation: "Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich."
+source_type: primary-text
+quality:
+  authority: primary-source
+  peer_review_status: not-peer-reviewed
+  rationale: The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-23"
+  obtained_via: Internet Archive page images and OCR; printed pages were checked through the IIIF scan.
+rights:
+  status: public-domain
+  quotation: permitted
+  reproduction: permitted
+  notes: Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.
+notes: The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.

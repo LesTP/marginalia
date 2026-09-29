@@ -1,0 +1,53 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_bebce410bbbccfbc
+title: From Trout to Mysterious Woman
+provenance:
+  local_key: fish-to-girl
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-23"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "7-16"
+  exact_text: |-
+    I dropped the berry in a stream
+    And caught a little silver trout.
+
+    When I had laid it on the floor
+    I went to blow the fire a-flame,
+    But something rustled on the floor,
+    And someone called me by my name:
+    It had become a glimmering girl
+    With apple blossom in her hair
+    Who called me by my name and ran
+    And faded through the brightening air.
+annotation_type: allusion
+claim:
+  body: "The caught trout suddenly becomes a “glimmering girl,” and her disappearance turns a fishing episode into the lifelong search that occupies the poem's ending. In a note appended to the poem, Yeats connects this transformation with Irish beliefs about supernatural beings associated with the goddess Danu: spirits of the water that may appear as fish or as beautiful women."
+  epistemic_status: documented-fact
+  editorial_confidence:
+    level: unassessed
+    rationale: This states the contextual frame supplied by Yeats himself rather than claiming a recoverable single mythic source.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_yeats_shapechanging_note
+    source_id: src_e0b122f22eb15e7b
+    relationship: supports
+    use: direct-evidence
+    summary: Yeats's note connects water spirits, fish forms, and appearances as beautiful women.
+    citation:
+      locator: pp. 87-88, note to The Song of Wandering Aengus
+      citation_text: "Yeats, The Wind Among the Reeds (1899), 87-88."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: The note supports the broad folkloric frame, not a claim that one recorded story directly generated every image.
+tags:
+  - lens-myth-folklore
+  - shape-changing
+  - water

@@ -1,0 +1,29 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_7b0f4b601ea6737c
+provenance:
+  scheme: bibliographic-key
+  value: "example:river-poems-critical-edition:2024"
+bibliography:
+  title: The River Poems, a Critical Edition
+  contributors:
+    - name: Ada Example
+      role: editor
+  issued: "2024"
+  publisher: Example University Press
+  edition: Critical edition
+  citation: "Example, Ada, ed. The River Poems: A Critical Edition. Example University Press, 2024."
+source_type: critical-edition
+quality:
+  authority: scholarly-edition
+  peer_review_status: editorially-reviewed
+  rationale: The fictional example represents a fully consulted critical edition with an explicit apparatus.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-22"
+  obtained_via: Owned print copy.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: Short quotations may be recorded for editorial verification; publication requires a separate rights assessment.

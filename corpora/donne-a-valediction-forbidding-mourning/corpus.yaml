@@ -1,0 +1,84 @@
+schema_version: "1.0.0"
+record_type: corpus-manifest
+corpus_id: corpus_donne_a_valediction_forbidding_mourning
+title: "John Donne: A Valediction: Forbidding Mourning"
+description: An annotated reading of Donne's argument that physical separation can extend a deeply assured love without breaking it.
+presentation:
+  base_text_annotation: base-text
+  texts:
+    - id: edition-faithful
+      label: 1633 text
+      description: A transcription of the first printed edition, preserving wording, spelling, punctuation, lineation, and stanza structure with documented typographic normalization.
+      type: canonical-target
+      historical_forms: true
+    - id: modernized
+      label: Modernized text
+      description: A conservative editorial reading text that modernizes spelling, typography, and selected punctuation while preserving wording, syntax, lineation, and stanza structure.
+      type: editorial-derivation
+      derived_from: edition-faithful
+  default_text: edition-faithful
+  default_mode: pathway
+  default_pathway: guided-reading
+  lenses:
+    - id: form-argument
+      label: Form and argument
+      description: Follow how each quatrain turns departure from feared rupture into continued relation and return.
+      tag: lens-form-argument
+    - id: bodies-souls
+      label: Bodies and souls
+      description: Trace what physical absence removes and what the speaker claims an inwardly assured love can preserve.
+      tag: lens-bodies-souls
+    - id: geometry-cosmology
+      label: Geometry and cosmology
+      description: Read the earthquake, spheres, beaten gold, and compasses as working models rather than decorative comparisons.
+      tag: lens-geometry-cosmology
+    - id: text-history
+      label: Text and history
+      description: Compare the 1633 witness, the modernized reading text, and editorial variants without collapsing them into one text.
+      tag: lens-text-history
+  pathways:
+    - id: guided-reading
+      label: Guided reading
+      description: Follow the poem's argument from quiet departure through inward assurance to the compass circle that promises return.
+      overview_annotation: guided-reading
+      steps:
+        - id: quiet-passing
+          label: A quiet model for parting
+          annotation_keys:
+            - quiet-passing
+        - id: profanation
+          label: Why display would profane the love
+          annotation_keys:
+            - no-noise-profanation
+        - id: earthly-celestial-motion
+          label: Earthquake and celestial motion
+          annotation_keys:
+            - earthly-celestial-motion
+        - id: refined-love
+          label: What physical absence removes
+          annotation_keys:
+            - refined-love
+        - id: beaten-gold
+          label: A breach becomes an expansion
+          annotation_keys:
+            - beaten-gold
+        - id: twin-compasses-return
+          label: The compasses and return
+          annotation_keys:
+            - twin-compasses-return
+sources:
+  - records/sources/base-text-witness.yaml
+  - records/sources/grierson-text.yaml
+  - records/sources/grierson-commentary.yaml
+  - records/sources/freccero-valediction.yaml
+annotations:
+  - records/annotations/base-text.yaml
+  - records/annotations/transcription-modernization-policy.yaml
+  - records/annotations/quiet-passing.yaml
+  - records/annotations/no-noise-profanation.yaml
+  - records/annotations/earthly-celestial-motion.yaml
+  - records/annotations/refined-love.yaml
+  - records/annotations/beaten-gold.yaml
+  - records/annotations/twin-compasses-return.yaml
+  - records/annotations/and-hands-variant.yaml
+  - records/annotations/guided-reading.yaml

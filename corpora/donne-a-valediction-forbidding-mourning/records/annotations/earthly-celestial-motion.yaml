@@ -1,0 +1,87 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_e55785f415f467d2
+title: Earthquake and Celestial Motion
+provenance:
+  local_key: earthly-celestial-motion
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "9-12"
+  exact_text: |-
+    Moving of th'earth brings harmes and feares,
+    Men reckon what it did and meant,
+    But trepidation of the spheares,
+    Though greater farre, is innocent.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        Moving of th'earth brings harms and fears,
+        Men reckon what it did and meant,
+        But trepidation of the spheres,
+        Though greater far, is innocent.
+annotation_type: historical-context
+claim:
+  body: >-
+    The stanza contrasts a frightening, measurable earthquake with a vastly greater celestial movement that causes no alarm. The comparison makes visible disturbance a poor measure of importance. In Grierson's commentary, Chambers identifies “trepidation” with the precession of the equinoxes as explained through the movement of the ninth or crystalline sphere in Ptolemaic astronomy. John Freccero places the contrast in period cosmology: motion in the sublunary world below the moon was thought changeable and often violent, while the motion of the higher spheres was regular and benign, so the stanza measures the lovers' parting against the calm of the heavens rather than the alarm of the earth. He reads “Moving of th'earth” as an earthquake (terrae motus), a sublunary rupture that brings floods and tempests, rather than a Copernican moving of the earth, and hears in the “trepidation of the spheares” a gentle “access and recess,” a going and returning that does no harm.
+  epistemic_status: attributed-interpretation
+  editorial_confidence:
+    level: unassessed
+    rationale: The contrast is explicit in the poem and the astronomical gloss is available through Grierson, but Chambers's original discussion has not been independently consulted.
+  contested: false
+  attributions:
+    - scholar: E. K. Chambers, as quoted by Herbert J. C. Grierson
+      position: “Trepidation” refers to precession of the equinoxes, then explained as movement of the ninth or crystalline sphere in Ptolemaic astronomy.
+      evidence_ids:
+        - ev_trepidation_gloss
+    - scholar: John Freccero
+      position: >-
+        "Moving of th'earth" is an earthquake (terrae motus), a sublunary breach bringing floods and tempests, not a Copernican moving of the earth; the trepidation of the spheres is by contrast a harmless "access and recess."
+      evidence_ids:
+        - ev_freccero_terrae_motus
+evidence:
+  - id: ev_motion_contrast
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: The third stanza opposes harmful and feared terrestrial movement to greater but innocent movement of the spheres.
+    citation:
+      locator: p. 193, lines 9-12
+      citation_text: "Donne, Poems (1633), 193."
+  - id: ev_trepidation_gloss
+    source_id: src_95a01a8318fcf5d6
+    relationship: contextualizes
+    use: reported-evidence
+    summary: Grierson quotes Chambers's explanation of trepidation and illustrates the cosmological context with lines from Sir John Davies's Orchestra.
+    citation:
+      locator: vol. II, p. 49, note to lines 9-12
+      citation_text: "Grierson, commentary on 'A Valediction,' 2:49."
+  - id: ev_freccero_cosmology
+    source_id: src_d0ac9779e429149d
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Freccero describes the period distinction between changeable sublunary motion and the regular motion of the higher spheres that frames the earthquake-versus-trepidation comparison.
+    citation:
+      locator: pp. 343-345
+      citation_text: "Freccero, 'Donne's Valediction,' 343-45."
+  - id: ev_freccero_terrae_motus
+    source_id: src_d0ac9779e429149d
+    relationship: supports
+    use: direct-evidence
+    summary: Freccero argues that “Moving of th'earth” is an earthquake (terrae motus), a sublunary breach, and rejects C. M. Coffin's reading of it as a Copernican moving of the earth; the trepidation of the spheres is by contrast a harmless access and recess.
+    citation:
+      locator: pp. 360-361
+      citation_text: "Freccero, 'Donne's Valediction,' 360-61."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Consult Chambers directly before treating the astronomical attribution as independently verified.
+tags:
+  - lens-form-argument
+  - lens-geometry-cosmology
+  - astronomy

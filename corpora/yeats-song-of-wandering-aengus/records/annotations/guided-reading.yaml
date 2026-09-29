@@ -1,0 +1,82 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_b8d357fb34d7793d
+title: A Desire That Becomes a Search
+provenance:
+  local_key: guided-reading
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-23"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "1-24"
+  exact_text: |-
+    I went out to the hazel wood,
+    Because a fire was in my head,
+    And cut and peeled a hazel wand,
+    And hooked a berry to a thread;
+    And when white moths were on the wing,
+    And moth-like stars were flickering out,
+    I dropped the berry in a stream
+    And caught a little silver trout.
+
+    When I had laid it on the floor
+    I went to blow the fire a-flame,
+    But something rustled on the floor,
+    And someone called me by my name:
+    It had become a glimmering girl
+    With apple blossom in her hair
+    Who called me by my name and ran
+    And faded through the brightening air.
+
+    Though I am old with wandering
+    Through hollow lands and hilly lands,
+    I will find out where she has gone,
+    And kiss her lips and take her hands;
+    And walk among long dappled grass,
+    And pluck till time and times are done,
+    The silver apples of the moon,
+    The golden apples of the sun.
+annotation_type: editorial-note
+claim:
+  body: The poem moves from an unexplained desire through transformation and sudden loss into a search that lasts into old age. The five sections below follow that movement and show how form, folklore, and later interpretation can deepen it.
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The route synthesizes directly consulted primary and scholarly evidence; it remains an editorial arrangement, and no formal confidence grade has been assigned.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_guide_primary
+    source_id: src_e0b122f22eb15e7b
+    relationship: supports
+    use: direct-evidence
+    summary: The base witness supplies the poem and Yeats's appended explanation of its folkloric setting.
+    citation:
+      locator: pp. 15-16 and 87-89
+      citation_text: "Yeats, The Wind Among the Reeds (1899), 15-16, 87-89."
+  - id: ev_guide_medieval
+    source_id: src_602bbd20c75c04c8
+    relationship: contextualizes
+    use: direct-evidence
+    summary: The scholarly edition supplies the medieval dream, disappearance, search, and swan-transformation parallel.
+    citation:
+      locator: sections 1-2 and 12-14
+      citation_text: "Shaw, ed., and Murray, trans., Aislinge Oenguso, sections 1-2, 12-14."
+  - id: ev_guide_apples
+    source_id: src_1c6c6ab9dbcb7c2f
+    relationship: qualifies
+    use: direct-evidence
+    summary: Mazzaro documents and contests a biographical explanation of the apple imagery.
+    citation:
+      locator: pp. 342-343
+      citation_text: "Mazzaro, 'Apple Imagery,' 342-343."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: This is navigation and synthesis, not a substitute for the individual evidence records.
+tags:
+  - guided-reading

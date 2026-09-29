@@ -1,0 +1,33 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_57223be24ba042a2
+provenance:
+  scheme: uri
+  value: https://researchoutput.csu.edu.au/en/publications/changing-the-story-in-yeats-the-song-of-wandering-aengus/
+  detail: Charles Sturt University institutional research record and complete conference abstract.
+bibliography:
+  title: "Changing the story in Yeats' The Song of Wandering Aengus"
+  contributors:
+    - name: Roxanne Bodsworth
+      role: author
+  issued: "2023-09-26"
+  publisher: Charles Sturt University Research Output
+  container_title: 10th Australian Conference of Celtic Studies 2023
+  canonical_url: https://researchoutput.csu.edu.au/en/publications/changing-the-story-in-yeats-the-song-of-wandering-aengus/
+  citation: "Bodsworth, Roxanne. 'Changing the story in Yeats’ The Song of Wandering Aengus.' Abstract presented at the 10th Australian Conference of Celtic Studies, University of Sydney, 26 September 2023."
+source_type: other
+source_type_detail: Peer-reviewed conference abstract
+quality:
+  authority: institutional-resource
+  peer_review_status: peer-reviewed
+  rationale: The complete abstract is published in a university research repository and explicitly marked as peer-reviewed, but the underlying presentation was not available.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-23"
+  obtained_via: Charles Sturt University Research Output record.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: No reuse license was identified. The corpus paraphrases the abstract and does not reproduce it.
+notes: The source supports only statements made in the abstract, including its account of the 1897 title and its argument about later alignment with Aislinge Óenguso.

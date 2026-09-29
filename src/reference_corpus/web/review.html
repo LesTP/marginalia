@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A source-first literary review edition">
+  <title>Corpus Review</title>
+  <style>
+@@REVIEW_STYLE@@
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#poem-panel">Skip to the text</a>
+  <header class="masthead" aria-labelledby="edition-title">
+    <div class="masthead__mark" aria-hidden="true">✦</div>
+    <div class="masthead__identity">
+      <p class="eyebrow">Annotated reading edition</p>
+      <h1 id="edition-title">Corpus Review</h1>
+      <p id="edition-author" class="byline"></p>
+    </div>
+    <div id="edition-status" class="masthead__status"></div>
+  </header>
+
+  <nav id="reading-nav" class="reading-nav" aria-label="Ways to read"></nav>
+  <p id="mode-description" class="mode-description" aria-live="polite" hidden></p>
+
+  <main class="edition-shell">
+    <section id="poem-panel" class="poem-panel" aria-label="Base text">
+      <div class="poem-sticky">
+        <div id="text-view-selector" class="text-view-selector" role="group" aria-label="Reading text" hidden></div>
+        <div id="poem-lines" class="poem-lines"></div>
+        <p id="base-witness" class="witness-note"></p>
+      </div>
+    </section>
+
+    <section id="reading-detail" class="reading-panel" aria-label="Commentary" tabindex="-1">
+      <section id="pathway-detail" class="pathway-detail" hidden aria-label="Guided reading"></section>
+      <div id="reading-grid" class="reading-grid reading-grid--single">
+        <section id="annotation-collection" class="annotation-collection" hidden aria-label="Annotations"></section>
+        <section id="source-detail" class="source-detail" hidden aria-labelledby="sources-heading">
+          <h3 id="sources-heading">Sources and access</h3>
+          <p class="source-intro">What was read, how it may be used, and where the evidence remains incomplete.</p>
+          <div id="source-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p id="corpus-description"></p>
+    <p>Generated from validated corpus records. YAML remains the editorial source of truth.</p>
+    @@REVIEW_FONT_ATTRIBUTION@@
+  </footer>
+
+  <script id="corpus-data" type="application/json">@@REVIEW_DATA@@</script>
+  <script>
+@@REVIEW_SCRIPT@@
+  </script>
+</body>
+</html>

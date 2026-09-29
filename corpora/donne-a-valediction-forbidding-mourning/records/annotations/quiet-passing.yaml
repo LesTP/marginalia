@@ -1,0 +1,62 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_8ace869b1258c5b6
+title: A Quiet Model for Parting
+provenance:
+  local_key: quiet-passing
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "1-4"
+  exact_text: |-
+    AS virtuous men passe mildly away,
+    And whisper to their soules, to goe,
+    Whilst some of their sad friends doe say,
+    The breath goes now, and some say, no.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        As virtuous men pass mildly away,
+        And whisper to their souls, to go,
+        Whilst some of their sad friends do say,
+        The breath goes now, and some say, no:
+annotation_type: thematic
+claim:
+  body: >-
+    The opening imagines death so gentle that the surrounding friends cannot agree on the instant it occurs. By choosing this nearly imperceptible departure as his first comparison, the speaker makes quietness—not denial of feeling—the standard for the lovers' separation. John Freccero places the poem in the tradition of the congé d'amour, the lover's leave-taking that consoles the beloved by insisting the two remain one; Donne's distinctive move is to transpose that consolation onto the Christian promise of resurrection rather than an ordinary reunion.
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The contrast between mild passing and uncertain witnesses is explicit in the stanza; its application to the lovers is an editorial reading, and no formal confidence grade has been assigned.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_quiet_passing
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: The first stanza describes virtuous people dying mildly while friends debate whether the breath has gone.
+    citation:
+      locator: p. 193, lines 1-4
+      citation_text: "Donne, Poems (1633), 193."
+  - id: ev_freccero_conge
+    source_id: src_d0ac9779e429149d
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Freccero identifies the poem's genre as the congé d'amour, a lover's leave-taking that claims the two are not truly parted, which Donne recasts through the Christian Resurrection.
+    citation:
+      locator: pp. 353-355
+      citation_text: "Freccero, 'Donne's Valediction,' 353-55."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Close reading reviewed by a human editor.
+tags:
+  - lens-form-argument
+  - lens-bodies-souls
+  - departure

@@ -1,0 +1,9 @@
+schema_version: "1.0.0"
+record_type: corpus-manifest
+corpus_id: corpus_new_project
+title: New literary reference corpus
+description: Add source and annotation record paths as the corpus grows.
+sources: []
+annotations: []
+# Add a presentation block after defining a base-text annotation. New configured
+# corpora default to Plain reading when presentation.default_mode is omitted.

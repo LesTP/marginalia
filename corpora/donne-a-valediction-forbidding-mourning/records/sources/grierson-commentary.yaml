@@ -1,0 +1,43 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_95a01a8318fcf5d6
+provenance:
+  scheme: archive-id
+  value: "project-gutenberg:48772"
+  detail: Project Gutenberg transcription of the 1912 Clarendon Press introduction and commentary volume, mirrored by Internet Archive.
+bibliography:
+  title: The Poems of John Donne, Volume II
+  contributors:
+    - name: John Donne
+      role: author
+    - name: Herbert J. C. Grierson
+      role: editor
+  issued: "1912"
+  publisher: Clarendon Press
+  edition: Edited from the old editions and numerous manuscripts
+  volume: II
+  pages: 49-50
+  identifiers:
+    - scheme: Project Gutenberg ebook
+      value: "48772"
+    - scheme: Internet Archive identifier
+      value: thepoemsofjohndo48772gut
+  canonical_url: https://www.gutenberg.org/ebooks/48772
+  citation: "Donne, John. The Poems of John Donne. Edited by Herbert J. C. Grierson. Vol. II, Introduction and Commentary. Oxford: Clarendon Press, 1912, 49-50. Project Gutenberg ebook 48772."
+source_type: critical-edition
+quality:
+  authority: scholarly-edition
+  peer_review_status: editorially-reviewed
+  rationale: Grierson's commentary supplies poem-specific historical, astronomical, lexical, and textual notes tied to exact line ranges.
+access:
+  state: excerpt-consulted
+  consulted_on: "2026-09-26"
+  scope_note: >-
+    The title matter and commentary headed “A Valediction: Forbidding Mourning” on pages 49-50 were consulted in the Project Gutenberg transcription.
+  obtained_via: Project Gutenberg UTF-8 transcription 48772-0.txt, mirrored by Internet Archive.
+rights:
+  status: public-domain
+  quotation: permitted
+  reproduction: permitted
+  notes: The 1912 edition and Project Gutenberg transcription are treated as public domain; users outside the United States should confirm local law.
+notes: Grierson reports Chambers's astronomical gloss, discusses “elemented,” records manuscript support for “and hands,” and comments on the compass simile.

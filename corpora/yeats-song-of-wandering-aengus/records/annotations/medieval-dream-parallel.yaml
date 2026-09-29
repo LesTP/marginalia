@@ -1,0 +1,67 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_8e349d98b192e05a
+title: A Similar Story from Medieval Ireland
+provenance:
+  local_key: medieval-dream-parallel
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-23"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "13-20"
+  exact_text: |-
+    It had become a glimmering girl
+    With apple blossom in her hair
+    Who called me by my name and ran
+    And faded through the brightening air.
+
+    Though I am old with wandering
+    Through hollow lands and hilly lands,
+    I will find out where she has gone,
+    And kiss her lips and take her hands;
+annotation_type: intertext
+claim:
+  body: "Yeats's poem resembles a medieval Irish story in which Óengus dreams of a supernatural woman, loses her, and searches for her. In Aislinge Óenguso (The Dream of Óengus), the woman is Caer, who alternates between human and bird form; Óengus eventually joins her as a swan. The shared pattern of disappearance and search helps illuminate the poem, but the transformations differ, and the resemblance does not prove that the tale was Yeats's sole or direct source."
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The comparison uses directly consulted texts and scholarship, but its relevance to the poem requires human interpretive review.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_medieval_tale
+    source_id: src_602bbd20c75c04c8
+    relationship: supports
+    use: direct-evidence
+    summary: The tale presents the woman's disappearance, Óengus's wasting and search, Caer's alternating forms, and their final swan transformation.
+    citation:
+      locator: sections 1-2 and 12-14
+      citation_text: "Shaw, ed., and Murray, trans., Aislinge Oenguso, sections 1-2, 12-14."
+  - id: ev_bodsworth_tale_context
+    source_id: src_fc31908c58046bcd
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Bodsworth summarizes the manuscript, search narrative, Caer's alternating forms, and Óengus's metamorphosis.
+    citation:
+      locator: pp. 87-91
+      citation_text: "Bodsworth, 'Meet Me in My World,' 87-91."
+  - id: ev_title_alignment_argument
+    source_id: src_57223be24ba042a2
+    relationship: qualifies
+    use: direct-evidence
+    summary: Bodsworth's abstract argues for close alignment after the title change while acknowledging prior claims of little connection beyond the title.
+    citation:
+      locator: Overview, abstract paragraph
+      citation_text: "Bodsworth, 'Changing the story' (2023)."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: The relationship between poem and medieval tale is an interpretive question and should remain explicitly synthetic.
+tags:
+  - lens-myth-folklore
+  - intertext
+  - aislinge-oenguso

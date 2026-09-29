@@ -1,0 +1,38 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_d933303080412160
+provenance:
+  scheme: archive-id
+  value: "internet-archive:donnepoems"
+  detail: Google Books scan of the 1633 first edition hosted by Internet Archive.
+bibliography:
+  title: Poems, by J. Donne. With Elegies on the Authors Death
+  contributors:
+    - name: John Donne
+      role: author
+  issued: "1633"
+  publisher: "Miles Flesher for John Marriot"
+  edition: First edition
+  pages: 193-194
+  identifiers:
+    - scheme: Internet Archive identifier
+      value: donnepoems
+    - scheme: OCLC
+      value: "1008264503"
+  canonical_url: https://archive.org/details/donnepoems
+  citation: "Donne, John. Poems, by J. Donne. With Elegies on the Authors Death. London: printed by Miles Flesher for John Marriot, 1633, 193-194. Internet Archive, donnepoems."
+source_type: primary-text
+quality:
+  authority: primary-source
+  peer_review_status: not-peer-reviewed
+  rationale: The page images reproduce the first printed edition and are the controlling witness for this corpus transcription.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-26"
+  obtained_via: Internet Archive page images derived from the Google Books scan; printed pages 193-194 were inspected directly at scan leaves 208-209.
+rights:
+  status: public-domain
+  quotation: permitted
+  reproduction: permitted
+  notes: Internet Archive marks the item with the Creative Commons Public Domain Mark; users should confirm the law applicable in their jurisdiction.
+notes: The transcription was checked directly against https://archive.org/download/donnepoems/page/n208_w2000.jpg and https://archive.org/download/donnepoems/page/n209_w2000.jpg. OCR was used only to locate the pages.

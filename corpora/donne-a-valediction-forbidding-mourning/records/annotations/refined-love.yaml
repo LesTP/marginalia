@@ -1,0 +1,71 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_2f9f9630d8c06779
+title: What Physical Absence Removes
+provenance:
+  local_key: refined-love
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "13-20"
+  exact_text: |-
+    Dull sublunary lovers love
+    (Whose soule is sense) cannot admit
+    Absence, because it doth remove
+    Those things which elemented it.
+
+    But we by a love, so much refin'd,
+    That our selves know not what it is,
+    Inter-assured of the mind,
+    Care lesse; eyes, lips, hands to misse.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        Dull sublunary lovers' love
+        (Whose soul is sense) cannot admit
+        Absence, because it doth remove
+        Those things which elemented it.
+
+        But we by a love, so much refined,
+        That ourselves know not what it is,
+        Inter-assured of the mind,
+        Care less, eyes, lips, hands to miss.
+annotation_type: thematic
+claim:
+  body: These stanzas distinguish love composed from sensory presence from a bond so inwardly assured that it can survive missing eyes, lips, and hands. The speaker does not deny the body; he argues that this particular love is not exhausted by the bodily elements that absence removes. Grierson glosses “elemented” as “composed,” pointing forward to the poem's list of physical parts.
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The distinction and bodily list are explicit, while the account of their relationship is an editorial synthesis informed by Grierson's lexical note.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_refined_love
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: Lines 13-20 contrast sense-dependent love with a refined, mentally assured bond and enumerate eyes, lips, and hands.
+    citation:
+      locator: p. 194, lines 13-20
+      citation_text: "Donne, Poems (1633), 194."
+  - id: ev_elemented
+    source_id: src_95a01a8318fcf5d6
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Grierson explains “elemented” as “composed” and connects “those things” to the physical list in line 20.
+    citation:
+      locator: vol. II, p. 49, note to line 16
+      citation_text: "Grierson, commentary on 'A Valediction,' 2:49."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Close-reading and lexical note reviewed by a human editor.
+tags:
+  - lens-form-argument
+  - lens-bodies-souls
+  - absence

@@ -1,0 +1,72 @@
+schema_version: "1.0.0"
+record_type: corpus-manifest
+corpus_id: corpus_yeats_song_of_wandering_aengus
+title: "W. B. Yeats: The Song of Wandering Aengus"
+description: An annotated reading of Yeats's poem about desire, transformation, loss, and a search that outlasts ordinary time.
+presentation:
+  base_text_annotation: base-text
+  default_mode: pathway
+  default_pathway: guided-reading
+  lenses:
+    - id: myth-folklore
+      label: Myth and folklore
+      description: Follow the poem's transformation and search alongside Irish folklore and a related medieval story.
+      tag: lens-myth-folklore
+    - id: form-imagery
+      label: Form and imagery
+      description: Notice how repetition, stanza shape, light, naming, and future tense carry the poem from desire to loss.
+      tag: lens-form-imagery
+    - id: text-history
+      label: Text and history
+      description: See how the poem's title and printed form changed between its early publication and the 1899 edition.
+      tag: lens-publication-textual-history
+  pathways:
+    - id: guided-reading
+      label: Guided reading
+      description: Follow the speaker from an unexplained inner fire through transformation and loss to a search that lasts into old age.
+      overview_annotation: guided-reading
+      steps:
+        - id: initiating-fire
+          label: The initiating fire
+          annotation_keys:
+            - light-and-time
+        - id: transformation
+          label: The trout becomes a woman
+          annotation_keys:
+            - fish-to-girl
+            - author-framing
+        - id: recognition
+          label: She calls him by name
+          annotation_keys:
+            - called-by-name
+        - id: medieval-parallel
+          label: A similar medieval Irish story
+          annotation_keys:
+            - medieval-dream-parallel
+        - id: future-apples
+          label: The unfinished search and the apples
+          annotation_keys:
+            - future-vow
+            - apple-imagery-debate
+sources:
+  - records/sources/base-text-witness.yaml
+  - records/sources/gutenberg-witness.yaml
+  - records/sources/aislinge-oenguso-ucc.yaml
+  - records/sources/bodsworth-aislinge-study.yaml
+  - records/sources/bodsworth-changing-story-abstract.yaml
+  - records/sources/mazzaro-apple-imagery.yaml
+  - records/sources/mcdonald-poems-commentary.yaml
+  - records/sources/liedernet-text-record.yaml
+annotations:
+  - records/annotations/base-text.yaml
+  - records/annotations/publication-history.yaml
+  - records/annotations/author-framing.yaml
+  - records/annotations/fish-to-girl.yaml
+  - records/annotations/medieval-dream-parallel.yaml
+  - records/annotations/apple-imagery-debate.yaml
+  - records/annotations/stanzaic-progression.yaml
+  - records/annotations/and-repetition.yaml
+  - records/annotations/light-and-time.yaml
+  - records/annotations/called-by-name.yaml
+  - records/annotations/future-vow.yaml
+  - records/annotations/guided-reading.yaml

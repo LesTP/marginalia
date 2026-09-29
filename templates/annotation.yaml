@@ -1,0 +1,44 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_0000000000000000 # Replace with --show-derived-id output.
+title: A clear heading for readers
+provenance:
+  local_key: stable-editorial-key
+  created_by: Editor name
+  created_on: "2026-09-22"
+target:
+  work_id: work_example
+  edition_source_id: src_0000000000000000
+  locator:
+    scheme: line
+    value: "1"
+  exact_text: Exact text being annotated.
+  prefix: Optional preceding context.
+  suffix: Optional following context.
+  # Required for each editorial text declared by the manifest.
+  display_selectors:
+    - text_id: modernized
+      exact_text: Corresponding passage in the modernized reading text.
+      prefix: Optional preceding context in that reading text.
+      suffix: Optional following context in that reading text.
+annotation_type: historical-context
+claim:
+  body: Explain what the passage does and why it matters in ordinary language. Introduce scholar-specific positions, disagreement, or uncertainty afterward.
+  epistemic_status: documented-fact
+  editorial_confidence:
+    level: unassessed
+    rationale: Explain the evidentiary support and remaining uncertainty.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_primary
+    source_id: src_0000000000000000
+    relationship: supports
+    use: direct-evidence
+    summary: Concise account of what the consulted source establishes.
+    citation:
+      locator: p. 1
+      citation_text: Optional shortened citation.
+review:
+  state: draft
+tags: []

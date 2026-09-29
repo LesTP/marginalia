@@ -1,0 +1,37 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_fc31908c58046bcd
+provenance:
+  scheme: uri
+  value: https://ceraejournal.com/wp-content/uploads/2025/01/Vol.-11-4-Bodsworth.pdf
+  detail: Open PDF published by Ceræ.
+bibliography:
+  title: "Meet Me in My World: a creative prosimetric reconstruction of Aislinge Óenguso"
+  contributors:
+    - name: Roxanne Bodsworth
+      role: author
+  issued: "2024"
+  publisher: Ceræ
+  container_title: "Ceræ: An Australasian Journal of Medieval and Early Modern Studies"
+  volume: "11"
+  pages: 87-121
+  identifiers:
+    - scheme: ISSN
+      value: 2204-146X
+  canonical_url: https://ceraejournal.com/wp-content/uploads/2025/01/Vol.-11-4-Bodsworth.pdf
+  citation: "Bodsworth, Roxanne. 'Meet Me in My World: a creative prosimetric reconstruction of Aislinge Óenguso.' Ceræ: An Australasian Journal of Medieval and Early Modern Studies 11 (2024): 87-121."
+source_type: journal-article
+quality:
+  authority: peer-reviewed-scholarship
+  peer_review_status: peer-reviewed
+  rationale: Ceræ identifies itself as a peer-reviewed open-access academic journal; the volume classifies this contribution as creative varia grounded in scholarship on the medieval tale.
+access:
+  state: excerpt-consulted
+  consulted_on: "2026-09-23"
+  scope_note: Pages 87-91 and 121 were consulted for manuscript dating, narrative outline, metamorphosis, translation cautions, and licensing.
+  obtained_via: Open PDF from the journal website.
+rights:
+  status: licensed
+  quotation: limited
+  reproduction: limited
+  notes: The PDF states a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 license. This corpus paraphrases its scholarship and supplies citations.

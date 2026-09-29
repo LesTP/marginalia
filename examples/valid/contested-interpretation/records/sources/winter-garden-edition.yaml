@@ -1,0 +1,29 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_961a9b7f77024c55
+provenance:
+  scheme: bibliographic-key
+  value: "example:winter-garden-critical-edition:2025"
+bibliography:
+  title: The Winter Garden, a Critical Edition
+  contributors:
+    - name: Lena Example
+      role: editor
+  issued: "2025"
+  publisher: North Example University Press
+  edition: Critical edition
+  citation: "Example, Lena, ed. The Winter Garden: A Critical Edition. North Example University Press, 2025."
+source_type: critical-edition
+quality:
+  authority: scholarly-edition
+  peer_review_status: editorially-reviewed
+  rationale: The fictional edition establishes the target passage and its section locator.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-22"
+  obtained_via: Library copy.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: Short verification quotations only; publication constraints require separate review.

@@ -1,0 +1,31 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_1347fbe62fb17fc4
+provenance:
+  scheme: isbn
+  value: "978-0-00-000001-1"
+bibliography:
+  title: Remembering the Impossible Garden
+  contributors:
+    - name: Alex Memory
+      role: author
+  issued: "2020"
+  publisher: Example University Press
+  identifiers:
+    - scheme: ISBN
+      value: "978-0-00-000001-1"
+  citation: "Memory, Alex. Remembering the Impossible Garden. Example University Press, 2020."
+source_type: monograph
+quality:
+  authority: university-press-scholarship
+  peer_review_status: editorially-reviewed
+  rationale: The fictional monograph represents a sustained scholarly argument about memory in the work.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-22"
+  obtained_via: Owned ebook.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: Paraphrase with precise citations; quote only within applicable limits.

@@ -1,0 +1,31 @@
+# --- Copyrighted source captures (kept locally, never published) ---
+# Page images / screenshots of copyrighted sources are consulted locally but
+# must not be redistributed. Store such captures in a subfolder under a
+# source's records/sources/ area; the paraphrased notes and citations that
+# cite them are tracked, the scans themselves are not.
+corpora/**/records/sources/**/*.png
+corpora/**/records/sources/**/*.jpg
+corpora/**/records/sources/**/*.jpeg
+corpora/**/records/sources/**/*.gif
+corpora/**/records/sources/**/*.pdf
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

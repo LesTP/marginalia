@@ -1,0 +1,41 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_b3584b6bff8f37cb
+provenance:
+  local_key: line-12-variant
+  created_by: Example Editor
+  created_on: "2026-09-22"
+target:
+  work_id: work_example_river_poems
+  edition_source_id: src_7b0f4b601ea6737c
+  locator:
+    scheme: line
+    value: "12"
+  exact_text: The river remembers its winter name.
+annotation_type: textual-variant
+claim:
+  body: The critical edition records "winter" as a revision from the manuscript reading "former."
+  epistemic_status: documented-fact
+  editorial_confidence:
+    level: high
+    rationale: The claim is stated directly in the consulted textual apparatus.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_apparatus
+    source_id: src_7b0f4b601ea6737c
+    relationship: supports
+    use: direct-evidence
+    summary: The apparatus records the manuscript and edited readings for line 12.
+    citation:
+      locator: p. 34, apparatus to line 12
+      citation_text: "Example, River Poems, 34."
+    quotation: "12 winter] former MS"
+review:
+  state: source-verified
+  reviewer: Example Reviewer
+  reviewed_on: "2026-09-22"
+  notes: Locator and wording checked against the fictional example edition.
+tags:
+  - revision
+  - textual-history

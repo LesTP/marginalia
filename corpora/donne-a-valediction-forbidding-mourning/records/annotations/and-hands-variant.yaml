@@ -1,0 +1,69 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_2ccbe2d8fc826598
+title: The Missing “And” Before “Hands”
+provenance:
+  local_key: and-hands-variant
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "17-20"
+  exact_text: |-
+    But we by a love, so much refin'd,
+    That our selves know not what it is,
+    Inter-assured of the mind,
+    Care lesse; eyes, lips, hands to misse.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        But we by a love, so much refined,
+        That ourselves know not what it is,
+        Inter-assured of the mind,
+        Care less, eyes, lips, hands to miss.
+annotation_type: textual-variant
+claim:
+  body: The 1633 page reads “eyes, lips, hands” without a conjunction before the final item, and the corpus preserves that reading in both views. Grierson prints “and hands,” reports that all manuscripts support the added word, and nevertheless observes that its absence is “no great loss.” The difference shows why a readable modernization should not silently become an eclectic critical edition.
+  epistemic_status: documented-fact
+  editorial_confidence:
+    level: unassessed
+    rationale: The omission is directly visible in the 1633 image and Grierson's printed choice and apparatus were consulted, but the manuscripts themselves were not inspected.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_1633_no_and
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: The 1633 witness prints “Care lesse; eyes, lips, hands to misse” without “and.”
+    citation:
+      locator: p. 194, line 20
+      citation_text: "Donne, Poems (1633), 194."
+  - id: ev_grierson_and_hands
+    source_id: src_ce7b60f5c415155e
+    relationship: qualifies
+    use: direct-evidence
+    summary: Grierson's edited text prints “and hands,” and the accompanying apparatus identifies the addition as manuscript-supported rather than the 1633 reading.
+    citation:
+      locator: vol. I, p. 49, line 20 and apparatus
+      citation_text: "Donne, Poems, ed. Grierson, 1:49."
+  - id: ev_grierson_comment_and
+    source_id: src_95a01a8318fcf5d6
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Grierson states that “and” has the support of all manuscripts, while acknowledging that the line remains intelligible without it.
+    citation:
+      locator: vol. II, p. 50, note to line 20
+      citation_text: "Grierson, commentary on 'A Valediction,' 2:50."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: The manuscript claim remains dependent on Grierson's report.
+tags:
+  - lens-text-history
+  - lens-form-argument
+  - textual-variant

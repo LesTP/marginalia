@@ -1,0 +1,33 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_602bbd20c75c04c8
+provenance:
+  scheme: uri
+  value: https://iso.ucc.ie/Aislinge-oenguso/Aislinge-oenguso-index.html
+  detail: University College Cork Irish Sagas digital edition.
+bibliography:
+  title: "The Dream of Oengus: Aislinge Oenguso"
+  contributors:
+    - name: Francis Shaw
+      role: editor
+    - name: Kevin Murray
+      role: translator
+  publisher: University College Cork, CELT and Irish Sagas Online
+  edition: Digital presentation based on Francis Shaw's 1934 edition, pages 43-64, with English translation by Kevin Murray
+  canonical_url: https://iso.ucc.ie/Aislinge-oenguso/Aislinge-oenguso-index.html
+  citation: "Shaw, Francis, ed. The Dream of Oengus: Aislinge Oenguso. Dublin: Brown & Nolan, 1934, pp. 43-64. English translation by Kevin Murray, Irish Sagas Online, University College Cork."
+source_type: critical-edition
+quality:
+  authority: scholarly-edition
+  peer_review_status: editorially-reviewed
+  rationale: The University College Cork resource presents the medieval Irish text, a modern Irish version, an English translation, manuscript information, and scholarly bibliography.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-23"
+  obtained_via: University College Cork Irish Sagas Online pages for text, translation, sources, and background.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: No open reproduction license was identified on the edition pages. The corpus paraphrases the translation and links to the edition rather than reproducing it.
+notes: Sections 1-2 and 12-14 are most relevant to the dream, disappearance, search, alternating forms, and Oengus's transformation into a swan.

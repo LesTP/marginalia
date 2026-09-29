@@ -1,0 +1,43 @@
+schema_version: "1.0.0"
+record_type: corpus-manifest
+corpus_id: corpus_example_name
+title: Example corpus title
+description: What this corpus covers and which edition it annotates.
+sources:
+  - records/sources/example-source.yaml
+annotations:
+  - records/annotations/base-text.yaml
+  - records/annotations/example-annotation.yaml
+  - records/annotations/guided-reading.yaml
+presentation:
+  base_text_annotation: base-text
+  # Optional when a corpus presents more than one reading text.
+  texts:
+    - id: edition-faithful
+      label: Edition-faithful text
+      description: The transcription anchored to the controlling historical witness.
+      type: canonical-target
+      # Optional presentation-only historical glyph shaping; stored text is unchanged.
+      historical_forms: true
+    - id: modernized
+      label: Modernized text
+      description: A conservative editorial reading text derived from the edition-faithful transcription.
+      type: editorial-derivation
+      derived_from: edition-faithful
+  default_text: edition-faithful
+  default_mode: plain
+  lenses:
+    - id: context
+      label: Context
+      description: Notice how the world around the text changes the meaning of this passage.
+      tag: lens-context
+  pathways:
+    - id: first-reading
+      label: First reading
+      description: Follow the text's central movement in an order designed for a first-time reader.
+      overview_annotation: guided-reading
+      steps:
+        - id: opening
+          label: Begin with the opening
+          annotation_keys:
+            - stable-editorial-key

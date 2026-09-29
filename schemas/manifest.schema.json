@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reference-corpus.local/schemas/manifest.schema.json",
+  "title": "Reference corpus manifest",
+  "description": "A reference-only index of source and annotation record files with optional reading presentation.",
+  "type": "object",
+  "required": ["schema_version", "record_type", "corpus_id", "title", "sources", "annotations"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"$ref": "vocabularies.schema.json#/$defs/schemaVersion"},
+    "record_type": {"const": "corpus-manifest"},
+    "corpus_id": {
+      "type": "string",
+      "pattern": "^corpus_[a-z0-9][a-z0-9_-]*$"
+    },
+    "title": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "sources": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/recordPath"}
+    },
+    "annotations": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/recordPath"}
+    },
+    "presentation": {"$ref": "#/$defs/presentation"}
+  },
+  "$defs": {
+    "recordPath": {
+      "type": "string",
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+\\.yaml$"
+    },
+    "stableKey": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "textView": {
+      "type": "object",
+      "required": ["id", "label", "description", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/stableKey"},
+        "label": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "type": {
+          "type": "string",
+          "enum": ["canonical-target", "editorial-derivation"]
+        },
+        "derived_from": {"$ref": "#/$defs/stableKey"},
+        "historical_forms": {"type": "boolean"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"type": {"const": "editorial-derivation"}},
+            "required": ["type"]
+          },
+          "then": {"required": ["derived_from"]}
+        },
+        {
+          "if": {
+            "properties": {"type": {"const": "canonical-target"}},
+            "required": ["type"]
+          },
+          "then": {"not": {"required": ["derived_from"]}}
+        }
+      ]
+    },
+    "lens": {
+      "type": "object",
+      "required": ["id", "label", "description", "tag"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/stableKey"},
+        "label": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "tag": {"$ref": "#/$defs/stableKey"}
+      }
+    },
+    "pathwayStep": {
+      "type": "object",
+      "required": ["id", "label", "annotation_keys"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/stableKey"},
+        "label": {"type": "string", "minLength": 1},
+        "annotation_keys": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/stableKey"}
+        }
+      }
+    },
+    "pathway": {
+      "type": "object",
+      "required": ["id", "label", "description", "overview_annotation", "steps"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/stableKey"},
+        "label": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "overview_annotation": {"$ref": "#/$defs/stableKey"},
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/pathwayStep"}
+        }
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "required": ["base_text_annotation", "lenses", "pathways"],
+      "additionalProperties": false,
+      "properties": {
+        "base_text_annotation": {"$ref": "#/$defs/stableKey"},
+        "texts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/textView"}
+        },
+        "default_text": {"$ref": "#/$defs/stableKey"},
+        "default_mode": {
+          "type": "string",
+          "enum": ["plain", "lens", "pathway", "all", "sources"]
+        },
+        "default_lens": {"$ref": "#/$defs/stableKey"},
+        "default_pathway": {"$ref": "#/$defs/stableKey"},
+        "lenses": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/lens"}
+        },
+        "pathways": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/pathway"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {"required": ["texts"]},
+          "then": {"required": ["default_text"]}
+        },
+        {
+          "if": {
+            "properties": {"default_mode": {"const": "lens"}},
+            "required": ["default_mode"]
+          },
+          "then": {"required": ["default_lens"]}
+        },
+        {
+          "if": {
+            "properties": {"default_mode": {"const": "pathway"}},
+            "required": ["default_mode"]
+          },
+          "then": {"required": ["default_pathway"]}
+        }
+      ]
+    }
+  }
+}

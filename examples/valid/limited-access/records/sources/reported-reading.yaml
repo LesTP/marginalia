@@ -1,0 +1,35 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_acf6576968934da6
+provenance:
+  scheme: doi
+  value: "10.0000/example.reported-reading"
+bibliography:
+  title: Windows and Witness in The Glass House
+  contributors:
+    - name: Priya Scholar
+      role: author
+  issued: "2018"
+  container_title: Journal of Fictional Literary Studies
+  volume: "12"
+  issue: "2"
+  pages: 40-61
+  identifiers:
+    - scheme: DOI
+      value: "10.0000/example.reported-reading"
+  canonical_url: https://doi.org/10.0000/example.reported-reading
+  citation: "Scholar, Priya. 'Windows and Witness in The Glass House.' Journal of Fictional Literary Studies 12.2 (2018): 40-61."
+source_type: journal-article
+quality:
+  authority: peer-reviewed-scholarship
+  peer_review_status: peer-reviewed
+  rationale: The fictional article represents a relevant peer-reviewed interpretation, but it has not been directly consulted.
+access:
+  state: citation-only
+  scope_note: The bibliographic record and a later scholar's description were found; the original article was not accessed.
+  obtained_via: Citation in a consulted bibliography.
+rights:
+  status: copyrighted
+  quotation: unknown
+  reproduction: unknown
+  notes: Do not quote or treat this source as directly consulted.

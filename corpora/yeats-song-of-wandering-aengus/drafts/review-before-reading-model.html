@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A source-first literary review edition">
+  <title>Corpus Review</title>
+  <style>
+:root {
+  --paper: #f2efe5;
+  --paper-deep: #e5dfcf;
+  --ink: #17221f;
+  --ink-soft: #48544d;
+  --moss: #586750;
+  --moss-pale: #dce0d1;
+  --moon: #476779;
+  --moon-pale: #dbe5e8;
+  --gold: #a16d2d;
+  --gold-pale: #eadfc8;
+  --rose: #874a42;
+  --rule: rgba(23, 34, 31, 0.22);
+  --shadow: rgba(31, 40, 35, 0.12);
+  --serif: "Iowan Old Style", Baskerville, "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: "Gill Sans", "Trebuchet MS", Candara, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, transparent 0 49.8%, rgba(71, 103, 121, 0.035) 50%, transparent 50.2%),
+    repeating-linear-gradient(0deg, rgba(23, 34, 31, 0.018) 0 1px, transparent 1px 5px),
+    radial-gradient(ellipse at 50% 0%, #faf8f1 0%, var(--paper) 55%, var(--paper-deep) 130%);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+button,
+summary,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 20;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: #fff;
+  background: var(--ink);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.masthead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1.2rem;
+  align-items: center;
+  max-width: 92rem;
+  margin: 0 auto;
+  padding: 2.4rem clamp(1.2rem, 4vw, 4rem) 1.6rem;
+  border-bottom: 1px solid var(--rule);
+  animation: reveal 520ms ease-out both;
+}
+
+.masthead__mark {
+  display: grid;
+  width: 3.2rem;
+  height: 3.2rem;
+  place-items: center;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  font-size: 1.45rem;
+}
+
+.masthead h1,
+.section-heading h2,
+.annotation-detail h3,
+.source-detail h3 {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.masthead h1 {
+  max-width: 22ch;
+  overflow-wrap: break-word;
+  font-size: 3.4rem;
+}
+
+.eyebrow,
+.byline,
+.status-line,
+.badge,
+.annotation-nav button,
+.lens-nav button,
+.source-meta,
+.evidence-meta,
+.witness-note,
+.colophon {
+  font-family: var(--sans);
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--moss);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.byline {
+  margin: 0.6rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.masthead__status {
+  min-width: 10rem;
+  text-align: right;
+}
+
+.status-line {
+  margin: 0.2rem 0;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.lens-nav {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+  background: rgba(242, 239, 229, 0.94);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(12px);
+}
+
+.lens-nav button {
+  flex: 0 0 auto;
+  padding: 0.9rem 1.05rem 0.78rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lens-nav button:hover,
+.lens-nav button[aria-pressed="true"] {
+  color: var(--moon);
+  border-bottom-color: var(--moon);
+}
+
+.edition-shell {
+  display: grid;
+  grid-template-columns: minmax(25rem, 0.9fr) minmax(30rem, 1.25fr);
+  max-width: 92rem;
+  min-height: 62rem;
+  margin: 0 auto;
+}
+
+.poem-panel,
+.reading-panel {
+  padding: 2.5rem clamp(1.25rem, 4vw, 4rem) 4rem;
+}
+
+.poem-panel {
+  border-right: 1px solid var(--rule);
+}
+
+.reading-panel {
+  min-width: 0;
+}
+
+.section-heading {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  font-size: 1.65rem;
+}
+
+.section-number {
+  margin: -0.08rem 0 0;
+  color: var(--gold);
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
+.poem-sticky {
+  position: sticky;
+  top: 5.2rem;
+  max-width: 37rem;
+}
+
+.poem-lines {
+  max-width: 35rem;
+  padding-bottom: 1rem;
+}
+
+.poem-line {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: baseline;
+  margin: 0 -0.7rem;
+  padding: 0.08rem 0.7rem;
+  border-left: 3px solid transparent;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.poem-line--stanza {
+  margin-top: 1.25rem;
+}
+
+.poem-line:first-child {
+  margin-top: 0;
+}
+
+.poem-line__number {
+  color: rgba(72, 84, 77, 0.62);
+  font-family: var(--sans);
+  font-size: 0.67rem;
+  text-align: right;
+  user-select: none;
+}
+
+.poem-line__text {
+  font-size: 1.08rem;
+  line-height: 1.48;
+}
+
+.poem-line--active {
+  color: #102b34;
+  background: linear-gradient(90deg, rgba(71, 103, 121, 0.18), rgba(71, 103, 121, 0.035));
+  border-left-color: var(--moon);
+}
+
+.witness-note {
+  max-width: 37rem;
+  margin: 2rem 0 0;
+  padding-top: 1rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.reading-grid {
+  display: grid;
+  grid-template-columns: minmax(11rem, 0.36fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3.25rem);
+  align-items: start;
+}
+
+.annotation-nav {
+  border-top: 1px solid var(--rule);
+}
+
+.annotation-nav__empty {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.annotation-nav button {
+  display: block;
+  width: 100%;
+  padding: 0.78rem 0.25rem;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.annotation-nav button:hover {
+  color: var(--moon);
+}
+
+.annotation-nav button[aria-current="true"] {
+  color: var(--moon);
+  box-shadow: inset 3px 0 var(--moon);
+  padding-left: 0.8rem;
+}
+
+.annotation-nav__locator {
+  display: block;
+  margin-top: 0.16rem;
+  color: var(--ink-soft);
+  font-size: 0.66rem;
+  font-weight: 400;
+}
+
+.annotation-detail,
+.source-detail {
+  min-width: 0;
+  animation: reveal 300ms ease-out both;
+}
+
+.annotation-kicker {
+  margin: 0 0 0.65rem;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.annotation-detail h3,
+.source-detail h3 {
+  font-size: 2rem;
+}
+
+.annotation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.25rem 0.55rem;
+  color: var(--ink-soft);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.badge--documented-fact {
+  color: #33462e;
+  background: var(--moss-pale);
+}
+
+.badge--attributed-interpretation {
+  color: #315161;
+  background: var(--moon-pale);
+}
+
+.badge--editorial-synthesis,
+.badge--editorial-proposal {
+  color: #6d4a1d;
+  background: var(--gold-pale);
+}
+
+.claim-body {
+  max-width: 42rem;
+  margin: 0 0 2rem;
+  font-size: 1.16rem;
+  line-height: 1.66;
+}
+
+.claim-body p {
+  margin: 0 0 1rem;
+}
+
+.claim-body ol {
+  padding-left: 1.45rem;
+}
+
+.claim-body li {
+  margin-bottom: 0.85rem;
+  padding-left: 0.35rem;
+}
+
+.editorial-note,
+.contestation,
+.attribution-list {
+  max-width: 42rem;
+  margin: 1.5rem 0;
+  padding: 1rem 0 1rem 1.2rem;
+  border-left: 3px solid var(--gold);
+}
+
+.editorial-note p,
+.contestation p,
+.attribution-list p {
+  margin: 0.3rem 0;
+}
+
+.evidence-heading {
+  margin: 2.4rem 0 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+details.evidence,
+details.source-record {
+  max-width: 45rem;
+  border-top: 1px solid var(--rule);
+}
+
+details.evidence:last-child,
+details.source-record:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+summary {
+  padding: 0.9rem 0;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.evidence__body,
+.source-record__body {
+  padding: 0 0 1.2rem 1.2rem;
+}
+
+.evidence__body p,
+.source-record__body p {
+  margin: 0.55rem 0;
+}
+
+.evidence-meta,
+.source-meta {
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+}
+
+.witness-note,
+.citation,
+.source-meta,
+.evidence-meta,
+.claim-body,
+.attribution-list,
+.contestation {
+  overflow-wrap: anywhere;
+}
+
+.citation {
+  padding-left: 1rem;
+  color: var(--ink-soft);
+  border-left: 1px solid var(--gold);
+  font-style: italic;
+}
+
+.source-intro {
+  max-width: 40rem;
+  color: var(--ink-soft);
+}
+
+.source-group-heading {
+  margin: 2.2rem 0 0.5rem;
+  color: var(--moss);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.source-link {
+  color: var(--moon);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16rem;
+}
+
+.colophon {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  max-width: 92rem;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1.25rem, 4vw, 4rem) 2.5rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+  font-size: 0.72rem;
+}
+
+.colophon p {
+  max-width: 52rem;
+  margin: 0;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 72rem) {
+  .masthead h1 {
+    font-size: 2.8rem;
+  }
+
+  .edition-shell {
+    grid-template-columns: minmax(22rem, 0.8fr) minmax(28rem, 1.2fr);
+  }
+
+  .reading-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .annotation-nav {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .annotation-nav button {
+    flex: 0 0 11rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 50rem) {
+  .masthead {
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    gap: 0.8rem;
+    padding-top: 1.5rem;
+  }
+
+  .masthead__mark {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .masthead h1 {
+    font-size: 1.8rem;
+  }
+
+  .masthead__status {
+    grid-column: 2;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .lens-nav {
+    justify-content: flex-start;
+  }
+
+  .edition-shell {
+    display: block;
+    min-height: 0;
+  }
+
+  .poem-panel,
+  .reading-panel {
+    padding: 2rem 1.2rem 3rem;
+  }
+
+  .poem-panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .poem-sticky {
+    position: static;
+  }
+
+  .poem-line {
+    grid-template-columns: 1.65rem minmax(0, 1fr);
+    gap: 0.55rem;
+  }
+
+  .poem-line__text {
+    font-size: 1rem;
+  }
+
+  .annotation-detail h3,
+  .source-detail h3 {
+    font-size: 1.7rem;
+  }
+
+  .claim-body {
+    font-size: 1.08rem;
+  }
+
+  .colophon {
+    display: block;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+  }
+
+  .colophon p + p {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .skip-link,
+  .lens-nav,
+  .annotation-nav,
+  .masthead__status {
+    display: none !important;
+  }
+
+  .masthead,
+  .edition-shell {
+    display: block;
+    max-width: none;
+  }
+
+  .poem-panel {
+    break-after: page;
+    border: 0;
+  }
+
+  .poem-lines {
+    position: static;
+  }
+
+  .poem-line--active {
+    background: transparent;
+    border-left-color: #666;
+  }
+
+  .reading-grid {
+    display: block;
+  }
+
+  details {
+    display: block;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#annotation-detail">Skip to the selected annotation</a>
+  <header class="masthead" aria-labelledby="edition-title">
+    <div class="masthead__mark" aria-hidden="true">✦</div>
+    <div class="masthead__identity">
+      <p class="eyebrow">Source-first review edition</p>
+      <h1 id="edition-title">Corpus Review</h1>
+      <p id="edition-author" class="byline"></p>
+    </div>
+    <div id="edition-status" class="masthead__status"></div>
+  </header>
+
+  <nav id="lens-nav" class="lens-nav" aria-label="Reading lenses"></nav>
+
+  <main class="edition-shell">
+    <section id="poem-panel" class="poem-panel" aria-labelledby="poem-heading">
+      <div class="section-heading">
+        <p class="section-number">I</p>
+        <div>
+          <p class="eyebrow">Base text</p>
+          <h2 id="poem-heading">The poem</h2>
+        </div>
+      </div>
+      <div class="poem-sticky">
+        <div id="poem-lines" class="poem-lines" aria-live="polite"></div>
+        <p id="base-witness" class="witness-note"></p>
+      </div>
+    </section>
+
+    <section class="reading-panel" aria-labelledby="notes-heading">
+      <div class="section-heading reading-panel__heading">
+        <p class="section-number">II</p>
+        <div>
+          <p id="active-lens-label" class="eyebrow">Guided reading</p>
+          <h2 id="notes-heading">Annotations</h2>
+        </div>
+      </div>
+      <div class="reading-grid">
+        <nav id="annotation-nav" class="annotation-nav" aria-label="Annotations"></nav>
+        <article id="annotation-detail" class="annotation-detail" tabindex="-1" aria-live="polite"></article>
+        <section id="source-detail" class="source-detail" hidden aria-labelledby="sources-heading">
+          <h3 id="sources-heading">Sources and access</h3>
+          <p class="source-intro">What was read, how it may be used, and where the evidence remains incomplete.</p>
+          <div id="source-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p id="corpus-description"></p>
+    <p>Generated from validated corpus records. YAML remains the editorial source of truth.</p>
+  </footer>
+
+  <script id="corpus-data" type="application/json">{"annotations":[{"annotation_type":"editorial-note","claim":{"attributions":[],"body":"This is the corpus base transcription of the poem as printed in the 1899 London edition of The Wind Among the Reeds, pages 15-16.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"The transcription was checked against page images and a Project Gutenberg transcription, but awaits human editorial review."},"epistemic_status":"documented-fact"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 15-16.","locator":"pp. 15-16; IIIF canvases 31-32"},"id":"ev_1899_scan","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"The printed page images supply the title, punctuation, lineation, stanza breaks, and wording used here.","use":"direct-evidence"},{"citation":{"citation_text":"Yeats, The Wind Among the Reeds, Project Gutenberg ebook 32233.","locator":"The Song of Wandering Aengus section, corresponding to printed pp. 15-16"},"id":"ev_gutenberg_crosscheck","relationship":"qualifies","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Project Gutenberg plain-text edition mirrored by Internet Archive.","state":"fully-consulted"},"canonical_url":"https://www.gutenberg.org/ebooks/32233","citation":"Yeats, W. B. The Wind Among the Reeds. Fourth edition, Elkin Mathews, 1903. Project Gutenberg ebook 32233, released 3 May 2010.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"},{"name":"Meredith Bach and the Online Distributed Proofreading Team","role":"other","role_detail":"ebook producers"}],"id":"src_5ef421a1a77a9391","issue":null,"issued":"2010","notes":"The poem and the appended author note were compared with the 1899 scan. The 1899 page images remain authoritative for corpus punctuation and lineation.","pages":null,"publisher":"Project Gutenberg","quality":{"authority":"institutional-resource","peer_review_status":"editorially-reviewed","rationale":"Project Gutenberg supplies a distributed-proofreading transcription from scanned page images and is used only to corroborate the base witness."},"rights":{"notes":"Project Gutenberg marks the underlying work public domain in the United States; its license terms and local law still apply to reuse of the ebook file.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"web-resource","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_5ef421a1a77a9391","summary":"The proofread 1903 fourth-edition transcription independently corroborates the poem's words and three-stanza structure.","use":"direct-evidence"}],"filters":["history"],"id":"ann_6faea52693f83798","local_key":"base-text","review":{"notes":"Source comparison is complete; human editorial approval remains outstanding.","state":"draft"},"tags":["base-text","lens-publication-textual-history"],"target":{"exact_text":"I went out to the hazel wood,\nBecause a fire was in my head,\nAnd cut and peeled a hazel wand,\nAnd hooked a berry to a thread;\nAnd when white moths were on the wing,\nAnd moth-like stars were flickering out,\nI dropped the berry in a stream\nAnd caught a little silver trout.\n\nWhen I had laid it on the floor\nI went to blow the fire a-flame,\nBut something rustled on the floor,\nAnd someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.\n\nThough I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;\nAnd walk among long dappled grass,\nAnd pluck till time and times are done,\nThe silver apples of the moon,\nThe golden apples of the sun.","line_range":{"end":24,"start":1},"locator":{"scheme":"line","value":"1-24"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Base Text"},{"annotation_type":"bibliographic","claim":{"attributions":[],"body":"The poem appeared in 1897 under the title “A Mad Song”; the 1899 first London edition of The Wind Among the Reeds prints it under the title “The Song of Wandering Aengus.”","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"A university research abstract reports the 1897 title, and the 1899 title was checked directly; the 1897 periodical page remains an acquisition target."},"epistemic_status":"documented-fact"},"evidence":[{"citation":{"citation_text":"Bodsworth, 'Changing the story in Yeats’ The Song of Wandering Aengus' (2023).","locator":"Overview, abstract paragraph"},"id":"ev_1897_report","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Charles Sturt University Research Output record.","state":"fully-consulted"},"canonical_url":"https://researchoutput.csu.edu.au/en/publications/changing-the-story-in-yeats-the-song-of-wandering-aengus/","citation":"Bodsworth, Roxanne. 'Changing the story in Yeats’ The Song of Wandering Aengus.' Abstract presented at the 10th Australian Conference of Celtic Studies, University of Sydney, 26 September 2023.","container_title":"10th Australian Conference of Celtic Studies 2023","contributors":[{"name":"Roxanne Bodsworth","role":"author"}],"id":"src_57223be24ba042a2","issue":null,"issued":"2023-09-26","notes":"The source supports only statements made in the abstract, including its account of the 1897 title and its argument about later alignment with Aislinge Óenguso.","pages":null,"publisher":"Charles Sturt University Research Output","quality":{"authority":"institutional-resource","peer_review_status":"peer-reviewed","rationale":"The complete abstract is published in a university research repository and explicitly marked as peer-reviewed, but the underlying presentation was not available."},"rights":{"notes":"No reuse license was identified. The corpus paraphrases the abstract and does not reproduce it.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"other","source_type_detail":"Peer-reviewed conference abstract","title":"Changing the story in Yeats' The Song of Wandering Aengus","volume":null},"source_id":"src_57223be24ba042a2","summary":"Bodsworth's complete conference abstract reports first publication in 1897 as “A Mad Song” and the subsequent title change.","use":"direct-evidence"},{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 15.","locator":"p. 15"},"id":"ev_1899_title","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"The 1899 edition prints the now-standard title above the poem.","use":"direct-evidence"},{"citation":{"citation_text":"LiederNet Archive, text 28583.","locator":"About the headline and text-authorship notes"},"id":"ev_liedernet_history","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Public LiederNet text record and editorial notes.","state":"fully-consulted"},"canonical_url":"https://www.lieder.net/lieder/get_text.html?TextId=28583","citation":"Yeats, W. B. 'A mad song' [The Song of Wandering Aengus]. LiederNet Archive, text 28583, research by Emily Ezust and Garrett Medlock.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"},{"name":"Emily Ezust","role":"editor"},{"name":"Garrett Medlock","role":"editor"}],"id":"src_21c964fd93d0fe6a","issue":null,"issued":"2007-05-02","notes":"The record reports first publication in The Sketch in August 1897, revision and renaming in 1899, a 24-line text, and one check of the author's text against a primary source.","pages":null,"publisher":"LiederNet Archive","quality":{"authority":"established-reference","peer_review_status":"not-peer-reviewed","rationale":"LiederNet is a long-running specialist archive for song texts; this record identifies its primary-source checking status and publication/title history, but it is not a critical edition."},"rights":{"notes":"The underlying Yeats poem is public domain, but the archive's editorial record and translations have separate rights. This corpus paraphrases its metadata.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"web-resource","source_type_detail":null,"title":"A mad song [The Song of Wandering Aengus]","volume":null},"source_id":"src_21c964fd93d0fe6a","summary":"The curated record reports publication in The Sketch in August 1897 and revision and renaming in 1899.","use":"direct-evidence"}],"filters":["history"],"id":"ann_ad8a47b91d7fa05c","local_key":"publication-history","review":{"notes":"Verify the 1897 issue of The Sketch directly before promotion to source-verified.","state":"draft"},"tags":["lens-publication-textual-history","first-publication","title-history"],"target":{"exact_text":"I went out to the hazel wood,\nBecause a fire was in my head,\nAnd cut and peeled a hazel wand,\nAnd hooked a berry to a thread;\nAnd when white moths were on the wing,\nAnd moth-like stars were flickering out,\nI dropped the berry in a stream\nAnd caught a little silver trout.\n\nWhen I had laid it on the floor\nI went to blow the fire a-flame,\nBut something rustled on the floor,\nAnd someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.\n\nThough I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;\nAnd walk among long dappled grass,\nAnd pluck till time and times are done,\nThe silver apples of the moon,\nThe golden apples of the sun.","line_range":{"end":24,"start":1},"locator":{"scheme":"line","value":"1-24"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Publication History"},{"annotation_type":"historical-context","claim":{"attributions":[],"body":"In his appended note, Yeats says that a Greek folk song suggested the poem, while also stating that he thought of Ireland and the spirits believed to inhabit it.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"The claim paraphrases Yeats's signed authorial note, checked on the printed pages, but awaits human editorial review."},"epistemic_status":"documented-fact"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 88-89.","locator":"pp. 88-89, note to The Song of Wandering Aengus"},"id":"ev_yeats_note_origin","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"Yeats names both the Greek folk-song prompt and the Irish imaginative setting in his note to the poem.","use":"direct-evidence"}],"filters":["myth"],"id":"ann_3cad8e591eec562e","local_key":"author-framing","review":{"notes":"The exact printed note has been checked; interpretive consequences remain open.","state":"draft"},"tags":["lens-myth-folklore","authorial-note","composition"],"target":{"exact_text":"I dropped the berry in a stream\nAnd caught a little silver trout.\n\nWhen I had laid it on the floor\nI went to blow the fire a-flame,\nBut something rustled on the floor,\nAnd someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.","line_range":{"end":16,"start":7},"locator":{"scheme":"line","value":"7-16"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Author Framing"},{"annotation_type":"allusion","claim":{"attributions":[],"body":"Yeats's note places the trout's change into a woman within Irish testimony about the shape-changing “Tribes of the goddess Danu,” particularly beings in water who appear as fish and at other times as beautiful women.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"This states the contextual frame supplied by Yeats himself rather than claiming a recoverable single mythic source."},"epistemic_status":"documented-fact"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 87-88.","locator":"pp. 87-88, note to The Song of Wandering Aengus"},"id":"ev_yeats_shapechanging_note","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"Yeats's note connects water spirits, fish forms, and appearances as beautiful women.","use":"direct-evidence"}],"filters":["myth"],"id":"ann_bebce410bbbccfbc","local_key":"fish-to-girl","review":{"notes":"The note supports the broad folkloric frame, not a claim that one recorded story directly generated every image.","state":"draft"},"tags":["lens-myth-folklore","shape-changing","water"],"target":{"exact_text":"I dropped the berry in a stream\nAnd caught a little silver trout.\n\nWhen I had laid it on the floor\nI went to blow the fire a-flame,\nBut something rustled on the floor,\nAnd someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.","line_range":{"end":16,"start":7},"locator":{"scheme":"line","value":"7-16"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Fish To Girl"},{"annotation_type":"intertext","claim":{"attributions":[],"body":"Editorial synthesis: The poem and Aislinge Óenguso share a supernatural beloved who disappears and provokes a search, but their transformations differ: Yeats's trout becomes a girl, whereas the medieval Caer alternates between woman and bird and Óengus eventually joins her as a swan. The resemblance is illuminating context, not proof that the medieval tale was the poem's sole source.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"The comparison uses directly consulted texts and scholarship, but its relevance to the poem requires human interpretive review."},"epistemic_status":"editorial-synthesis"},"evidence":[{"citation":{"citation_text":"Shaw, ed., and Murray, trans., Aislinge Oenguso, sections 1-2, 12-14.","locator":"sections 1-2 and 12-14"},"id":"ev_medieval_tale","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"University College Cork Irish Sagas Online pages for text, translation, sources, and background.","state":"fully-consulted"},"canonical_url":"https://iso.ucc.ie/Aislinge-oenguso/Aislinge-oenguso-index.html","citation":"Shaw, Francis, ed. The Dream of Oengus: Aislinge Oenguso. Dublin: Brown \u0026 Nolan, 1934, pp. 43-64. English translation by Kevin Murray, Irish Sagas Online, University College Cork.","container_title":null,"contributors":[{"name":"Francis Shaw","role":"editor"},{"name":"Kevin Murray","role":"translator"}],"id":"src_602bbd20c75c04c8","issue":null,"issued":null,"notes":"Sections 1-2 and 12-14 are most relevant to the dream, disappearance, search, alternating forms, and Oengus's transformation into a swan.","pages":null,"publisher":"University College Cork, CELT and Irish Sagas Online","quality":{"authority":"scholarly-edition","peer_review_status":"editorially-reviewed","rationale":"The University College Cork resource presents the medieval Irish text, a modern Irish version, an English translation, manuscript information, and scholarly bibliography."},"rights":{"notes":"No open reproduction license was identified on the edition pages. The corpus paraphrases the translation and links to the edition rather than reproducing it.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"critical-edition","source_type_detail":null,"title":"The Dream of Oengus: Aislinge Oenguso","volume":null},"source_id":"src_602bbd20c75c04c8","summary":"The tale presents the woman's disappearance, Óengus's wasting and search, Caer's alternating forms, and their final swan transformation.","use":"direct-evidence"},{"citation":{"citation_text":"Bodsworth, 'Meet Me in My World,' 87-91.","locator":"pp. 87-91"},"id":"ev_bodsworth_tale_context","relationship":"contextualizes","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Open PDF from the journal website.","scope_note":"Pages 87-91 and 121 were consulted for manuscript dating, narrative outline, metamorphosis, translation cautions, and licensing.","state":"excerpt-consulted"},"canonical_url":"https://ceraejournal.com/wp-content/uploads/2025/01/Vol.-11-4-Bodsworth.pdf","citation":"Bodsworth, Roxanne. 'Meet Me in My World: a creative prosimetric reconstruction of Aislinge Óenguso.' Ceræ: An Australasian Journal of Medieval and Early Modern Studies 11 (2024): 87-121.","container_title":"Ceræ: An Australasian Journal of Medieval and Early Modern Studies","contributors":[{"name":"Roxanne Bodsworth","role":"author"}],"id":"src_fc31908c58046bcd","issue":null,"issued":"2024","notes":null,"pages":"87-121","publisher":"Ceræ","quality":{"authority":"peer-reviewed-scholarship","peer_review_status":"peer-reviewed","rationale":"Ceræ identifies itself as a peer-reviewed open-access academic journal; the volume classifies this contribution as creative varia grounded in scholarship on the medieval tale."},"rights":{"notes":"The PDF states a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 license. This corpus paraphrases its scholarship and supplies citations.","quotation":"limited","reproduction":"limited","status":"licensed"},"source_type":"journal-article","source_type_detail":null,"title":"Meet Me in My World: a creative prosimetric reconstruction of Aislinge Óenguso","volume":"11"},"source_id":"src_fc31908c58046bcd","summary":"Bodsworth summarizes the manuscript, search narrative, Caer's alternating forms, and Óengus's metamorphosis.","use":"direct-evidence"},{"citation":{"citation_text":"Bodsworth, 'Changing the story' (2023).","locator":"Overview, abstract paragraph"},"id":"ev_title_alignment_argument","relationship":"qualifies","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Charles Sturt University Research Output record.","state":"fully-consulted"},"canonical_url":"https://researchoutput.csu.edu.au/en/publications/changing-the-story-in-yeats-the-song-of-wandering-aengus/","citation":"Bodsworth, Roxanne. 'Changing the story in Yeats’ The Song of Wandering Aengus.' Abstract presented at the 10th Australian Conference of Celtic Studies, University of Sydney, 26 September 2023.","container_title":"10th Australian Conference of Celtic Studies 2023","contributors":[{"name":"Roxanne Bodsworth","role":"author"}],"id":"src_57223be24ba042a2","issue":null,"issued":"2023-09-26","notes":"The source supports only statements made in the abstract, including its account of the 1897 title and its argument about later alignment with Aislinge Óenguso.","pages":null,"publisher":"Charles Sturt University Research Output","quality":{"authority":"institutional-resource","peer_review_status":"peer-reviewed","rationale":"The complete abstract is published in a university research repository and explicitly marked as peer-reviewed, but the underlying presentation was not available."},"rights":{"notes":"No reuse license was identified. The corpus paraphrases the abstract and does not reproduce it.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"other","source_type_detail":"Peer-reviewed conference abstract","title":"Changing the story in Yeats' The Song of Wandering Aengus","volume":null},"source_id":"src_57223be24ba042a2","summary":"Bodsworth's abstract argues for close alignment after the title change while acknowledging prior claims of little connection beyond the title.","use":"direct-evidence"}],"filters":["myth"],"id":"ann_8e349d98b192e05a","local_key":"medieval-dream-parallel","review":{"notes":"The relationship between poem and medieval tale is an interpretive question and should remain explicitly synthetic.","state":"draft"},"tags":["lens-myth-folklore","intertext","aislinge-oenguso"],"target":{"exact_text":"It had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.\n\nThough I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;","line_range":{"end":20,"start":13},"locator":{"scheme":"line","value":"13-20"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Medieval Dream Parallel"},{"annotation_type":"thematic","claim":{"attributions":[{"evidence_ids":["ev_mazzaro_reports_rudd"],"position":"The glimmering girl and apple blossom are explained through Yeats's description of Maud Gonne.","scholar":"Margaret Rudd, as reported by Jerome L. Mazzaro"},{"evidence_ids":["ev_mazzaro_argument"],"position":"Yeats's earlier apple imagery and reading in Celtic mythology better explain the image than a solely biographical identification.","scholar":"Jerome L. Mazzaro"}],"body":"Jerome L. Mazzaro rejects a purely biographical explanation of the poem's apple imagery and argues that Yeats's earlier uses of apples and his engagement with Celtic mythology provide a stronger account.","contestation_note":"Mazzaro reports that Margaret Rudd identifies the glimmering girl with Maud Gonne through Yeats's apple-blossom description of her; he counters that apple imagery predates their first meeting and belongs to a wider mythological pattern.","contested":true,"editorial_confidence":{"level":"unassessed","rationale":"Both positions are available through Mazzaro's directly consulted scholarly note, but Margaret Rudd's book has not yet been consulted independently."},"epistemic_status":"attributed-interpretation"},"evidence":[{"citation":{"citation_text":"Mazzaro, 'Apple Imagery,' 342.","locator":"p. 342, first paragraph"},"id":"ev_mazzaro_reports_rudd","relationship":"qualifies","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive scan of Modern Language Notes 72.5, checked directly on printed pages 342-343.","state":"fully-consulted"},"canonical_url":"https://doi.org/10.2307/3043075","citation":"Mazzaro, Jerome L. 'Apple Imagery in Yeats’ “The Song of Wandering Aengus.”' Modern Language Notes 72, no. 5 (May 1957): 342-343. https://doi.org/10.2307/3043075.","container_title":"Modern Language Notes","contributors":[{"name":"Jerome L. Mazzaro","role":"author"}],"id":"src_1c6c6ab9dbcb7c2f","issue":"5","issued":"1957-05","notes":null,"pages":"342-343","publisher":"Johns Hopkins University Press","quality":{"authority":"peer-reviewed-scholarship","peer_review_status":"peer-reviewed","rationale":"A scholarly note published in Modern Language Notes that explicitly tests competing biographical and mythological explanations of the poem's apple imagery."},"rights":{"notes":"The article is not open access according to OpenAlex. The corpus uses short attributed paraphrases and citations rather than reproducing the article.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"journal-article","source_type_detail":null,"title":"Apple Imagery in Yeats' ‘The Song of Wandering Aengus’","volume":"72"},"source_id":"src_1c6c6ab9dbcb7c2f","summary":"Mazzaro quotes and summarizes Rudd's identification of the girl with Maud Gonne.","use":"reported-evidence"},{"citation":{"citation_text":"Mazzaro, 'Apple Imagery,' 342-343.","locator":"pp. 342-343"},"id":"ev_mazzaro_argument","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive scan of Modern Language Notes 72.5, checked directly on printed pages 342-343.","state":"fully-consulted"},"canonical_url":"https://doi.org/10.2307/3043075","citation":"Mazzaro, Jerome L. 'Apple Imagery in Yeats’ “The Song of Wandering Aengus.”' Modern Language Notes 72, no. 5 (May 1957): 342-343. https://doi.org/10.2307/3043075.","container_title":"Modern Language Notes","contributors":[{"name":"Jerome L. Mazzaro","role":"author"}],"id":"src_1c6c6ab9dbcb7c2f","issue":"5","issued":"1957-05","notes":null,"pages":"342-343","publisher":"Johns Hopkins University Press","quality":{"authority":"peer-reviewed-scholarship","peer_review_status":"peer-reviewed","rationale":"A scholarly note published in Modern Language Notes that explicitly tests competing biographical and mythological explanations of the poem's apple imagery."},"rights":{"notes":"The article is not open access according to OpenAlex. The corpus uses short attributed paraphrases and citations rather than reproducing the article.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"journal-article","source_type_detail":null,"title":"Apple Imagery in Yeats' ‘The Song of Wandering Aengus’","volume":"72"},"source_id":"src_1c6c6ab9dbcb7c2f","summary":"Mazzaro traces earlier Yeatsian apple imagery and Gaelic mythic associations, concluding that Celtic mythology is the stronger explanation.","use":"direct-evidence"}],"filters":["myth","form"],"id":"ann_c1366df981c5d68c","local_key":"apple-imagery-debate","review":{"notes":"Consult Margaret Rudd's Divided Image, page 144, before treating her position as independently verified.","state":"draft"},"tags":["lens-myth-folklore","lens-form-imagery","apples","contested-reading"],"target":{"exact_text":"It had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.\n\nThough I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;\nAnd walk among long dappled grass,\nAnd pluck till time and times are done,\nThe silver apples of the moon,\nThe golden apples of the sun.","line_range":{"end":24,"start":13},"locator":{"scheme":"line","value":"13-24"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Apple Imagery Debate"},{"annotation_type":"formal","claim":{"attributions":[],"body":"Editorial synthesis: The three eight-line stanzas form a sequence of deliberate action, supernatural interruption, and future vow. The poem moves from a completed outing, through an apparition that vanishes, into a search whose fulfillment remains beyond the poem.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"The structural observations are directly checkable in the base text; the description of their narrative function is an editorial reading awaiting review."},"epistemic_status":"editorial-synthesis"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 15-16.","locator":"pp. 15-16, lines 1-24"},"id":"ev_three_stanzas","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"The 1899 witness prints three equal eight-line stanzas with the described changes in action and tense.","use":"direct-evidence"}],"filters":["form"],"id":"ann_06c7e719c00fa8a2","local_key":"stanzaic-progression","review":{"notes":"Formal description checked; interpretive phrasing awaits human review.","state":"draft"},"tags":["lens-form-imagery","stanza","narrative-structure"],"target":{"exact_text":"I went out to the hazel wood,\nBecause a fire was in my head,\nAnd cut and peeled a hazel wand,\nAnd hooked a berry to a thread;\nAnd when white moths were on the wing,\nAnd moth-like stars were flickering out,\nI dropped the berry in a stream\nAnd caught a little silver trout.\n\nWhen I had laid it on the floor\nI went to blow the fire a-flame,\nBut something rustled on the floor,\nAnd someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.\n\nThough I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;\nAnd walk among long dappled grass,\nAnd pluck till time and times are done,\nThe silver apples of the moon,\nThe golden apples of the sun.","line_range":{"end":24,"start":1},"locator":{"scheme":"line","value":"1-24"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Stanzaic Progression"},{"annotation_type":"formal","claim":{"attributions":[],"body":"Editorial synthesis: Ten of the poem's twenty-four lines begin with “And.” The repeated conjunction makes actions and images accumulate as one continuous telling, even when the poem crosses from ordinary fishing into metamorphosis and visionary promise.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"The count is directly verifiable; its account of cumulative narrative pressure is an editorial interpretation."},"epistemic_status":"editorial-synthesis"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 15-16.","locator":"pp. 15-16, lines 3-6, 8, 12, 16, 20-22"},"id":"ev_and_count","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"Lines 3-6, 8, 12, 16, and 20-22 begin with “And” in the base witness.","use":"direct-evidence"}],"filters":["form"],"id":"ann_f17ffadc0f77beaf","local_key":"and-repetition","review":{"notes":"Line count checked against the base transcription; interpretive effect awaits review.","state":"draft"},"tags":["lens-form-imagery","syntax","repetition"],"target":{"exact_text":"I went out to the hazel wood,\nBecause a fire was in my head,\nAnd cut and peeled a hazel wand,\nAnd hooked a berry to a thread;\nAnd when white moths were on the wing,\nAnd moth-like stars were flickering out,\nI dropped the berry in a stream\nAnd caught a little silver trout.\n\nWhen I had laid it on the floor\nI went to blow the fire a-flame,\nBut something rustled on the floor,\nAnd someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.\n\nThough I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;\nAnd walk among long dappled grass,\nAnd pluck till time and times are done,\nThe silver apples of the moon,\nThe golden apples of the sun.","line_range":{"end":24,"start":1},"locator":{"scheme":"line","value":"1-24"},"work_id":"work_the_song_of_wandering_aengus"},"title":"And Repetition"},{"annotation_type":"thematic","claim":{"attributions":[],"body":"Editorial proposal: The poem enlarges its light imagery from an inward “fire,” through stars fading into dawn and the girl's glimmer, to the final moon and sun. Read this sequence as a movement from private compulsion toward a desire measured on a cosmic scale.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"The recurring light words are textual facts, but the proposed scale and direction of the pattern are interpretive."},"epistemic_status":"editorial-proposal"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 15-16.","locator":"pp. 15-16, lines 2, 5-6, 10, 13, 16, 23-24"},"id":"ev_light_sequence","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"Fire, flickering stars, brightening air, moon, and sun recur across all three stanzas.","use":"direct-evidence"}],"filters":["form"],"id":"ann_3d36cad7dc2f73fa","local_key":"light-and-time","review":{"notes":"Offered as a reading prompt rather than an established scholarly interpretation.","state":"draft"},"tags":["lens-form-imagery","light","time"],"target":{"exact_text":"I went out to the hazel wood,\nBecause a fire was in my head,\nAnd cut and peeled a hazel wand,\nAnd hooked a berry to a thread;\nAnd when white moths were on the wing,\nAnd moth-like stars were flickering out,\nI dropped the berry in a stream\nAnd caught a little silver trout.\n\nWhen I had laid it on the floor\nI went to blow the fire a-flame,\nBut something rustled on the floor,\nAnd someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.\n\nThough I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;\nAnd walk among long dappled grass,\nAnd pluck till time and times are done,\nThe silver apples of the moon,\nThe golden apples of the sun.","line_range":{"end":24,"start":1},"locator":{"scheme":"line","value":"1-24"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Light And Time"},{"annotation_type":"formal","claim":{"attributions":[],"body":"Editorial synthesis: The phrase “called me by my name” occurs on both sides of the girl's appearance. Recognition is therefore repeated at the moment of transformation, but it does not prevent her escape.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"Repetition and placement are directly visible; their relation to recognition and loss is an editorial interpretation."},"epistemic_status":"editorial-synthesis"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 15.","locator":"p. 15, lines 12-15"},"id":"ev_name_repetition","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"The naming phrase appears in lines 12 and 15, framing the description in lines 13-14.","use":"direct-evidence"}],"filters":["form"],"id":"ann_4219b638287b4fbd","local_key":"called-by-name","review":{"notes":"Offered as a formal observation with an explicitly editorial inference.","state":"draft"},"tags":["lens-form-imagery","repetition","naming"],"target":{"exact_text":"And someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran","line_range":{"end":15,"start":12},"locator":{"scheme":"line","value":"12-15"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Called By Name"},{"annotation_type":"thematic","claim":{"attributions":[],"body":"Editorial proposal: The last stanza does not narrate reunion. It turns present age into repeated future tense—“I will,” then a chain of implied future actions—and places fulfillment beyond ordinary duration, “till time and times are done.”","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"The tense pattern is directly visible, while the account of unresolved fulfillment is a proposed reading."},"epistemic_status":"editorial-proposal"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 16.","locator":"p. 16, lines 17-24"},"id":"ev_future_stanza","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"The final stanza begins from old age, makes a future declaration, and never states that the search has ended.","use":"direct-evidence"}],"filters":["form"],"id":"ann_ee6cea7890413d1a","local_key":"future-vow","review":{"notes":"Offered as a reading prompt for the poem's unresolved ending.","state":"draft"},"tags":["lens-form-imagery","wandering","futurity"],"target":{"exact_text":"Though I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;\nAnd walk among long dappled grass,\nAnd pluck till time and times are done,\nThe silver apples of the moon,\nThe golden apples of the sun.","line_range":{"end":24,"start":17},"locator":{"scheme":"line","value":"17-24"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Future Vow"},{"annotation_type":"editorial-note","claim":{"attributions":[],"body":"Editorial synthesis: A compact route through the poem has five stops.\n\n1. Begin with the “fire” that sends the speaker into the wood: desire appears first as pressure before it has an object.\n2. Follow the sequence berry, trout, and girl, then compare it with Yeats's own note about fish-shaped and woman-shaped spirits.\n3. Pause over the repeated naming: the girl recognizes the speaker at the instant she becomes impossible to hold.\n4. Treat the medieval Oengus tale as a revealing parallel, not a settled source; Yeats names a Greek folk song and Irish belief, while later scholarship debates how closely the renamed poem aligns with Aislinge Óenguso.\n5. End with the future tense and the apples. The search remains incomplete, and even the apple imagery carries a documented disagreement between biographical and mythological readings.","contested":false,"editorial_confidence":{"level":"unassessed","rationale":"The route synthesizes directly consulted primary and scholarly evidence but is itself an editorial arrangement awaiting human review."},"epistemic_status":"editorial-synthesis"},"evidence":[{"citation":{"citation_text":"Yeats, The Wind Among the Reeds (1899), 15-16, 87-89.","locator":"pp. 15-16 and 87-89"},"id":"ev_guide_primary","relationship":"supports","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},"source_id":"src_e0b122f22eb15e7b","summary":"The base witness supplies the poem and Yeats's appended explanation of its folkloric setting.","use":"direct-evidence"},{"citation":{"citation_text":"Shaw, ed., and Murray, trans., Aislinge Oenguso, sections 1-2, 12-14.","locator":"sections 1-2 and 12-14"},"id":"ev_guide_medieval","relationship":"contextualizes","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"University College Cork Irish Sagas Online pages for text, translation, sources, and background.","state":"fully-consulted"},"canonical_url":"https://iso.ucc.ie/Aislinge-oenguso/Aislinge-oenguso-index.html","citation":"Shaw, Francis, ed. The Dream of Oengus: Aislinge Oenguso. Dublin: Brown \u0026 Nolan, 1934, pp. 43-64. English translation by Kevin Murray, Irish Sagas Online, University College Cork.","container_title":null,"contributors":[{"name":"Francis Shaw","role":"editor"},{"name":"Kevin Murray","role":"translator"}],"id":"src_602bbd20c75c04c8","issue":null,"issued":null,"notes":"Sections 1-2 and 12-14 are most relevant to the dream, disappearance, search, alternating forms, and Oengus's transformation into a swan.","pages":null,"publisher":"University College Cork, CELT and Irish Sagas Online","quality":{"authority":"scholarly-edition","peer_review_status":"editorially-reviewed","rationale":"The University College Cork resource presents the medieval Irish text, a modern Irish version, an English translation, manuscript information, and scholarly bibliography."},"rights":{"notes":"No open reproduction license was identified on the edition pages. The corpus paraphrases the translation and links to the edition rather than reproducing it.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"critical-edition","source_type_detail":null,"title":"The Dream of Oengus: Aislinge Oenguso","volume":null},"source_id":"src_602bbd20c75c04c8","summary":"The scholarly edition supplies the medieval dream, disappearance, search, and swan-transformation parallel.","use":"direct-evidence"},{"citation":{"citation_text":"Mazzaro, 'Apple Imagery,' 342-343.","locator":"pp. 342-343"},"id":"ev_guide_apples","relationship":"qualifies","source":{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive scan of Modern Language Notes 72.5, checked directly on printed pages 342-343.","state":"fully-consulted"},"canonical_url":"https://doi.org/10.2307/3043075","citation":"Mazzaro, Jerome L. 'Apple Imagery in Yeats’ “The Song of Wandering Aengus.”' Modern Language Notes 72, no. 5 (May 1957): 342-343. https://doi.org/10.2307/3043075.","container_title":"Modern Language Notes","contributors":[{"name":"Jerome L. Mazzaro","role":"author"}],"id":"src_1c6c6ab9dbcb7c2f","issue":"5","issued":"1957-05","notes":null,"pages":"342-343","publisher":"Johns Hopkins University Press","quality":{"authority":"peer-reviewed-scholarship","peer_review_status":"peer-reviewed","rationale":"A scholarly note published in Modern Language Notes that explicitly tests competing biographical and mythological explanations of the poem's apple imagery."},"rights":{"notes":"The article is not open access according to OpenAlex. The corpus uses short attributed paraphrases and citations rather than reproducing the article.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"journal-article","source_type_detail":null,"title":"Apple Imagery in Yeats' ‘The Song of Wandering Aengus’","volume":"72"},"source_id":"src_1c6c6ab9dbcb7c2f","summary":"Mazzaro documents and contests a biographical explanation of the apple imagery.","use":"direct-evidence"}],"filters":["guided"],"id":"ann_b8d357fb34d7793d","local_key":"guided-reading","review":{"notes":"This is navigation and synthesis, not a substitute for the individual evidence records.","state":"draft"},"tags":["guided-reading","lens-myth-folklore","lens-form-imagery","lens-publication-textual-history"],"target":{"exact_text":"I went out to the hazel wood,\nBecause a fire was in my head,\nAnd cut and peeled a hazel wand,\nAnd hooked a berry to a thread;\nAnd when white moths were on the wing,\nAnd moth-like stars were flickering out,\nI dropped the berry in a stream\nAnd caught a little silver trout.\n\nWhen I had laid it on the floor\nI went to blow the fire a-flame,\nBut something rustled on the floor,\nAnd someone called me by my name:\nIt had become a glimmering girl\nWith apple blossom in her hair\nWho called me by my name and ran\nAnd faded through the brightening air.\n\nThough I am old with wandering\nThrough hollow lands and hilly lands,\nI will find out where she has gone,\nAnd kiss her lips and take her hands;\nAnd walk among long dappled grass,\nAnd pluck till time and times are done,\nThe silver apples of the moon,\nThe golden apples of the sun.","line_range":{"end":24,"start":1},"locator":{"scheme":"line","value":"1-24"},"work_id":"work_the_song_of_wandering_aengus"},"title":"Guided Reading"}],"corpus":{"annotation_count":12,"authors":["W. B. Yeats"],"base_witness":{"citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","title":"The Wind Among the Reeds"},"description":"A source-first pilot corpus with a verified 1899 base text, three interpretive lenses, and an explicitly editorial guided reading.","id":"corpus_yeats_song_of_wandering_aengus","review_states":["draft"],"source_count":8,"title":"W. B. Yeats: The Song of Wandering Aengus"},"initial_annotation_id":"ann_b8d357fb34d7793d","poem":{"lines":[{"number":1,"stanza_start":true,"text":"I went out to the hazel wood,"},{"number":2,"stanza_start":false,"text":"Because a fire was in my head,"},{"number":3,"stanza_start":false,"text":"And cut and peeled a hazel wand,"},{"number":4,"stanza_start":false,"text":"And hooked a berry to a thread;"},{"number":5,"stanza_start":false,"text":"And when white moths were on the wing,"},{"number":6,"stanza_start":false,"text":"And moth-like stars were flickering out,"},{"number":7,"stanza_start":false,"text":"I dropped the berry in a stream"},{"number":8,"stanza_start":false,"text":"And caught a little silver trout."},{"number":9,"stanza_start":true,"text":"When I had laid it on the floor"},{"number":10,"stanza_start":false,"text":"I went to blow the fire a-flame,"},{"number":11,"stanza_start":false,"text":"But something rustled on the floor,"},{"number":12,"stanza_start":false,"text":"And someone called me by my name:"},{"number":13,"stanza_start":false,"text":"It had become a glimmering girl"},{"number":14,"stanza_start":false,"text":"With apple blossom in her hair"},{"number":15,"stanza_start":false,"text":"Who called me by my name and ran"},{"number":16,"stanza_start":false,"text":"And faded through the brightening air."},{"number":17,"stanza_start":true,"text":"Though I am old with wandering"},{"number":18,"stanza_start":false,"text":"Through hollow lands and hilly lands,"},{"number":19,"stanza_start":false,"text":"I will find out where she has gone,"},{"number":20,"stanza_start":false,"text":"And kiss her lips and take her hands;"},{"number":21,"stanza_start":false,"text":"And walk among long dappled grass,"},{"number":22,"stanza_start":false,"text":"And pluck till time and times are done,"},{"number":23,"stanza_start":false,"text":"The silver apples of the moon,"},{"number":24,"stanza_start":false,"text":"The golden apples of the sun."}],"work_id":"work_the_song_of_wandering_aengus"},"sources":[{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive page images and OCR; printed pages were checked through the IIIF scan.","state":"fully-consulted"},"canonical_url":"https://archive.org/details/windamongreeds00yeatrich","citation":"Yeats, W. B. The Wind Among the Reeds. London: Elkin Mathews, 1899. Internet Archive, windamongreeds00yeatrich.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"}],"id":"src_e0b122f22eb15e7b","issue":null,"issued":"1899","notes":"The poem was checked directly on printed pages 15-16. Yeats's note on the poem was checked on printed pages 87-89. OCR was used only for navigation.","pages":null,"publisher":"Elkin Mathews","quality":{"authority":"primary-source","peer_review_status":"not-peer-reviewed","rationale":"The scanned 1899 printed volume is the corpus's base textual witness and includes Yeats's own appended notes."},"rights":{"notes":"Published in 1899 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"primary-text","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},{"access":{"consulted_on":"2026-09-23","obtained_via":"Project Gutenberg plain-text edition mirrored by Internet Archive.","state":"fully-consulted"},"canonical_url":"https://www.gutenberg.org/ebooks/32233","citation":"Yeats, W. B. The Wind Among the Reeds. Fourth edition, Elkin Mathews, 1903. Project Gutenberg ebook 32233, released 3 May 2010.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"},{"name":"Meredith Bach and the Online Distributed Proofreading Team","role":"other","role_detail":"ebook producers"}],"id":"src_5ef421a1a77a9391","issue":null,"issued":"2010","notes":"The poem and the appended author note were compared with the 1899 scan. The 1899 page images remain authoritative for corpus punctuation and lineation.","pages":null,"publisher":"Project Gutenberg","quality":{"authority":"institutional-resource","peer_review_status":"editorially-reviewed","rationale":"Project Gutenberg supplies a distributed-proofreading transcription from scanned page images and is used only to corroborate the base witness."},"rights":{"notes":"Project Gutenberg marks the underlying work public domain in the United States; its license terms and local law still apply to reuse of the ebook file.","quotation":"permitted","reproduction":"permitted","status":"public-domain"},"source_type":"web-resource","source_type_detail":null,"title":"The Wind Among the Reeds","volume":null},{"access":{"consulted_on":"2026-09-23","obtained_via":"University College Cork Irish Sagas Online pages for text, translation, sources, and background.","state":"fully-consulted"},"canonical_url":"https://iso.ucc.ie/Aislinge-oenguso/Aislinge-oenguso-index.html","citation":"Shaw, Francis, ed. The Dream of Oengus: Aislinge Oenguso. Dublin: Brown \u0026 Nolan, 1934, pp. 43-64. English translation by Kevin Murray, Irish Sagas Online, University College Cork.","container_title":null,"contributors":[{"name":"Francis Shaw","role":"editor"},{"name":"Kevin Murray","role":"translator"}],"id":"src_602bbd20c75c04c8","issue":null,"issued":null,"notes":"Sections 1-2 and 12-14 are most relevant to the dream, disappearance, search, alternating forms, and Oengus's transformation into a swan.","pages":null,"publisher":"University College Cork, CELT and Irish Sagas Online","quality":{"authority":"scholarly-edition","peer_review_status":"editorially-reviewed","rationale":"The University College Cork resource presents the medieval Irish text, a modern Irish version, an English translation, manuscript information, and scholarly bibliography."},"rights":{"notes":"No open reproduction license was identified on the edition pages. The corpus paraphrases the translation and links to the edition rather than reproducing it.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"critical-edition","source_type_detail":null,"title":"The Dream of Oengus: Aislinge Oenguso","volume":null},{"access":{"consulted_on":"2026-09-23","obtained_via":"Open PDF from the journal website.","scope_note":"Pages 87-91 and 121 were consulted for manuscript dating, narrative outline, metamorphosis, translation cautions, and licensing.","state":"excerpt-consulted"},"canonical_url":"https://ceraejournal.com/wp-content/uploads/2025/01/Vol.-11-4-Bodsworth.pdf","citation":"Bodsworth, Roxanne. 'Meet Me in My World: a creative prosimetric reconstruction of Aislinge Óenguso.' Ceræ: An Australasian Journal of Medieval and Early Modern Studies 11 (2024): 87-121.","container_title":"Ceræ: An Australasian Journal of Medieval and Early Modern Studies","contributors":[{"name":"Roxanne Bodsworth","role":"author"}],"id":"src_fc31908c58046bcd","issue":null,"issued":"2024","notes":null,"pages":"87-121","publisher":"Ceræ","quality":{"authority":"peer-reviewed-scholarship","peer_review_status":"peer-reviewed","rationale":"Ceræ identifies itself as a peer-reviewed open-access academic journal; the volume classifies this contribution as creative varia grounded in scholarship on the medieval tale."},"rights":{"notes":"The PDF states a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 license. This corpus paraphrases its scholarship and supplies citations.","quotation":"limited","reproduction":"limited","status":"licensed"},"source_type":"journal-article","source_type_detail":null,"title":"Meet Me in My World: a creative prosimetric reconstruction of Aislinge Óenguso","volume":"11"},{"access":{"consulted_on":"2026-09-23","obtained_via":"Charles Sturt University Research Output record.","state":"fully-consulted"},"canonical_url":"https://researchoutput.csu.edu.au/en/publications/changing-the-story-in-yeats-the-song-of-wandering-aengus/","citation":"Bodsworth, Roxanne. 'Changing the story in Yeats’ The Song of Wandering Aengus.' Abstract presented at the 10th Australian Conference of Celtic Studies, University of Sydney, 26 September 2023.","container_title":"10th Australian Conference of Celtic Studies 2023","contributors":[{"name":"Roxanne Bodsworth","role":"author"}],"id":"src_57223be24ba042a2","issue":null,"issued":"2023-09-26","notes":"The source supports only statements made in the abstract, including its account of the 1897 title and its argument about later alignment with Aislinge Óenguso.","pages":null,"publisher":"Charles Sturt University Research Output","quality":{"authority":"institutional-resource","peer_review_status":"peer-reviewed","rationale":"The complete abstract is published in a university research repository and explicitly marked as peer-reviewed, but the underlying presentation was not available."},"rights":{"notes":"No reuse license was identified. The corpus paraphrases the abstract and does not reproduce it.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"other","source_type_detail":"Peer-reviewed conference abstract","title":"Changing the story in Yeats' The Song of Wandering Aengus","volume":null},{"access":{"consulted_on":"2026-09-23","obtained_via":"Internet Archive scan of Modern Language Notes 72.5, checked directly on printed pages 342-343.","state":"fully-consulted"},"canonical_url":"https://doi.org/10.2307/3043075","citation":"Mazzaro, Jerome L. 'Apple Imagery in Yeats’ “The Song of Wandering Aengus.”' Modern Language Notes 72, no. 5 (May 1957): 342-343. https://doi.org/10.2307/3043075.","container_title":"Modern Language Notes","contributors":[{"name":"Jerome L. Mazzaro","role":"author"}],"id":"src_1c6c6ab9dbcb7c2f","issue":"5","issued":"1957-05","notes":null,"pages":"342-343","publisher":"Johns Hopkins University Press","quality":{"authority":"peer-reviewed-scholarship","peer_review_status":"peer-reviewed","rationale":"A scholarly note published in Modern Language Notes that explicitly tests competing biographical and mythological explanations of the poem's apple imagery."},"rights":{"notes":"The article is not open access according to OpenAlex. The corpus uses short attributed paraphrases and citations rather than reproducing the article.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"journal-article","source_type_detail":null,"title":"Apple Imagery in Yeats' ‘The Song of Wandering Aengus’","volume":"72"},{"access":{"obtained_via":"Crossref and Routledge bibliographic metadata.","scope_note":"Crossref metadata and the Routledge landing page were verified, but the chapter text was not available for consultation.","state":"citation-only"},"canonical_url":"https://doi.org/10.4324/9781003047254-80","citation":"McDonald, Peter. 'The Song of Wandering Aengus.' In The Poems of W. B. Yeats, pp. 518-529. Routledge, 2020. https://doi.org/10.4324/9781003047254-80.","container_title":"The Poems of W. B. Yeats","contributors":[{"name":"Peter McDonald","role":"author"}],"id":"src_2da93dbd07af86d4","issue":null,"issued":"2020-08-18","notes":"Acquisition priority: high. The record is included to make the most important current scholarship gap explicit.","pages":"518-529","publisher":"Routledge","quality":{"authority":"university-press-scholarship","peer_review_status":"editorially-reviewed","rationale":"A modern, poem-specific chapter from a major scholarly publisher and the highest-priority source for expanding this pilot."},"rights":{"notes":"Do not quote or summarize the chapter until a legitimately accessible copy has been consulted.","quotation":"unknown","reproduction":"prohibited","status":"copyrighted"},"source_type":"book-chapter","source_type_detail":null,"title":"The Song of Wandering Aengus","volume":null},{"access":{"consulted_on":"2026-09-23","obtained_via":"Public LiederNet text record and editorial notes.","state":"fully-consulted"},"canonical_url":"https://www.lieder.net/lieder/get_text.html?TextId=28583","citation":"Yeats, W. B. 'A mad song' [The Song of Wandering Aengus]. LiederNet Archive, text 28583, research by Emily Ezust and Garrett Medlock.","container_title":null,"contributors":[{"name":"W. B. Yeats","role":"author"},{"name":"Emily Ezust","role":"editor"},{"name":"Garrett Medlock","role":"editor"}],"id":"src_21c964fd93d0fe6a","issue":null,"issued":"2007-05-02","notes":"The record reports first publication in The Sketch in August 1897, revision and renaming in 1899, a 24-line text, and one check of the author's text against a primary source.","pages":null,"publisher":"LiederNet Archive","quality":{"authority":"established-reference","peer_review_status":"not-peer-reviewed","rationale":"LiederNet is a long-running specialist archive for song texts; this record identifies its primary-source checking status and publication/title history, but it is not a critical edition."},"rights":{"notes":"The underlying Yeats poem is public domain, but the archive's editorial record and translations have separate rights. This corpus paraphrases its metadata.","quotation":"limited","reproduction":"prohibited","status":"copyrighted"},"source_type":"web-resource","source_type_detail":null,"title":"A mad song [The Song of Wandering Aengus]","volume":null}]}</script>
+  <script>
+"use strict";
+
+const dataNode = document.getElementById("corpus-data");
+const corpusData = JSON.parse(dataNode.textContent);
+const filters = [
+  ["guided", "Guided reading"],
+  ["myth", "Myth & folklore"],
+  ["form", "Form & imagery"],
+  ["history", "Text & history"],
+  ["all", "All notes"],
+  ["sources", "Sources"],
+];
+
+const state = {
+  filter: "guided",
+  selectedId: corpusData.initial_annotation_id,
+};
+
+const elements = {
+  title: document.getElementById("edition-title"),
+  author: document.getElementById("edition-author"),
+  status: document.getElementById("edition-status"),
+  lensNav: document.getElementById("lens-nav"),
+  activeLens: document.getElementById("active-lens-label"),
+  poem: document.getElementById("poem-lines"),
+  witness: document.getElementById("base-witness"),
+  annotationNav: document.getElementById("annotation-nav"),
+  annotationDetail: document.getElementById("annotation-detail"),
+  sourceDetail: document.getElementById("source-detail"),
+  sourceList: document.getElementById("source-list"),
+  description: document.getElementById("corpus-description"),
+};
+
+function makeElement(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) {
+    node.className = className;
+  }
+  if (text !== undefined && text !== null) {
+    node.textContent = text;
+  }
+  return node;
+}
+
+function humanize(value) {
+  return value.replaceAll("_", " ").replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function metadataLine(label, value) {
+  const paragraph = makeElement("p", "source-meta");
+  const strong = makeElement("strong", null, `${label}: `);
+  paragraph.append(strong, document.createTextNode(value));
+  return paragraph;
+}
+
+function appendBadge(container, value, modifier) {
+  const badge = makeElement("span", `badge${modifier ? ` badge--${modifier}` : ""}`, humanize(value));
+  container.append(badge);
+}
+
+function renderMasthead() {
+  document.title = `${corpusData.corpus.title} — Review edition`;
+  elements.title.textContent = corpusData.corpus.title;
+  elements.author.textContent = corpusData.corpus.authors.join(", ");
+  elements.description.textContent = corpusData.corpus.description;
+  elements.witness.textContent = `Base witness: ${corpusData.corpus.base_witness.citation}`;
+  elements.status.replaceChildren(
+    makeElement("p", "status-line", `${corpusData.corpus.annotation_count} annotations · ${corpusData.corpus.source_count} sources`),
+    makeElement("p", "status-line", `Review state: ${corpusData.corpus.review_states.map(humanize).join(", ")}`),
+  );
+}
+
+function renderFilters() {
+  elements.lensNav.replaceChildren();
+  for (const [key, label] of filters) {
+    const button = makeElement("button", null, label);
+    button.type = "button";
+    button.dataset.filter = key;
+    button.setAttribute("aria-pressed", String(state.filter === key));
+    button.addEventListener("click", () => setFilter(key));
+    elements.lensNav.append(button);
+  }
+}
+
+function renderPoem() {
+  elements.poem.replaceChildren();
+  for (const line of corpusData.poem.lines) {
+    const row = makeElement("div", `poem-line${line.stanza_start ? " poem-line--stanza" : ""}`);
+    row.dataset.line = String(line.number);
+    row.append(
+      makeElement("span", "poem-line__number", String(line.number)),
+      makeElement("span", "poem-line__text", line.text),
+    );
+    elements.poem.append(row);
+  }
+  updateHighlights();
+}
+
+function filteredAnnotations() {
+  if (state.filter === "all") {
+    return corpusData.annotations;
+  }
+  return corpusData.annotations.filter((annotation) => annotation.filters.includes(state.filter));
+}
+
+function selectedAnnotation() {
+  return corpusData.annotations.find((annotation) => annotation.id === state.selectedId) || null;
+}
+
+function setFilter(filter) {
+  state.filter = filter;
+  if (filter !== "sources") {
+    const available = filteredAnnotations();
+    if (!available.some((annotation) => annotation.id === state.selectedId)) {
+      state.selectedId = available[0]?.id || null;
+    }
+  }
+  renderFilters();
+  renderReadingPane();
+}
+
+function selectAnnotation(id, shouldScroll = true) {
+  state.selectedId = id;
+  const annotation = selectedAnnotation();
+  if (annotation) {
+    history.replaceState(null, "", `#${encodeURIComponent(annotation.local_key)}`);
+  }
+  renderAnnotationNav();
+  renderAnnotationDetail();
+  updateHighlights();
+  if (shouldScroll && window.matchMedia("(max-width: 50rem)").matches) {
+    elements.annotationDetail.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function renderAnnotationNav() {
+  elements.annotationNav.replaceChildren();
+  const annotations = filteredAnnotations();
+  if (!annotations.length) {
+    elements.annotationNav.append(makeElement("p", "annotation-nav__empty", "No annotations in this lens."));
+    return;
+  }
+  for (const annotation of annotations) {
+    const button = makeElement("button");
+    button.type = "button";
+    button.setAttribute("aria-current", String(annotation.id === state.selectedId));
+    button.append(
+      document.createTextNode(annotation.title),
+      makeElement(
+        "span",
+        "annotation-nav__locator",
+        `${humanize(annotation.target.locator.scheme)} ${annotation.target.locator.value}`,
+      ),
+    );
+    button.addEventListener("click", () => selectAnnotation(annotation.id));
+    elements.annotationNav.append(button);
+  }
+}
+
+function renderRichText(text, container) {
+  const lines = text.split("\n");
+  let list = null;
+  let paragraphLines = [];
+
+  const flushParagraph = () => {
+    if (paragraphLines.length) {
+      container.append(makeElement("p", null, paragraphLines.join(" ")));
+      paragraphLines = [];
+    }
+  };
+
+  for (const line of lines) {
+    const numbered = line.match(/^\s*\d+\.\s+(.+)$/);
+    if (numbered) {
+      flushParagraph();
+      if (!list) {
+        list = document.createElement("ol");
+        container.append(list);
+      }
+      list.append(makeElement("li", null, numbered[1]));
+      continue;
+    }
+    if (!line.trim()) {
+      flushParagraph();
+      list = null;
+      continue;
+    }
+    list = null;
+    paragraphLines.push(line.trim());
+  }
+  flushParagraph();
+}
+
+function renderAttributions(annotation, container) {
+  const claim = annotation.claim;
+  if (claim.contestation_note) {
+    const block = makeElement("div", "contestation");
+    block.append(makeElement("p", "eyebrow", "Contested reading"), makeElement("p", null, claim.contestation_note));
+    container.append(block);
+  }
+  if (claim.attributions?.length) {
+    const list = makeElement("div", "attribution-list");
+    list.append(makeElement("p", "eyebrow", "Positions"));
+    for (const attribution of claim.attributions) {
+      const paragraph = document.createElement("p");
+      paragraph.append(
+        makeElement("strong", null, `${attribution.scholar}: `),
+        document.createTextNode(attribution.position),
+      );
+      list.append(paragraph);
+    }
+    container.append(list);
+  }
+}
+
+function renderEvidence(evidence, container) {
+  const details = makeElement("details", "evidence");
+  const sourceLabel = evidence.source.title;
+  details.append(makeElement("summary", null, `${sourceLabel} — ${humanize(evidence.relationship)}`));
+  const body = makeElement("div", "evidence__body");
+  body.append(
+    makeElement("p", null, evidence.summary),
+    metadataLine("Evidence use", humanize(evidence.use)),
+    metadataLine("Access", humanize(evidence.source.access.state)),
+    metadataLine("Locator", evidence.citation.locator),
+    makeElement("p", "citation", evidence.citation.citation_text),
+  );
+  if (evidence.source.access.scope_note) {
+    body.append(metadataLine("Consulted scope", evidence.source.access.scope_note));
+  }
+  details.append(body);
+  container.append(details);
+}
+
+function renderAnnotationDetail() {
+  const annotation = selectedAnnotation();
+  elements.annotationDetail.replaceChildren();
+  if (!annotation) {
+    elements.annotationDetail.append(makeElement("p", null, "Choose an annotation to begin."));
+    updateHighlights();
+    return;
+  }
+
+  elements.annotationDetail.append(
+    makeElement("p", "annotation-kicker", `${humanize(annotation.annotation_type)} · ${humanize(annotation.target.locator.scheme)} ${annotation.target.locator.value}`),
+    makeElement("h3", null, annotation.title),
+  );
+  const meta = makeElement("div", "annotation-meta");
+  appendBadge(meta, annotation.claim.epistemic_status, annotation.claim.epistemic_status);
+  appendBadge(meta, annotation.review.state);
+  if (annotation.claim.contested) {
+    appendBadge(meta, "contested");
+  }
+  elements.annotationDetail.append(meta);
+
+  const claimBody = makeElement("div", "claim-body");
+  renderRichText(annotation.claim.body, claimBody);
+  elements.annotationDetail.append(claimBody);
+  renderAttributions(annotation, elements.annotationDetail);
+
+  const confidence = makeElement("div", "editorial-note");
+  confidence.append(
+    makeElement("p", "eyebrow", `Editorial confidence: ${humanize(annotation.claim.editorial_confidence.level)}`),
+    makeElement("p", null, annotation.claim.editorial_confidence.rationale),
+  );
+  elements.annotationDetail.append(confidence, makeElement("h4", "evidence-heading", "Evidence trail"));
+  for (const evidence of annotation.evidence) {
+    renderEvidence(evidence, elements.annotationDetail);
+  }
+}
+
+function updateHighlights() {
+  const range = selectedAnnotation()?.target.line_range;
+  for (const row of elements.poem.querySelectorAll(".poem-line")) {
+    const number = Number(row.dataset.line);
+    const active = Boolean(range && number >= range.start && number <= range.end);
+    row.classList.toggle("poem-line--active", active);
+  }
+}
+
+function contributorText(source) {
+  return source.contributors.map((item) => `${item.name} (${item.role})`).join(", ");
+}
+
+function renderSourceRecord(source, container) {
+  const details = makeElement("details", "source-record");
+  details.append(makeElement("summary", null, source.title));
+  const body = makeElement("div", "source-record__body");
+  if (source.contributors.length) {
+    body.append(metadataLine("Contributors", contributorText(source)));
+  }
+  body.append(
+    metadataLine("Access", humanize(source.access.state)),
+    metadataLine("Authority", humanize(source.quality.authority)),
+    metadataLine("Review", humanize(source.quality.peer_review_status)),
+    metadataLine("Rights", `${humanize(source.rights.status)}; quotation ${humanize(source.rights.quotation)}`),
+    makeElement("p", null, source.quality.rationale),
+    makeElement("p", "citation", source.citation),
+  );
+  if (source.access.scope_note) {
+    body.append(metadataLine("Consulted scope", source.access.scope_note));
+  }
+  if (source.notes) {
+    body.append(metadataLine("Editorial note", source.notes));
+  }
+  if (source.canonical_url) {
+    const link = makeElement("a", "source-link", "Open source record");
+    link.href = source.canonical_url;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    body.append(link);
+  }
+  details.append(body);
+  container.append(details);
+}
+
+function renderSources() {
+  elements.sourceList.replaceChildren();
+  const accessOrder = ["fully-consulted", "excerpt-consulted", "citation-only", "unavailable"];
+  for (const stateName of accessOrder) {
+    const group = corpusData.sources.filter((source) => source.access.state === stateName);
+    if (!group.length) {
+      continue;
+    }
+    elements.sourceList.append(makeElement("h4", "source-group-heading", `${humanize(stateName)} · ${group.length}`));
+    for (const source of group) {
+      renderSourceRecord(source, elements.sourceList);
+    }
+  }
+}
+
+function renderReadingPane() {
+  const filterLabel = filters.find(([key]) => key === state.filter)?.[1] || "Annotations";
+  elements.activeLens.textContent = filterLabel;
+  const showingSources = state.filter === "sources";
+  elements.annotationNav.hidden = showingSources;
+  elements.annotationDetail.hidden = showingSources;
+  elements.sourceDetail.hidden = !showingSources;
+  if (showingSources) {
+    renderSources();
+    updateHighlights();
+    return;
+  }
+  renderAnnotationNav();
+  renderAnnotationDetail();
+  updateHighlights();
+}
+
+function restoreHashSelection() {
+  const localKey = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+  if (!localKey) {
+    return;
+  }
+  const annotation = corpusData.annotations.find((item) => item.local_key === localKey);
+  if (!annotation) {
+    return;
+  }
+  state.selectedId = annotation.id;
+  if (annotation.filters.length) {
+    state.filter = annotation.filters[0];
+  } else {
+    state.filter = "all";
+  }
+}
+
+restoreHashSelection();
+renderMasthead();
+renderFilters();
+renderPoem();
+renderReadingPane();
+window.addEventListener("hashchange", () => {
+  restoreHashSelection();
+  renderFilters();
+  renderReadingPane();
+});
+
+  </script>
+</body>
+</html>

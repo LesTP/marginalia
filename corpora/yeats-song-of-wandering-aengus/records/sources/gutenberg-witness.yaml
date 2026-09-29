@@ -1,0 +1,38 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_5ef421a1a77a9391
+provenance:
+  scheme: uri
+  value: https://www.gutenberg.org/ebooks/32233
+  detail: Project Gutenberg ebook 32233.
+bibliography:
+  title: The Wind Among the Reeds
+  contributors:
+    - name: W. B. Yeats
+      role: author
+    - name: Meredith Bach and the Online Distributed Proofreading Team
+      role: other
+      role_detail: ebook producers
+  issued: "2010"
+  publisher: Project Gutenberg
+  edition: Digital transcription of the 1903 fourth edition published by Elkin Mathews
+  identifiers:
+    - scheme: Project Gutenberg ebook
+      value: "32233"
+  canonical_url: https://www.gutenberg.org/ebooks/32233
+  citation: "Yeats, W. B. The Wind Among the Reeds. Fourth edition, Elkin Mathews, 1903. Project Gutenberg ebook 32233, released 3 May 2010."
+source_type: web-resource
+quality:
+  authority: institutional-resource
+  peer_review_status: editorially-reviewed
+  rationale: Project Gutenberg supplies a distributed-proofreading transcription from scanned page images and is used only to corroborate the base witness.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-23"
+  obtained_via: Project Gutenberg plain-text edition mirrored by Internet Archive.
+rights:
+  status: public-domain
+  quotation: permitted
+  reproduction: permitted
+  notes: Project Gutenberg marks the underlying work public domain in the United States; its license terms and local law still apply to reuse of the ebook file.
+notes: The poem and the appended author note were compared with the 1899 scan. The 1899 page images remain authoritative for corpus punctuation and lineation.

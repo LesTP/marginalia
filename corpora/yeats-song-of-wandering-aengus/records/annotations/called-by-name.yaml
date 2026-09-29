@@ -1,0 +1,46 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_4219b638287b4fbd
+title: She Knows His Name, Then Vanishes
+provenance:
+  local_key: called-by-name
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-23"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "12-15"
+  exact_text: |-
+    And someone called me by my name:
+    It had become a glimmering girl
+    With apple blossom in her hair
+    Who called me by my name and ran
+annotation_type: formal
+claim:
+  body: "The girl knows the speaker well enough to call him by name, yet that recognition does not allow him to keep her. By placing the phrase “called me by my name” on both sides of her appearance, the poem frames the transformation with intimacy and immediate loss."
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: Repetition and placement are directly visible; their relation to recognition and loss is an editorial interpretation.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_name_repetition
+    source_id: src_e0b122f22eb15e7b
+    relationship: supports
+    use: direct-evidence
+    summary: The naming phrase appears in lines 12 and 15, framing the description in lines 13-14.
+    citation:
+      locator: p. 15, lines 12-15
+      citation_text: "Yeats, The Wind Among the Reeds (1899), 15."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: Offered as a formal observation with an explicitly editorial inference.
+tags:
+  - lens-form-imagery
+  - repetition
+  - naming

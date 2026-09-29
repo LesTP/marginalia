@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reference-corpus.local/schemas/vocabularies.schema.json",
+  "title": "Reference corpus controlled vocabularies",
+  "description": "The single machine-readable authority for controlled terms used by corpus records.",
+  "$defs": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "accessState": {
+      "type": "string",
+      "enum": ["fully-consulted", "excerpt-consulted", "citation-only", "unavailable"]
+    },
+    "annotationType": {
+      "type": "string",
+      "enum": [
+        "textual-variant",
+        "allusion",
+        "intertext",
+        "historical-context",
+        "biographical-context",
+        "linguistic",
+        "formal",
+        "thematic",
+        "reception",
+        "bibliographic",
+        "editorial-note",
+        "other"
+      ]
+    },
+    "authorityCategory": {
+      "type": "string",
+      "enum": [
+        "primary-source",
+        "scholarly-edition",
+        "peer-reviewed-scholarship",
+        "university-press-scholarship",
+        "institutional-resource",
+        "established-reference",
+        "informal-resource",
+        "unknown"
+      ]
+    },
+    "editorialConfidence": {
+      "type": "string",
+      "enum": ["high", "moderate", "low", "unassessed"]
+    },
+    "epistemicStatus": {
+      "type": "string",
+      "enum": [
+        "documented-fact",
+        "scholarly-consensus",
+        "attributed-interpretation",
+        "editorial-synthesis",
+        "editorial-proposal",
+        "conjecture"
+      ]
+    },
+    "evidenceRelationship": {
+      "type": "string",
+      "enum": ["supports", "qualifies", "disputes", "contextualizes"]
+    },
+    "evidenceUse": {
+      "type": "string",
+      "enum": ["direct-evidence", "reported-evidence", "context-only"]
+    },
+    "peerReviewStatus": {
+      "type": "string",
+      "enum": ["peer-reviewed", "editorially-reviewed", "not-peer-reviewed", "unknown"]
+    },
+    "reviewState": {
+      "type": "string",
+      "enum": ["draft", "human-reviewed", "source-verified", "editorially-approved"]
+    },
+    "rightsPermission": {
+      "type": "string",
+      "enum": ["permitted", "limited", "prohibited", "unknown"]
+    },
+    "rightsStatus": {
+      "type": "string",
+      "enum": ["public-domain", "copyrighted", "licensed", "unknown"]
+    },
+    "sourceType": {
+      "type": "string",
+      "enum": [
+        "primary-text",
+        "critical-edition",
+        "monograph",
+        "book-chapter",
+        "journal-article",
+        "dissertation-thesis",
+        "reference-work",
+        "archival-item",
+        "review",
+        "web-resource",
+        "other"
+      ]
+    }
+  }
+}

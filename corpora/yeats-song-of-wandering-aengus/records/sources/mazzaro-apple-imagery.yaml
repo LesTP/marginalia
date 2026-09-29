@@ -1,0 +1,39 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_1c6c6ab9dbcb7c2f
+provenance:
+  scheme: doi
+  value: 10.2307/3043075
+  detail: Published article also inspected in the Internet Archive scan sim_mln_1957-05_72_5.
+bibliography:
+  title: "Apple Imagery in Yeats' ‘The Song of Wandering Aengus’"
+  contributors:
+    - name: Jerome L. Mazzaro
+      role: author
+  issued: "1957-05"
+  publisher: Johns Hopkins University Press
+  container_title: Modern Language Notes
+  volume: "72"
+  issue: "5"
+  pages: 342-343
+  identifiers:
+    - scheme: DOI
+      value: 10.2307/3043075
+    - scheme: Internet Archive identifier
+      value: sim_mln_1957-05_72_5
+  canonical_url: https://doi.org/10.2307/3043075
+  citation: "Mazzaro, Jerome L. 'Apple Imagery in Yeats’ “The Song of Wandering Aengus.”' Modern Language Notes 72, no. 5 (May 1957): 342-343. https://doi.org/10.2307/3043075."
+source_type: journal-article
+quality:
+  authority: peer-reviewed-scholarship
+  peer_review_status: peer-reviewed
+  rationale: A scholarly note published in Modern Language Notes that explicitly tests competing biographical and mythological explanations of the poem's apple imagery.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-23"
+  obtained_via: Internet Archive scan of Modern Language Notes 72.5, checked directly on printed pages 342-343.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: The article is not open access according to OpenAlex. The corpus uses short attributed paraphrases and citations rather than reproducing the article.

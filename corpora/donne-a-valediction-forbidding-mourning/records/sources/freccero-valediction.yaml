@@ -1,0 +1,36 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_d0ac9779e429149d
+provenance:
+  scheme: bibliographic-key
+  value: freccero-1963-valediction-elh
+  detail: John Freccero's 1963 ELH essay on the poem, consulted from journal page images supplied by the editor.
+bibliography:
+  title: "Donne's 'Valediction: Forbidding Mourning'"
+  contributors:
+    - name: John Freccero
+      role: author
+  issued: "1963"
+  publisher: Johns Hopkins University Press
+  container_title: ELH
+  volume: "30"
+  issue: "4"
+  pages: "335-376"
+  citation: "Freccero, John. \"Donne's 'Valediction: Forbidding Mourning'.\" ELH 30, no. 4 (1963): 335-376."
+source_type: journal-article
+quality:
+  authority: peer-reviewed-scholarship
+  peer_review_status: peer-reviewed
+  rationale: A peer-reviewed scholarly essay in ELH that reads the poem's compass conceit within Renaissance and Neoplatonic cosmology.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-28"
+  scope_note: >-
+    The complete essay (pp. 335-376) was consulted from journal page images.
+  obtained_via: Journal page images (screenshots) supplied by the editor.
+rights:
+  status: copyrighted
+  quotation: limited
+  reproduction: prohibited
+  notes: The essay is under copyright (ELH, Johns Hopkins University Press). The corpus paraphrases with short attributed phrases and does not reproduce the text; users should confirm rights before quoting.
+notes: Freccero reads the twin compasses as fusing linear and circular motion, glosses "just" as a pun on a true circle and the virtuous man, and links "obliquely runne" and "far doth rome" to planetary motion.

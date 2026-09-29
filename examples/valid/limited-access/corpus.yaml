@@ -1,0 +1,9 @@
+schema_version: "1.0.0"
+record_type: corpus-manifest
+corpus_id: corpus_limited_access_example
+title: Limited-access evidence example
+sources:
+  - records/sources/glass-house-edition.yaml
+  - records/sources/reported-reading.yaml
+annotations:
+  - records/annotations/window-reading.yaml

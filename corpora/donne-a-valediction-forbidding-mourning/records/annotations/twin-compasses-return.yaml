@@ -1,0 +1,113 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_00732c6105d8947e
+title: The Compasses Make Separation Relational
+provenance:
+  local_key: twin-compasses-return
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "25-36"
+  exact_text: |-
+    If they be two; they are two so
+    As stiffe twin compasses are two,
+    Thy soule the fixt foot, makes no show
+    To move, but doth, if th'other doe.
+
+    And though it in the center sit,
+    Yet when the other far doth rome,
+    It leanes, and hearkens after it,
+    And growes erect, as that comes home.
+
+    Such wilt thou be to mee, who must
+    Like th'other foot, obliquely runne,
+    Thy firmnes makes my circle just,
+    And makes me end, where I begunne.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        If they be two, they are two so
+        As stiff twin compasses are two,
+        Thy soul the fixed foot, makes no show
+        To move, but doth, if th'other do.
+
+        And though it in the center sit,
+        Yet when the other far doth roam,
+        It leans, and hearkens after it,
+        And grows erect, as that comes home.
+
+        Such wilt thou be to me, who must
+        Like th'other foot, obliquely run;
+        Thy firmness makes my circle just,
+        And makes me end, where I begun.
+annotation_type: formal
+claim:
+  body: >-
+    The closing compass image allows the lovers to be two without becoming independent. The fixed foot responds to the roaming foot by leaning toward it and standing upright at its return; the center therefore participates in the journey. The final circle makes fidelity active: one partner's firmness shapes the other's path and brings it back to its beginning. John Freccero reads the conceit within Renaissance cosmology: the compass fuses the roaming foot's straight-line motion through time and distance with the fixed foot's turning, so that the drawn circle becomes a figure of eternity. On his account the pun on a "just" circle also names the "just," or virtuous, man of the opening simile, and the roaming foot's "obliquely runne" evokes the wandering, oblique path of the planets rather than mere straying. Freccero also ties the poem's scale to its form: its thirty-six lines answer to the 36,000-year "Great Year" of classical cosmology, so the whole span of parting reads as one turn of a circle that must return to where it began.
+  epistemic_status: attributed-interpretation
+  editorial_confidence:
+    level: unassessed
+    rationale: The described movements follow the poem's sequence and compass geometry; the cosmological reading is attributed to Freccero, whose essay was consulted in part.
+  contested: false
+  attributions:
+    - scholar: John Freccero
+      position: The twin compasses fuse the roaming foot's linear motion through time and space with the fixed foot's circular return, making the drawn circle a figure of eternity; "just" puns on a true circle and the virtuous man, and "obliquely runne" evokes the planets' wandering, oblique motion.
+      evidence_ids:
+        - ev_freccero_compass
+        - ev_freccero_oblique
+evidence:
+  - id: ev_compasses
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: The final three stanzas describe linked compass legs, responsive leaning, circular movement, and return to the starting point.
+    citation:
+      locator: p. 194, lines 25-36
+      citation_text: "Donne, Poems (1633), 194."
+  - id: ev_compass_commentary
+    source_id: src_95a01a8318fcf5d6
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Grierson identifies the passage as Donne's famous simile and records a possible parallel in translations of Omar Khayyam without claiming direct influence.
+    citation:
+      locator: vol. II, p. 50, note to lines 25-36
+      citation_text: "Grierson, commentary on 'A Valediction,' 2:50."
+  - id: ev_freccero_compass
+    source_id: src_d0ac9779e429149d
+    relationship: supports
+    use: direct-evidence
+    summary: Freccero reads the twin compasses as synthesizing linear and circular motion and the drawn circle as a figure of eternity, and glosses "just" as a pun on a true circle and the virtuous man.
+    citation:
+      locator: pp. 335-341
+      citation_text: "Freccero, 'Donne's Valediction,' 335-41."
+  - id: ev_freccero_oblique
+    source_id: src_d0ac9779e429149d
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Freccero connects "obliquely runne" and "far doth rome" to the wandering, oblique motion of the planets in the Chalcidius commentary on the Timaeus and in Renaissance compass emblems.
+    citation:
+      locator: pp. 341-345
+      citation_text: "Freccero, 'Donne's Valediction,' 341-45."
+  - id: ev_freccero_greatyear
+    source_id: src_d0ac9779e429149d
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Freccero reads the poem's thirty-six verses as answering to the 36,000-year Great Year, so its span of separation forms one complete circle of departure and return.
+    citation:
+      locator: "pp. 355, 376"
+      citation_text: "Freccero, 'Donne's Valediction,' 355, 376."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: The geometric description and interpretive emphasis have been reviewed by a human editor.
+tags:
+  - lens-form-argument
+  - lens-bodies-souls
+  - lens-geometry-cosmology
+  - compass
+  - return

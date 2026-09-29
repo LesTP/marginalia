@@ -1,0 +1,43 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_51969843a25b5fc5
+title: Watching from Behind the Glass
+provenance:
+  local_key: reported-window-reading
+  created_by: Example Editor
+  created_on: "2026-09-22"
+target:
+  work_id: work_example_glass_house
+  edition_source_id: src_64be35435887eef3
+  locator:
+    scheme: page
+    value: "47"
+  exact_text: She watched the room through the darkened pane.
+annotation_type: thematic
+claim:
+  body: The darkened pane separates the woman from the room without making her a neutral observer; she remains implicated in what she sees. Priya Scholar is reported to develop this interpretation, but the original article has not yet been consulted.
+  epistemic_status: attributed-interpretation
+  editorial_confidence:
+    level: low
+    rationale: The interpretation is known only through a secondary citation and needs verification in the original article.
+  contested: false
+  attributions:
+    - scholar: Priya Scholar
+      position: The window figures implicated witnessing rather than objective distance.
+      evidence_ids:
+        - ev_reported_article
+evidence:
+  - id: ev_reported_article
+    source_id: src_acf6576968934da6
+    relationship: contextualizes
+    use: reported-evidence
+    summary: A later bibliography describes the article as advancing this reading; the article itself remains unconsulted.
+    citation:
+      locator: reported discussion of p. 52
+      citation_text: "Scholar, 'Windows and Witness,' reportedly 52."
+review:
+  state: draft
+  notes: Obtain and inspect the article before moving this annotation to source-verified.
+tags:
+  - access-gap
+  - witnessing

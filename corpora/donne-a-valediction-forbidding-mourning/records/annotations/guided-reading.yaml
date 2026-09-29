@@ -1,0 +1,139 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_9161eff2a9cee011
+title: Separation Without Rupture
+provenance:
+  local_key: guided-reading
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-09-26"
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: "1-36"
+  exact_text: |-
+    AS virtuous men passe mildly away,
+    And whisper to their soules, to goe,
+    Whilst some of their sad friends doe say,
+    The breath goes now, and some say, no.
+
+    So let us melt, and make no noise,
+    No teare-floods, nor sigh-tempests move,
+    T'were prophanation of our joyes
+    To tell the layetie our love.
+
+    Moving of th'earth brings harmes and feares,
+    Men reckon what it did and meant,
+    But trepidation of the spheares,
+    Though greater farre, is innocent.
+
+    Dull sublunary lovers love
+    (Whose soule is sense) cannot admit
+    Absence, because it doth remove
+    Those things which elemented it.
+
+    But we by a love, so much refin'd,
+    That our selves know not what it is,
+    Inter-assured of the mind,
+    Care lesse; eyes, lips, hands to misse.
+
+    Our two soules therefore, which are one,
+    Though I must goe, endure not yet
+    A breach, but an expansion,
+    Like gold to ayery thinnesse beate.
+
+    If they be two; they are two so
+    As stiffe twin compasses are two,
+    Thy soule the fixt foot, makes no show
+    To move, but doth, if th'other doe.
+
+    And though it in the center sit,
+    Yet when the other far doth rome,
+    It leanes, and hearkens after it,
+    And growes erect, as that comes home.
+
+    Such wilt thou be to mee, who must
+    Like th'other foot, obliquely runne,
+    Thy firmnes makes my circle just,
+    And makes me end, where I begunne.
+  display_selectors:
+    - text_id: modernized
+      exact_text: |-
+        As virtuous men pass mildly away,
+        And whisper to their souls, to go,
+        Whilst some of their sad friends do say,
+        The breath goes now, and some say, no:
+
+        So let us melt, and make no noise,
+        No tear-floods, nor sigh-tempests move,
+        'Twere profanation of our joys
+        To tell the laity our love.
+
+        Moving of th'earth brings harms and fears,
+        Men reckon what it did and meant,
+        But trepidation of the spheres,
+        Though greater far, is innocent.
+
+        Dull sublunary lovers' love
+        (Whose soul is sense) cannot admit
+        Absence, because it doth remove
+        Those things which elemented it.
+
+        But we by a love, so much refined,
+        That ourselves know not what it is,
+        Inter-assured of the mind,
+        Care less, eyes, lips, hands to miss.
+
+        Our two souls therefore, which are one,
+        Though I must go, endure not yet
+        A breach, but an expansion,
+        Like gold to airy thinness beat.
+
+        If they be two, they are two so
+        As stiff twin compasses are two,
+        Thy soul the fixed foot, makes no show
+        To move, but doth, if th'other do.
+
+        And though it in the center sit,
+        Yet when the other far doth roam,
+        It leans, and hearkens after it,
+        And grows erect, as that comes home.
+
+        Such wilt thou be to me, who must
+        Like th'other foot, obliquely run;
+        Thy firmness makes my circle just,
+        And makes me end, where I begun.
+annotation_type: editorial-note
+claim:
+  body: The poem turns an impending departure into an argument that true union can survive distance. The six sections below follow that argument from a quiet model of parting, through contrasts between visible disturbance and inward assurance, to images of gold and compasses that make separation a form of continued connection.
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The route follows the poem's stanza sequence and directly inspected commentary; its selection and emphasis remain editorial, and no formal confidence grade has been assigned.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_guide_poem
+    source_id: src_d933303080412160
+    relationship: supports
+    use: direct-evidence
+    summary: The nine quatrains provide the ordered progression from quiet departure through metaphysical comparison to promised return.
+    citation:
+      locator: printed pp. 193-194, lines 1-36
+      citation_text: "Donne, Poems (1633), 193-194."
+  - id: ev_guide_commentary
+    source_id: src_95a01a8318fcf5d6
+    relationship: contextualizes
+    use: direct-evidence
+    summary: Grierson's poem-specific commentary supplies historical context for the celestial movement, the word “elemented,” textual variation, and the compass simile.
+    citation:
+      locator: vol. II, pp. 49-50
+      citation_text: "Donne, Poems, ed. Grierson, 2:49-50."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-28"
+  notes: The guided sequence is an editorial route rather than a claim of scholarly consensus.
+tags:
+  - guided-reading
