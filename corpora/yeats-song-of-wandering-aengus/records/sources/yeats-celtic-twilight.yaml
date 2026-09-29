@@ -1,0 +1,38 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_9a4ff9f4b44ea1e9
+provenance:
+  scheme: uri
+  value: https://www.gutenberg.org/ebooks/10459
+  detail: Project Gutenberg ebook 10459.
+bibliography:
+  title: The Celtic Twilight
+  contributors:
+    - name: W. B. Yeats
+      role: author
+    - name: Carrie Lorenz and John B. Hare
+      role: other
+      role_detail: ebook producer and redactor
+  issued: "2003"
+  publisher: Project Gutenberg
+  edition: Digital transcription of the 1902 expanded edition published by A. H. Bullen (first published 1893 by Lawrence and Bullen)
+  identifiers:
+    - scheme: Project Gutenberg ebook
+      value: "10459"
+  canonical_url: https://www.gutenberg.org/ebooks/10459
+  citation: "Yeats, W. B. The Celtic Twilight. Expanded edition, A. H. Bullen, 1902. Project Gutenberg ebook 10459, released 1 December 2003."
+source_type: web-resource
+quality:
+  authority: institutional-resource
+  peer_review_status: editorially-reviewed
+  rationale: A Project Gutenberg transcription of Yeats's prose collection, used here as a witness to Yeats's own stated aims for his Irish folklore work. It has not been checked against printed page images, so it supports paraphrase and short quotation pending source verification.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-29"
+  obtained_via: Project Gutenberg plain-text edition (pg10459.txt).
+rights:
+  status: public-domain
+  quotation: permitted
+  reproduction: permitted
+  notes: The underlying 1893/1902 work is public domain in the United States; Project Gutenberg license terms and local law still apply to reuse of the ebook file.
+notes: Consulted for the dedicatory preface ("This Book", dated 1893) in which Yeats frames the collection as showing "the face of Ireland" to his own people. Page numbers are not cited because a paginated printed edition was not consulted.

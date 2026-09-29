@@ -57,10 +57,13 @@ sources:
   - records/sources/mazzaro-apple-imagery.yaml
   - records/sources/mcdonald-poems-commentary.yaml
   - records/sources/liedernet-text-record.yaml
+  - records/sources/yeats-celtic-twilight.yaml
+  - records/sources/yeats-ideas-of-good-and-evil.yaml
 annotations:
   - records/annotations/base-text.yaml
   - records/annotations/publication-history.yaml
   - records/annotations/author-framing.yaml
+  - records/annotations/irish-identity.yaml
   - records/annotations/fish-to-girl.yaml
   - records/annotations/medieval-dream-parallel.yaml
   - records/annotations/apple-imagery-debate.yaml

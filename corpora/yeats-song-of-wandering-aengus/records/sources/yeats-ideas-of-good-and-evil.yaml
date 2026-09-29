@@ -1,0 +1,38 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_890993afc1055265
+provenance:
+  scheme: uri
+  value: https://www.gutenberg.org/ebooks/32884
+  detail: Project Gutenberg ebook 32884.
+bibliography:
+  title: Ideas of Good and Evil
+  contributors:
+    - name: W. B. Yeats
+      role: author
+    - name: Brian Foley and the Online Distributed Proofreading Team
+      role: other
+      role_detail: ebook producers
+  issued: "2010"
+  publisher: Project Gutenberg
+  edition: Digital transcription of the second edition published by A. H. Bullen, London, 1903
+  identifiers:
+    - scheme: Project Gutenberg ebook
+      value: "32884"
+  canonical_url: https://www.gutenberg.org/ebooks/32884
+  citation: "Yeats, W. B. Ideas of Good and Evil. Second edition, A. H. Bullen, 1903. Project Gutenberg ebook 32884."
+source_type: web-resource
+quality:
+  authority: institutional-resource
+  peer_review_status: editorially-reviewed
+  rationale: A Project Gutenberg transcription (from Internet Archive page images) of Yeats's essay collection, used here as a witness to Yeats's stated cultural-nationalist program. It has not been checked against printed page images, so it supports paraphrase and short quotation pending source verification.
+access:
+  state: fully-consulted
+  consulted_on: "2026-09-29"
+  obtained_via: Project Gutenberg plain-text edition (pg32884.txt).
+rights:
+  status: public-domain
+  quotation: permitted
+  reproduction: permitted
+  notes: The underlying 1903 work is public domain in the United States; Project Gutenberg license terms and local law still apply to reuse of the ebook file.
+notes: Consulted for the essays "The Celtic Element in Literature" (dated 1897, with a 1902 postscript) and "Ireland and the Arts" (dated 1901). Located by essay and internal section rather than page number, as a paginated printed edition was not consulted.

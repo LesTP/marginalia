@@ -1,0 +1,87 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_54753ffb5a36a9f6
+title: An Irish God, Chosen in English
+provenance:
+  local_key: irish-identity
+  created_by: Devmate generative-track draft
+  created_on: "2026-09-29"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "1-24"
+  exact_text: |-
+    I went out to the hazel wood,
+    Because a fire was in my head,
+    And cut and peeled a hazel wand,
+    And hooked a berry to a thread;
+    And when white moths were on the wing,
+    And moth-like stars were flickering out,
+    I dropped the berry in a stream
+    And caught a little silver trout.
+
+    When I had laid it on the floor
+    I went to blow the fire a-flame,
+    But something rustled on the floor,
+    And someone called me by my name:
+    It had become a glimmering girl
+    With apple blossom in her hair
+    Who called me by my name and ran
+    And faded through the brightening air.
+
+    Though I am old with wandering
+    Through hollow lands and hilly lands,
+    I will find out where she has gone,
+    And kiss her lips and take her hands;
+    And walk among long dappled grass,
+    And pluck till time and times are done,
+    The silver apples of the moon,
+    The golden apples of the sun.
+annotation_type: historical-context
+claim:
+  body: "The poem's wandering hero is Aengus, a god of the old Irish otherworld, and its hazel wood and silver and golden apples belong to that same world. In his own note Yeats identifies the man with the hazel wand as \"Aengus, Master of Love,\" one of the Tuatha De Danaan, the ancient Irish gods whom country people still called the Sidhe. Choosing such a figure was not a neutral literary decision. Through the 1890s Yeats worked to build a modern Irish literature out of Gaelic legend: he called the Celtic movement \"principally the opening of this fountain\" of old stories, and urged Irish writers to master \"this history and these legends.\" Writing an Irish god into an English lyric was part of that program, an attempt to make an ancient national imagination speak to modern readers."
+  epistemic_status: editorial-synthesis
+  editorial_confidence:
+    level: unassessed
+    rationale: The god's identity rests on Yeats's own note, and the cultural program on his own essays; connecting that program to this particular poem is editorial synthesis that a human editor has not yet graded, and it has not been checked against secondary Yeats scholarship.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_yeats_note_aengus
+    source_id: src_e0b122f22eb15e7b
+    relationship: supports
+    use: direct-evidence
+    summary: Yeats's own 1899 note identifies the poem's hazel-wand man as Aengus, Master of Love, one of the children of the goddess Danu, and his notes explain that the Tuatha De Danaan were the old gods of Ireland, called the Sidhe by the poor.
+    citation:
+      locator: notes to "The Song of Wandering Aengus" and "The Hosting of the Sidhe"
+      citation_text: "Yeats, The Wind Among the Reeds (1899), notes, pp. 74 and 88-89."
+    quotation: "The man in my poem who has a hazel wand may have been Aengus, Master of Love"
+  - id: ev_celtic_twilight_face_of_ireland
+    source_id: src_9a4ff9f4b44ea1e9
+    relationship: supports
+    use: direct-evidence
+    summary: In the dedicatory preface to The Celtic Twilight, Yeats frames his folklore work as national in purpose, aimed at showing Ireland to his own people.
+    citation:
+      locator: dedicatory preface, "This Book" (dated 1893)
+      citation_text: "Yeats, The Celtic Twilight (1902), 'This Book'."
+    quotation: "to show in a vision something of the face of Ireland to any of my own people who would look where I bid them"
+  - id: ev_ige_celtic_movement
+    source_id: src_890993afc1055265
+    relationship: supports
+    use: direct-evidence
+    summary: In "The Celtic Element in Literature" Yeats defines the Celtic movement as the opening of a great "fountain" of Gaelic legend, and in "Ireland and the Arts" he urges Irish writers to master the country's history and legends, evidence of the cultural-nationalist program behind his use of Irish myth.
+    citation:
+      locator: essays "The Celtic Element in Literature" (IV) and "Ireland and the Arts"
+      citation_text: "Yeats, Ideas of Good and Evil (1903), 'The Celtic Element in Literature' and 'Ireland and the Arts'."
+    quotation: "'The Celtic movement,' as I understand it, is principally the opening of this fountain"
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-09-29"
+  notes: "Produced by the generative track (see DESIGN_generative_track_v1.md) and reviewed for reading and prose. The three quotations were checked against the Project Gutenberg transcriptions of the cited works. Still outstanding, so the state is human-reviewed rather than source-verified: (1) confirm Yeats's 1899 note wording and page numbers against the base-text page images; (2) check the two prose quotations against printed editions rather than the transcriptions; (3) a secondary-scholarship novelty and attribution check, since the reading that Yeats's turn to Irish myth was a cultural-nationalist statement is standard criticism and may later warrant attributed-interpretation or scholarly-consensus with named scholars."
+tags:
+  - lens-publication-textual-history
+  - historical-context
+  - cultural-nationalism
