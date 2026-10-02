@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 record_type: annotation
 id: ann_cf7ccd17ef12cf3b
-title: Emotional Strain in the Compass Conceit
+title: Does the Conceit's Elaborateness Betray Need?
 provenance:
   local_key: strain-as-tell
   created_by: Devmate generative-track (stage 5 test)
@@ -39,15 +39,18 @@ target:
     And makes me end, where I begunne.'
 annotation_type: thematic
 claim:
-  body: This passage uses the elaborate compass metaphor to illustrate a deep emotional connection between
-    the lovers. However, the complexity of the conceit itself suggests an underlying emotional need or
-    insecurity; if their union were truly secure, such an intricate argument would be unnecessary. The
-    strain within the metaphor reveals a tension in the relationship.
+  body: 'The speaker meets the fact of parting not with open feeling but with an elaborate geometric proof,
+    the twin compasses. One way to read that elaborateness is as a sign of need: were the union as secure
+    as the argument claims, it might not require so intricate a machine to establish it, so that the strain
+    of the conceit becomes part of its meaning. The lines equally support the opposite reading, in which
+    the compass is a confident, even triumphant demonstration -- "Thy firmnes makes my circle just" --
+    and the ingenuity marks assurance rather than anxiety. This note offers the first reading as a possibility
+    while recording that the text sustains both.'
   epistemic_status: editorial-proposal
   editorial_confidence:
     level: unassessed
-    rationale: The interpretation is proposed but awaits further review and corroboration with additional
-      critical perspectives.
+    rationale: Offered as a reading the text permits but does not compel; the competing confident reading
+      is carried in the body. Status-aware stage-6 verification found it defensible but contested.
   contested: false
   attributions: []
 evidence:
@@ -55,8 +58,8 @@ evidence:
   source_id: src_d933303080412160
   relationship: supports
   use: direct-evidence
-  summary: The lines describe the fixed and moving feet of a compass, symbolizing the lovers' connection,
-    but also highlight the movement and leaning, implying a strain or tension between them.
+  summary: 'The compass argument sustained across the three stanzas is the textual basis for both readings:
+    the elaborateness heard either as anxious need or as confident wit.'
   citation:
     locator: lines 25-36, 1633 text
   quotation: 'If they be two; they are two so
@@ -68,4 +71,6 @@ evidence:
     To move, but doth, if th''other doe.'
 review:
   state: draft
-  notes: Needs additional critical sources and analysis to confirm the interpretation.
+  notes: 'Stage-6 (status-aware) verified as defensible but contested; competing reading now carried in
+    the body. Pending before promotion: novelty/attribution check and display_selectors for the modernized
+    view.'

@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 record_type: annotation
 id: ann_f556653c96915e85
-title: Consistent abab rhyme scheme in three stanzas
+title: The abab Rhyme Scheme
 provenance:
   local_key: abab-exact-rhyme
   created_by: Devmate generative-track (stage 5 test)
@@ -39,14 +39,14 @@ target:
     And makes me end, where I begunne.'
 annotation_type: formal
 claim:
-  body: This passage demonstrates a consistent rhyme scheme of abab throughout three stanzas. Each stanza
-    uses exact, nearly monosyllabic rhymes, creating a formal regularity that is directly observable in
-    the text. This pattern contributes to the poem's structured and harmonious sound.
+  body: The three stanzas rhyme abab throughout, each quatrain closing on single end-rhymes (so/show,
+    two/doe; sit/it, rome/home; must/just, runne/begunne). The regular alternating scheme is directly
+    observable in the base text and lends the argument its measured, closed movement.
   epistemic_status: documented-fact
   editorial_confidence:
     level: unassessed
-    rationale: The claim is straightforward and directly supported by the text, but has not yet been formally
-      reviewed or cross-checked with other analyses.
+    rationale: A structural description strictly checkable against the base text; the 'exact' and 'nearly
+      monosyllabic' characterisations were removed after stage-6 flagged them as over-claims.
   contested: false
   attributions: []
 evidence:
@@ -54,8 +54,8 @@ evidence:
   source_id: src_d933303080412160
   relationship: supports
   use: direct-evidence
-  summary: The quoted lines illustrate the abab rhyme scheme with pairs like so/show, two/doe; sit/it,
-    rome/home; and must/just, runne/begunne, confirming the formal regularity.
+  summary: Each quatrain shows the abab pattern, the rhyme falling on the final word of every line (so/show,
+    two/doe; sit/it, rome/home; must/just, runne/begunne).
   citation:
     locator: lines 25-36, 1633 text
   quotation: 'If they be two; they are two so
@@ -85,4 +85,6 @@ evidence:
     And makes me end, where I begunne.'
 review:
   state: draft
-  notes: Confirm editorial confidence and cross-check rhyme scheme with other editions before final promotion.
+  notes: 'Stage-6 flagged ''exact, nearly monosyllabic'' as an over-claim; tightened to the abab scheme
+    and single end-rhymes, which are strictly checkable. Pending before promotion: display_selectors for
+    the modernized view.'
