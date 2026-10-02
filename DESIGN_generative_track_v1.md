@@ -342,7 +342,7 @@ worker-authored records. The Devmate built-in `/council` (3-model blind peer rev
 | 3 -> argue | **diplomat round loop (`round_stepped.py`): contest singular readings against the text** | extract round engine -> toolkit, shed negotiation scoring (6.4) |
 | 4 Gather sources | `source_ingestion.normalization.fetch_url_text` / `html_to_text` | `toolkit.doc_fetch` (fetch+cache+retry) -- gap |
 | 5 Regenerate as records | `structured_call(schema=annotation.schema.json)` -> dict -> `yaml_io`; then `reference-corpus-validate` (authoritative) | map structured output -> repo YAML conventions; disposition routing (section 4.1) |
-| 6 Verify | diplomat adversarial critic; `mechanism_classifier` judge (fixed independent model) | source-span matcher (`targets.py`-style, against fetched source text) |
+| 6 Verify | **deterministic first** (`targets.resolve_target` + verbatim-quotation check); then an independent judge (`mechanism_classifier` pattern, fixed independent model) with a **status-aware rubric** | source-span matcher against *fetched* source text (gap); the status-aware verifier prompt |
 | 7 Edit | `edit_classifier` to categorize edits; `identifiers.py` identity stability | frozen-field diff between rounds |
 | 8 Select and review | human; optional `gateway` + `feedback_collector` for HITL delivery/edits | - |
 
@@ -356,7 +356,38 @@ Two placements to note:
 - **structured_llm pre-validates; the repo validator stays authoritative.**
   `structured_call` validates the model's JSON against `schemas/annotation.schema.json`
   as a pre-filter; derived-ID, target-resolution, access/quotation and cross-record
-  checks still run through `reference-corpus-validate`.
+checks still run through `reference-corpus-validate`.
+
+Stage-6 findings (first run on the Donne drafts, 2026-10-02):
+
+- **Run the deterministic checks first; they carry the reliable weight.** The repo's
+  `targets.resolve_target` (unique target resolution) plus a verbatim-quotation check
+  need no model and cannot hallucinate; the model judgment is advisory on top. In the
+  first run all three drafts passed the deterministic checks (no fabricated or
+  misquoted text).
+- **The verifier rubric must be status-aware.** Holding an `editorial-proposal` to the
+  documented-fact standard ("every assertion borne out by the lines, no over-reach")
+  flags all genuine interpretation. Switch rubric on the epistemic status: a
+  `documented-fact` must be strictly checkable from the text (this correctly caught an
+  "exact, nearly monosyllabic rhymes" over-claim); an `editorial-proposal` need only be
+  defensible / not contradicted by the lines, free of external facts, and honestly
+  labelled as a proposal. The verifier must receive the status and pick its test.
+- **The verifier itself errs; humans adjudicate (principle 8).** The independent model
+  miscalled exact rhymes (so/show, two/doe, rome/home) as near rhymes -- over-correcting
+  on the very point it flagged. Verifier output is a candidate for human review, not a
+  verdict; no model is the final authority, which is why the deterministic checks hold
+  the reliable weight.
+- **A flag on a proposal often means 'contested', not 'wrong'.** The verifier reproduced
+  the stage-3 strong-lines position against the anxious/melancholy readings. Such a flag
+  should route the proposal to carry its counter-reading (or the `contested` annotation
+  type), not to deletion.
+- **Confirmed by a status-aware re-run (2026-10-02).** With the rubric switched on
+  epistemic status, both editorial-proposals verified as defensible -- the verifier
+  marking each as *contested* and naming its competing reading (the confident/triumphant
+  reading of the compass) -- while the documented-fact stayed flagged for the "exact,
+  nearly monosyllabic" over-claim. The status split stops over-flagging genuine
+  interpretation without weakening the catch on factual over-claims. The verifier again
+  miscalled exact rhymes as slant, confirming that human adjudication remains required.
 
 ### 6.4 What to extract into toolkit
 
