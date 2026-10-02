@@ -1,0 +1,95 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_47a0e25a727bb6ac
+title: A Greek Folk Song of Apples
+provenance:
+  local_key: greek-apple-song
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-10-02"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "14-24"
+  exact_text: |-
+    With apple blossom in her hair
+    Who called me by my name and ran
+    And faded through the brightening air.
+
+    Though I am old with wandering
+    Through hollow lands and hilly lands,
+    I will find out where she has gone,
+    And kiss her lips and take her hands;
+    And walk among long dappled grass,
+    And pluck till time and times are done,
+    The silver apples of the moon,
+    The golden apples of the sun.
+annotation_type: intertext
+claim:
+  body: |-
+    Yeats says only that the poem was suggested by a Greek folk song. A strong candidate is "The Fruit of the Apple-Tree," published in 1885 in English translation by Lucy M. J. Garnett.
+
+    |^ THE FRUIT OF THE APPLE-TREE.
+    |^ Ο ΚΑΡΠΟΣ ΤΗΣ ΜΗΛΗΑΣ.
+    |^ Ὁ νειὸς μέ τὰ λαγωνικὰ ἐβγῆκε ’ς τὸ κυνῆγι
+    |^ κ’ ἐκράτει καὶ ’ς τὸ χέρι του ἕνα μικρὸ γεράκι.
+    |> κ. τ. λ.
+    |^ (Aravandinos, 240.)
+    | With all his greyhounds fleet around, a youth goes out a-hunting;
+    | A falcon small upon his wrist he bears as forth he sallies.
+    | It frees itself, and flies afar, and in a garden enters;
+    | But quick, his falcon to regain, the hunter follows after.
+    | A maiden fair within he finds, at marble fountain washing;
+    | With whitest pearls she is bedecked, and strings of golden sequins.
+    | ‘Call off thy dogs, Sir Hunter bold, and tie them to the bushes!
+    | I fear they’ll bite me, Hunter bold—I fear that they will chase me.’
+    | ‘My little dogs are better taught, ’tis only hares they worry;
+    | And ne’er to maidens fair as thou do any kind of evil.
+    | O tell me, tell me, maiden mine, what dowry canst thou bring me?
+    | No dowry do I ask of coin, nor dowry of adornment.’
+    | ‘No dowry dost thou ask of coin, nor dowry of adornment?
+    | Then will I give this apple-tree, all covered o’er with blossom;
+    | All laden, too, with rosy fruit, with fairest, sweetest apples.’
+    | ‘Thou, maiden, art the apple-tree, and now let fall the apples!’
+    | She broke the strings, and far and wide her pearls and sequins scattered.
+    | ‘Come, gather, youth! come, gather them, the apples of my fruit-tree;
+    | And gather them again, again, and stoop again and gather!’
+  epistemic_status: editorial-proposal
+  editorial_confidence:
+    level: unassessed
+    rationale: The song's text was checked on the 1885 page images, and Yeats's note confirms that a Greek folk song prompted the poem. That this is the song he meant is a proposal. Yeats does not name it, his reading of Garnett's collection is not documented here, and published commentary has not been checked for a prior identification.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_yeats_greek_prompt
+    source_id: src_e0b122f22eb15e7b
+    relationship: supports
+    use: direct-evidence
+    summary: Yeats's note says a Greek folk song suggested the poem, without naming the song.
+    citation:
+      locator: pp. 88-89, note to The Song of Wandering Aengus
+      citation_text: "Yeats, The Wind Among the Reeds (1899), 88-89."
+  - id: ev_garnett_apple_tree
+    source_id: src_a9b1e73bb3baa879
+    relationship: supports
+    use: direct-evidence
+    summary: A youth out hunting meets a maiden who offers an apple tree in blossom and fruit, then scatters pearls and golden sequins as apples for him to gather again and again.
+    citation:
+      locator: pp. 133-134, "The Fruit of the Apple-Tree"
+      citation_text: "Garnett, Greek Folk-Songs (1885), 133-134."
+    quotation: "Then will I give this apple-tree, all covered o’er with blossom; All laden, too, with rosy fruit, with fairest, sweetest apples."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-10-02"
+  notes: >-
+    Song text checked on the 1885 page images. Still to check: McDonald and Jeffares for
+    a prior identification of the song, and whether Yeats is documented as knowing
+    Garnett's collection. The reprinted song uses the "|" verse-block lines that the
+    hand-authored review.html renders; the generated view shows them as plain text.
+tags:
+  - lens-publication-textual-history
+  - lens-form-imagery
+  - apples
+  - greek-folk-song

@@ -1,0 +1,36 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_2dbdcbc4f6f1f6ca
+provenance:
+  scheme: uri
+  value: https://www.gutenberg.org/ebooks/10
+  detail: Project Gutenberg ebook 10.
+bibliography:
+  title: The King James Version of the Bible
+  contributors:
+    - name: Project Gutenberg
+      role: other
+      role_detail: ebook producer
+  issued: "1989"
+  publisher: Project Gutenberg
+  edition: Digital transcription of the Authorized (King James) Version of 1611; ebook most recently updated 29 October 2024
+  identifiers:
+    - scheme: Project Gutenberg ebook
+      value: "10"
+  canonical_url: https://www.gutenberg.org/ebooks/10
+  citation: "The Holy Bible, King James Version. Project Gutenberg ebook 10."
+source_type: web-resource
+quality:
+  authority: institutional-resource
+  peer_review_status: editorially-reviewed
+  rationale: A widely used public-domain transcription of the King James Version, the English Bible whose wording Yeats's readers would have known. Used here only as a witness to the wording of two verses; it has not been checked against a printed edition.
+access:
+  state: excerpt-consulted
+  consulted_on: "2026-10-02"
+  scope_note: Daniel 7:25 and Revelation 12:14 only, consulted for the phrase "time and times".
+  obtained_via: Project Gutenberg plain-text edition (pg10.txt).
+rights:
+  status: public-domain
+  quotation: permitted
+  reproduction: permitted
+  notes: The King James text is public domain in the United States (Crown rights persist in the United Kingdom); Project Gutenberg license terms and local law still apply to reuse of the ebook file.

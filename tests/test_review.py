@@ -86,8 +86,8 @@ def _dual_text_yeats(tmp_path: Path) -> Path:
 def test_builds_yeats_review_model() -> None:
     model = build_review_model(YEATS_MANIFEST)
 
-    assert model["corpus"]["source_count"] == 10
-    assert model["corpus"]["annotation_count"] == 13
+    assert model["corpus"]["source_count"] == 12
+    assert model["corpus"]["annotation_count"] == 15
     assert model["corpus"]["authors"] == ["W. B. Yeats"]
     assert len(model["poem"]["lines"]) == 24
     assert [
@@ -99,7 +99,7 @@ def test_builds_yeats_review_model() -> None:
         "lens": None,
         "pathway": "guided-reading",
         "step": "initiating-fire",
-        "annotation": "light-and-time",
+        "annotation": "two-fires",
     }
     assert model["presentation"]["default_text"] == "canonical"
     assert [text["id"] for text in model["texts"]] == ["canonical"]

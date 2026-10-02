@@ -51,7 +51,7 @@ The Yeats corpus below is the single-text worked example; the Donne corpus demon
 
 | Corpus | Status | Base witness | Records |
 |---|---|---|---|
-| [W. B. Yeats, *The Song of Wandering Aengus*](yeats-song-of-wandering-aengus/) | Human-reviewed for sense; not source-verified | *The Wind Among the Reeds* (London: Elkin Mathews, 1899), pp. 15-16 | 10 sources, 13 annotations |
+| [W. B. Yeats, *The Song of Wandering Aengus*](yeats-song-of-wandering-aengus/) | Human-reviewed for sense; not source-verified | *The Wind Among the Reeds* (London: Elkin Mathews, 1899), pp. 15-16 | 12 sources, 15 annotations |
 | [John Donne, *A Valediction: Forbidding Mourning*](donne-a-valediction-forbidding-mourning/) | Human-reviewed for sense; not source-verified; edition-faithful and modernized views | *Poems, by J. Donne* (London: Miles Flesher for John Marriot, 1633), pp. 193-194 | 4 sources, 12 annotations |
 
 Files under `examples/valid/` are fictional contract fixtures. Files under `corpora/` are

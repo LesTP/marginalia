@@ -3,8 +3,8 @@
 A compact annotated reading of W. B. Yeats's 24-line poem for a general audience. It is
 the first real corpus in this repository and tests how careful provenance can support
 clear literary explanation without asking readers to know the scholarship in advance or
-pretending that interpretation is mechanically decidable. The corpus contains 13 annotation
-records, including 11 reader-facing notes.
+pretending that interpretation is mechanically decidable. The corpus contains 15 annotation
+records, including 13 reader-facing notes.
 
 All annotation records are `human-reviewed`: read for sense, but not yet verified against
 their sources. None is `editorially-approved`, and editorial confidence remains `unassessed`.
@@ -36,8 +36,8 @@ work_the_song_of_wandering_aengus
 ## Three Lenses
 
 - **Myth and folklore** starts with Yeats's own note on pages 87-89. He names a Greek folk song as the poem's prompt while describing Irish beliefs about spirits that appear as fish or women. The medieval *Aislinge Óenguso* is treated as a revealing comparison, not an unquestioned genetic source.
-- **Form and imagery** examines the three-stanza progression, repeated `And`, light imagery, repeated naming, the future-tense vow, and the scholarly disagreement over the apples.
-- **Text and history** records the 1897 title reported by current scholarship and the directly inspected 1899 title and text. The 1897 periodical witness has not yet been obtained. It also places the poem's Irish god, written in English, within Yeats's stated cultural program of the 1890s, drawing on his own prose.
+- **Form and imagery** examines the three-stanza progression, repeated `And`, the two fires, the movement from night into daylight, repeated naming, the future-tense vow, and the apple imagery, including the scholarly disagreement over it.
+- **Text and history** records the 1897 title reported by current scholarship and the directly inspected 1899 title and text. The 1897 periodical witness has not yet been obtained. It also places the poem's Irish god, written in English, within Yeats's stated cultural program of the 1890s, drawing on his own prose, and proposes Lucy Garnett's 1885 translation of the Greek folk song "The Fruit of the Apple-Tree" as the song Yeats's note mentions.
 
 ## Source Map
 
@@ -53,6 +53,8 @@ work_the_song_of_wandering_aengus
 | LiederNet text 28583 | Curated title and publication-history record | Fully consulted | Useful corroboration, not a critical edition |
 | Yeats, *The Celtic Twilight* (1902 ed.), Project Gutenberg 10459 | Yeats's stated aims for his folklore work | Fully consulted | Dedicatory preface only; transcription not checked against page images, so no page numbers |
 | Yeats, *Ideas of Good and Evil* (1903 ed.), Project Gutenberg 32884 | Yeats's stated cultural-nationalist program | Fully consulted | "The Celtic Element in Literature" and "Ireland and the Arts"; located by essay, not page |
+| Garnett, trans., *Greek Folk-Songs from the Turkish Provinces of Greece* (1885) | Text of "The Fruit of the Apple-Tree" | Excerpt consulted | Pages 133-134, checked on page images; Yeats does not name this song |
+| King James Bible, Project Gutenberg 10 | Wording of "a time and times" | Excerpt consulted | Daniel 7:25 and Revelation 12:14 only; supports a verbal echo, not Yeats's intention |
 
 ## Guided Reading
 
@@ -85,6 +87,7 @@ directly consulted.
 - The connection with *Aislinge Óenguso* is deliberately qualified: Yeats's own note identifies a Greek folk-song prompt and Irish folkloric associations, while later scholarship argues over the medieval tale's relevance.
 - Formal notes based only on the poem are labeled editorial synthesis or proposal, not scholarship.
 - The Irish-identity note links Yeats's own prose program to this poem as editorial synthesis; it has not been checked against secondary Yeats scholarship.
+- The Greek folk-song identification and the time-of-day and two-fires readings are editorial proposals; none has yet been checked against McDonald or Jeffares for prior statement.
 - The two Yeats prose sources are Project Gutenberg transcriptions not yet checked against printed page images.
 - Rights fields document the working assessment used by this project and are not legal advice.
 

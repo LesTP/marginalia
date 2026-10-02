@@ -103,8 +103,8 @@ def test_wandering_aengus_targets_resolve_in_base_text() -> None:
     base = next(item for item in annotations if item["provenance"]["local_key"] == "base-text")
     base_index = index_base_text(base["target"]["exact_text"])
 
-    assert len(manifest["sources"]) == 10
-    assert len(annotations) == 13
+    assert len(manifest["sources"]) == 12
+    assert len(annotations) == 15
     assert len(base_index.lines) == 24
 
     for annotation in annotations:

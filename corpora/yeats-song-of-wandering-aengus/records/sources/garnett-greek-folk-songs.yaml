@@ -1,0 +1,37 @@
+schema_version: "1.0.0"
+record_type: source
+id: src_a9b1e73bb3baa879
+provenance:
+  scheme: archive-id
+  value: "internet-archive:greekfolksongsfr00garnuoft"
+  detail: University of Toronto (Robarts Library) scan hosted by Internet Archive.
+bibliography:
+  title: "Greek Folk-Songs from the Turkish Provinces of Greece: Albania, Thessaly (Not Yet Wholly Free), and Macedonia"
+  contributors:
+    - name: Lucy M. J. Garnett
+      role: translator
+    - name: John S. Stuart Glennie
+      role: editor
+  issued: "1885"
+  publisher: Elliot Stock
+  identifiers:
+    - scheme: Internet Archive identifier
+      value: greekfolksongsfr00garnuoft
+  canonical_url: https://archive.org/details/greekfolksongsfr00garnuoft
+  citation: "Garnett, Lucy M. J., trans. Greek Folk-Songs from the Turkish Provinces of Greece. Edited by John S. Stuart Glennie. London: Elliot Stock, 1885. Internet Archive, greekfolksongsfr00garnuoft."
+source_type: primary-text
+quality:
+  authority: primary-source
+  peer_review_status: not-peer-reviewed
+  rationale: A published 1885 English translation of Greek folk songs, available to English readers before Yeats wrote the poem. Used here as the text of one song; it is not scholarship on Yeats.
+access:
+  state: excerpt-consulted
+  consulted_on: "2026-10-02"
+  scope_note: "Printed pages 133-134 (IIIF canvases 169-170), \"The Fruit of the Apple-Tree\", checked on page images. Title-page details read from OCR."
+  obtained_via: Internet Archive IIIF page images; OCR used only to locate the song.
+rights:
+  status: public-domain
+  quotation: permitted
+  reproduction: permitted
+  notes: Published in 1885 and treated as public domain for this corpus; users should confirm the law applicable in their jurisdiction.
+notes: The IIIF manifest's canvas labels do not match printed page numbers (the canvas labelled 133 is printed page 96); use canvases 169-170 for printed pages 133-134. The corpus transcription keeps the printed wording and punctuation but drops the typographic space printed before semicolons, exclamation marks, and question marks. In the Greek heading and opening lines, the printed curly beta (ϐ) and kappa (ϰ) are written as ordinary β and κ; spelling (including ΜΗΛΗΑΣ and νειὸς) and accents follow the page.

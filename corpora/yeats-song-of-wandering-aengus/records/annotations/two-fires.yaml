@@ -1,0 +1,54 @@
+schema_version: "1.0.0"
+record_type: annotation
+id: ann_97938e0e1bbd5e47
+title: Two Fires
+provenance:
+  local_key: two-fires
+  created_by: Devmate-assisted editorial draft
+  created_on: "2026-10-02"
+target:
+  work_id: work_the_song_of_wandering_aengus
+  edition_source_id: src_e0b122f22eb15e7b
+  locator:
+    scheme: line
+    value: "2-10"
+  exact_text: |-
+    Because a fire was in my head,
+    And cut and peeled a hazel wand,
+    And hooked a berry to a thread;
+    And when white moths were on the wing,
+    And moth-like stars were flickering out,
+    I dropped the berry in a stream
+    And caught a little silver trout.
+
+    When I had laid it on the floor
+    I went to blow the fire a-flame,
+annotation_type: thematic
+claim:
+  body: "Two fires frame the catch. A “fire” in the speaker's head sends him out to the hazel wood; back indoors, he goes to “blow the fire a-flame” on his own hearth. The first is an inner compulsion, the second an ordinary household task, and the transformation interrupts the second: we don't know if the speaker ever lights the hearth. As he turns to tend the domestic fire, the trout becomes the girl who will set him wandering."
+  epistemic_status: editorial-proposal
+  editorial_confidence:
+    level: unassessed
+    rationale: Both fires and the interruption are textual facts. Treating them as a deliberate pairing of inner compulsion and household task is a proposal, not yet checked against published commentary for prior attribution.
+  contested: false
+  attributions: []
+evidence:
+  - id: ev_two_fires
+    source_id: src_e0b122f22eb15e7b
+    relationship: supports
+    use: direct-evidence
+    summary: Line 2 gives the inward fire that prompts the outing; line 10 gives the hearth fire the speaker goes to kindle, immediately interrupted by the rustle and the calling of his name.
+    citation:
+      locator: p. 15, lines 2, 10-12
+      citation_text: "Yeats, The Wind Among the Reeds (1899), 15."
+review:
+  state: human-reviewed
+  reviewer: LesTP
+  reviewed_on: "2026-10-02"
+  notes: >-
+    Offered as a reading prompt. Replaces light-and-time together with
+    night-into-daylight. Not yet checked against McDonald or Jeffares for prior
+    attribution.
+tags:
+  - lens-form-imagery
+  - fire

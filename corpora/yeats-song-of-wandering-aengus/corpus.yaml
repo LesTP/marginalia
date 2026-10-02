@@ -14,7 +14,7 @@ presentation:
       tag: lens-myth-folklore
     - id: form-imagery
       label: Form and imagery
-      description: Notice how repetition, stanza shape, light, naming, and future tense carry the poem from desire to loss.
+      description: Notice how repetition, stanza shape, fire, time of day, naming, and future tense carry the poem from desire to loss.
       tag: lens-form-imagery
     - id: text-history
       label: Text and history
@@ -29,7 +29,7 @@ presentation:
         - id: initiating-fire
           label: The initiating fire
           annotation_keys:
-            - light-and-time
+            - two-fires
         - id: transformation
           label: The trout becomes a woman
           annotation_keys:
@@ -59,6 +59,8 @@ sources:
   - records/sources/liedernet-text-record.yaml
   - records/sources/yeats-celtic-twilight.yaml
   - records/sources/yeats-ideas-of-good-and-evil.yaml
+  - records/sources/kjv-bible.yaml
+  - records/sources/garnett-greek-folk-songs.yaml
 annotations:
   - records/annotations/base-text.yaml
   - records/annotations/publication-history.yaml
@@ -67,9 +69,11 @@ annotations:
   - records/annotations/fish-to-girl.yaml
   - records/annotations/medieval-dream-parallel.yaml
   - records/annotations/apple-imagery-debate.yaml
+  - records/annotations/greek-apple-song.yaml
   - records/annotations/stanzaic-progression.yaml
   - records/annotations/and-repetition.yaml
-  - records/annotations/light-and-time.yaml
+  - records/annotations/night-into-daylight.yaml
+  - records/annotations/two-fires.yaml
   - records/annotations/called-by-name.yaml
   - records/annotations/future-vow.yaml
   - records/annotations/guided-reading.yaml
