@@ -240,7 +240,7 @@ Exit codes:
 
 ## Real Corpora
 
-- `corpora/yeats-song-of-wandering-aengus/` is the first pilot: a verified public-domain base text, eight source records, ten public notes, and an explicitly editorial guided reading.
+- `corpora/yeats-song-of-wandering-aengus/` is the first pilot: a verified public-domain base text, ten source records, eleven public notes, and an explicitly editorial guided reading.
 - `corpora/donne-a-valediction-forbidding-mourning/` demonstrates an edition-faithful 1633 transcription and a line-aligned modernized derivation, both resolved against the same human-reviewed annotations, with commentary drawn from Grierson (1912) and Freccero (1963).
 - `corpora/README.md` is the catalog and layout guide for future poems.
 
