@@ -1,0 +1,71 @@
+schema_version: 1.0.0
+record_type: annotation
+id: ann_cf7ccd17ef12cf3b
+title: Emotional Strain in the Compass Conceit
+provenance:
+  local_key: strain-as-tell
+  created_by: Devmate generative-track (stage 5 test)
+  created_on: '2026-10-02'
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: 25-36
+  exact_text: 'If they be two; they are two so
+
+    As stiffe twin compasses are two,
+
+    Thy soule the fixt foot, makes no show
+
+    To move, but doth, if th''other doe.
+
+
+    And though it in the center sit,
+
+    Yet when the other far doth rome,
+
+    It leanes, and hearkens after it,
+
+    And growes erect, as that comes home.
+
+
+    Such wilt thou be to mee, who must
+
+    Like th''other foot, obliquely runne,
+
+    Thy firmnes makes my circle just,
+
+    And makes me end, where I begunne.'
+annotation_type: thematic
+claim:
+  body: This passage uses the elaborate compass metaphor to illustrate a deep emotional connection between
+    the lovers. However, the complexity of the conceit itself suggests an underlying emotional need or
+    insecurity; if their union were truly secure, such an intricate argument would be unnecessary. The
+    strain within the metaphor reveals a tension in the relationship.
+  epistemic_status: editorial-proposal
+  editorial_confidence:
+    level: unassessed
+    rationale: The interpretation is proposed but awaits further review and corroboration with additional
+      critical perspectives.
+  contested: false
+  attributions: []
+evidence:
+- id: ev_base_text
+  source_id: src_d933303080412160
+  relationship: supports
+  use: direct-evidence
+  summary: The lines describe the fixed and moving feet of a compass, symbolizing the lovers' connection,
+    but also highlight the movement and leaning, implying a strain or tension between them.
+  citation:
+    locator: lines 25-36, 1633 text
+  quotation: 'If they be two; they are two so
+
+    As stiffe twin compasses are two,
+
+    Thy soule the fixt foot, makes no show
+
+    To move, but doth, if th''other doe.'
+review:
+  state: draft
+  notes: Needs additional critical sources and analysis to confirm the interpretation.

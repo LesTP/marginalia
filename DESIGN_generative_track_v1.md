@@ -424,3 +424,55 @@ Compare each config against Grierson, Freccero and the existing annotations. A h
 confabulation rate in B is not a reason to drop staged friction; it is a reason to
 tighten the persona prompt's rule that the text is the only evidence unless a real
 named source can be given.
+
+### 7.1 Results, first pass (2026-10-02)
+
+First pass on the Donne compass conceit (the last three stanzas), run on pirozhok via
+diplomat's venv and `.env` keys (the API path, not the FU-28 `claude -p` path). A
+throwaway harness under `_scratch/genpipe/`, not committed. One stanza only -- treat
+as indicative, not general.
+
+**Stage 2, blind divergence** (same prompt, no context, no personas), at mid tier
+(gpt-4.1-mini, claude-sonnet-4-6, gemini-2.5-flash-lite) and quality tier (gpt-5.5,
+claude-opus-4-6, gemini-2.5-pro):
+
+- Readings shared across models matched the standard commentary already in the corpus
+  (interdependent feet, oblique path, turn to direct address, circular closure),
+  confirming that the shared-vs-singular split is a usable signal.
+- **Tier matters, unevenly by provider.** OpenAI mid -> quality was a large jump;
+  Anthropic Opus led on novelty and produced the only two genuinely new divergence
+  readings (the conceit as a concession/fallback, not the main claim; "end where I
+  begun" as no progress, only form -- quietly melancholic). Gemini was the weakest
+  idea-generator at both tiers (competent but standard).
+- **Confabulation: 0** at either tier -- no invented critics, sources, or quotations.
+- Practical: reasoning models (gpt-5*, gemini pro) need a large token budget or they
+  return empty/truncated; the harness retries at a higher budget.
+
+**Stage 3, argue** (strong-lines/wit on Opus vs plain-style on gpt-5.5, each on a
+different model, neutral observer on gemini-pro, seeded with the standout divergence
+readings):
+
+- **Friction out-produced divergence.** The clash generated a reading neither opening
+  had -- the elaborate conceit as a symptom of emotional need ("if the union were as
+  serene as the argument wants, the poem would not need so elaborate a machine to
+  prove it"), the strain itself the tell. It also adjudicated the seeded readings: the
+  concession reading sharpened from "fallback" to the logician's "even if"; the
+  melancholy reading was diagnosed as depending on an imported Romantic expectation of
+  growth. It surfaced an agency-asymmetry reading (the beloved praised for constancy
+  but cast as reactive).
+- **Confabulation: 0 even in persona mode** -- the framing most likely to invent a
+  period quotation produced none (observer's check: "None"). Key safety result.
+- The neutral observer worked as the stage-3 pool/judge: it separated genuine
+  disagreements, named the new readings, and ran the confabulation check.
+- The debate did not collapse into hedging (the *Waste Land* failure mode); concession
+  plus counter developed claims rather than averaging them.
+
+**Validated / still open.** The idea-generation half (stages 1-3) holds on first
+contact: variety is real, quality tier lifts novelty, friction develops and tests
+ideas, and the honesty rule survives throughout. Still untested: config C (persona x
+model swap, the ventriloquism control) and the record-producing half (stages 4-6:
+sources, stage-5 YAML + validator, stage-6 verification), along with decisions D1-D3.
+
+**Roster finding.** Weight toward the strong idea-generators (Opus led; gpt-5.5
+strong), but keep >= 2 models so the shared-vs-singular split still works; Gemini
+earns a place for coverage/confirmation, not novelty.

@@ -1,0 +1,88 @@
+schema_version: 1.0.0
+record_type: annotation
+id: ann_f556653c96915e85
+title: Consistent abab rhyme scheme in three stanzas
+provenance:
+  local_key: abab-exact-rhyme
+  created_by: Devmate generative-track (stage 5 test)
+  created_on: '2026-10-02'
+target:
+  work_id: work_a_valediction_forbidding_mourning
+  edition_source_id: src_d933303080412160
+  locator:
+    scheme: line
+    value: 25-36
+  exact_text: 'If they be two; they are two so
+
+    As stiffe twin compasses are two,
+
+    Thy soule the fixt foot, makes no show
+
+    To move, but doth, if th''other doe.
+
+
+    And though it in the center sit,
+
+    Yet when the other far doth rome,
+
+    It leanes, and hearkens after it,
+
+    And growes erect, as that comes home.
+
+
+    Such wilt thou be to mee, who must
+
+    Like th''other foot, obliquely runne,
+
+    Thy firmnes makes my circle just,
+
+    And makes me end, where I begunne.'
+annotation_type: formal
+claim:
+  body: This passage demonstrates a consistent rhyme scheme of abab throughout three stanzas. Each stanza
+    uses exact, nearly monosyllabic rhymes, creating a formal regularity that is directly observable in
+    the text. This pattern contributes to the poem's structured and harmonious sound.
+  epistemic_status: documented-fact
+  editorial_confidence:
+    level: unassessed
+    rationale: The claim is straightforward and directly supported by the text, but has not yet been formally
+      reviewed or cross-checked with other analyses.
+  contested: false
+  attributions: []
+evidence:
+- id: ev_base_text
+  source_id: src_d933303080412160
+  relationship: supports
+  use: direct-evidence
+  summary: The quoted lines illustrate the abab rhyme scheme with pairs like so/show, two/doe; sit/it,
+    rome/home; and must/just, runne/begunne, confirming the formal regularity.
+  citation:
+    locator: lines 25-36, 1633 text
+  quotation: 'If they be two; they are two so
+
+    As stiffe twin compasses are two,
+
+    Thy soule the fixt foot, makes no show
+
+    To move, but doth, if th''other doe.
+
+
+    And though it in the center sit,
+
+    Yet when the other far doth rome,
+
+    It leanes, and hearkens after it,
+
+    And growes erect, as that comes home.
+
+
+    Such wilt thou be to mee, who must
+
+    Like th''other foot, obliquely runne,
+
+    Thy firmnes makes my circle just,
+
+    And makes me end, where I begunne.'
+review:
+  state: draft
+  notes: Confirm editorial confidence and cross-check rhyme scheme with other editions before final promotion.
