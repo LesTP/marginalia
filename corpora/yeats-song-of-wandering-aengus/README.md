@@ -3,18 +3,18 @@
 A compact annotated reading of W. B. Yeats's 24-line poem for a general audience. It is
 the first real corpus in this repository and tests how careful provenance can support
 clear literary explanation without asking readers to know the scholarship in advance or
-pretending that interpretation is mechanically decidable.
+pretending that interpretation is mechanically decidable. The corpus contains 13 annotation
+records, including 11 reader-facing notes.
 
-All annotations remain `draft`. Source locators and access states have been checked, but
-no record is `editorially-approved` until a human editor reviews its wording and judgment.
+All annotation records are `human-reviewed`: read for sense, but not yet verified against
+their sources. None is `editorially-approved`, and editorial confidence remains `unassessed`.
 
 For assembled reading and review, open `review.html` in a browser. It keeps the poem
-visible, offers Plain reading plus corpus-configured lenses and a guided pathway, highlights
-the selected annotation's exact target, and presents evidence and source access without
-exposing the YAML structure.
+visible beside one poem-ordered stream of notes, offers the corpus lenses as **Focus**
+filters, highlights the selected note's exact target, and presents evidence and source
+access without exposing the YAML structure.
 
-`review-before-reading-model.html` is a byte-for-byte archival copy of the previous review
-page, retained so the earlier interaction can still be compared with the reusable model.
+Earlier review pages and prototypes are archived in `drafts/` (see `drafts/README.md`).
 
 ## Base Text
 
@@ -37,7 +37,7 @@ work_the_song_of_wandering_aengus
 
 - **Myth and folklore** starts with Yeats's own note on pages 87-89. He names a Greek folk song as the poem's prompt while describing Irish beliefs about spirits that appear as fish or women. The medieval *Aislinge Óenguso* is treated as a revealing comparison, not an unquestioned genetic source.
 - **Form and imagery** examines the three-stanza progression, repeated `And`, light imagery, repeated naming, the future-tense vow, and the scholarly disagreement over the apples.
-- **Text and history** records the 1897 title reported by current scholarship and the directly inspected 1899 title and text. The 1897 periodical witness has not yet been obtained.
+- **Text and history** records the 1897 title reported by current scholarship and the directly inspected 1899 title and text. The 1897 periodical witness has not yet been obtained. It also places the poem's Irish god, written in English, within Yeats's stated cultural program of the 1890s, drawing on his own prose.
 
 ## Source Map
 
@@ -51,20 +51,21 @@ work_the_song_of_wandering_aengus
 | Mazzaro, “Apple Imagery” (1957) | Direct poem-specific scholarship | Fully consulted | Pages 342-343; preserves a debate rather than settling it |
 | McDonald, “The Song of Wandering Aengus” (2020) | Priority modern commentary | Citation only | Supplies no evidence until the chapter is obtained |
 | LiederNet text 28583 | Curated title and publication-history record | Fully consulted | Useful corroboration, not a critical edition |
+| Yeats, *The Celtic Twilight* (1902 ed.), Project Gutenberg 10459 | Yeats's stated aims for his folklore work | Fully consulted | Dedicatory preface only; transcription not checked against page images, so no page numbers |
+| Yeats, *Ideas of Good and Evil* (1903 ed.), Project Gutenberg 32884 | Yeats's stated cultural-nationalist program | Fully consulted | "The Celtic Element in Literature" and "Ireland and the Arts"; located by essay, not page |
 
 ## Guided Reading
 
-The page presents Guided Reading as one short introduction followed by five numbered
-disclosure sections: the initiating fire, the trout's transformation, recognition by name,
-a similar medieval Irish story, and the unfinished search with its apple imagery. The first
-section is open by default; opening another closes the previous section so the current stage
-stays visually connected to the poem.
+The manifest defines Guided Reading as one short introduction followed by five ordered
+steps: the initiating fire, the trout's transformation, recognition by name, a similar
+medieval Irish story, and the unfinished search with its apple imagery.
+
+The current hand-authored `review.html` does not present the pathway: it treats the
+`guided-reading` annotation as route metadata and omits it from the note stream. The
+pathway appears in the generated view archived in `drafts/`.
 
 The order remains an editorial route rather than a claim of scholarly consensus. Each
-section points to existing evidence-bearing annotations, and sections with more than one
-relevant note show those notes together instead of turning them into separate pages. The
-three lenses and All Notes use the same numbered disclosure design, with one top-level
-section open at a time and source detail expandable inside it.
+step points to existing evidence-bearing annotations.
 
 ## Acquisition Priorities
 
@@ -83,6 +84,8 @@ directly consulted.
 - No comprehensive modern variorum has been consulted.
 - The connection with *Aislinge Óenguso* is deliberately qualified: Yeats's own note identifies a Greek folk-song prompt and Irish folkloric associations, while later scholarship argues over the medieval tale's relevance.
 - Formal notes based only on the poem are labeled editorial synthesis or proposal, not scholarship.
+- The Irish-identity note links Yeats's own prose program to this poem as editorial synthesis; it has not been checked against secondary Yeats scholarship.
+- The two Yeats prose sources are Project Gutenberg transcriptions not yet checked against printed page images.
 - Rights fields document the working assessment used by this project and are not legal advice.
 
 ## Render and Validate
@@ -91,10 +94,11 @@ From the repository root:
 
 ```powershell
 reference-corpus-validate .\corpora\yeats-song-of-wandering-aengus\corpus.yaml
-reference-corpus-render .\corpora\yeats-song-of-wandering-aengus\corpus.yaml
+python .\scripts\refresh-review.py .\corpora\yeats-song-of-wandering-aengus\corpus.yaml
 python -m pytest
 ```
 
-`review.html` is deterministic generated output. Make editorial changes in the YAML
-records and rerun the renderer; do not edit the HTML by hand. The preserved
-`review-before-reading-model.html` is a historical snapshot and is not regenerated.
+`review.html` is a hand-authored continuous reading shell with a deterministic embedded
+corpus-data snapshot. Make editorial changes in YAML, then run `refresh-review.py`; do not
+replace the shell with the generic renderer. To produce the generated view, pass `--output`
+to `reference-corpus-render` (for example, `drafts\review-generated-shared-renderer.html`).
