@@ -14,10 +14,11 @@ conceit (last three stanzas) and routed by the section 4.1 disposition test:
   elaborateness read as a sign of emotional need.
 - `circle-no-progress.yaml` -- reading -> proposal (`editorial-proposal`): "end where
   I begun" as form without progress, quietly melancholic.
-- `abab-exact-rhyme.yaml` -- **promoted 2026-10-02** to
-  `../../records/annotations/abab-exact-rhyme.yaml` (backed -> normal,
-  `documented-fact`); tightened to the abab scheme and given a modernized display
-  selector before promotion, so it is no longer in this folder.
+- `abab-exact-rhyme.yaml` -- promoted 2026-10-02, then **retired** the same day. The
+  abab scheme is uniform across all nine stanzas, so a note keyed to the compass
+  stanzas was accurate but misplaced and without payoff (a stage-8 selection miss:
+  verification confirms accuracy, not salience or scope). The content is recoverable
+  from git history.
 
 Plus `research-leads.md` -- the fact -> research-lead branch: a biographical
 world-claim that was **not** turned into a record because no source was consulted.
