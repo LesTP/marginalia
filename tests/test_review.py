@@ -127,7 +127,7 @@ def test_builds_donne_review_model() -> None:
         model["corpus"]["annotation_count"],
         model["corpus"]["authors"],
         len(model["poem"]["lines"]),
-    ) == (4, 13, ["John Donne"], 36)
+    ) == (4, 14, ["John Donne"], 36)
     assert [text["id"] for text in model["texts"]] == [
         "edition-faithful",
         "modernized",
