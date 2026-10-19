@@ -1,7 +1,9 @@
 # DESIGN: Generative Track v1
 
-**Status:** Draft — 2026-09-29. A proposal for discussion; nothing is built. §6
-(infrastructure) is a first inventory, to be elaborated.
+**Status:** Experimental pilot completed 2026-10-02; reusable production tooling is
+not built. The preserved scripts and evidence live under
+`experiments/generative-track/pilot-2026-10/`. Results remain inconclusive pending
+the diverse-text evidence gate in §8.
 **Scope:** a second way of producing corpus records, alongside the existing
 source-first workflow. Same project, same schemas, validator and renderer.
 **Depends on:** `schemas/`, `src/reference_corpus/`, the Editorial Workflow in
@@ -459,9 +461,10 @@ named source can be given.
 ### 7.1 Results, first pass (2026-10-02)
 
 First pass on the Donne compass conceit (the last three stanzas), run on pirozhok via
-diplomat's venv and `.env` keys (the API path, not the FU-28 `claude -p` path). A
-throwaway harness under `_scratch/genpipe/`, not committed. One stanza only -- treat
-as indicative, not general.
+diplomat's venv and `.env` keys (the API path, not the FU-28 `claude -p` path). The
+original throwaway harness and evidence are now preserved, unchanged and explicitly
+non-production, under `experiments/generative-track/pilot-2026-10/`. One stanza only
+-- treat as indicative, not general.
 
 **Stage 2, blind divergence** (same prompt, no context, no personas), at mid tier
 (gpt-4.1-mini, claude-sonnet-4-6, gemini-2.5-flash-lite) and quality tier (gpt-5.5,
@@ -498,12 +501,91 @@ readings):
 - The debate did not collapse into hedging (the *Waste Land* failure mode); concession
   plus counter developed claims rather than averaging them.
 
-**Validated / still open.** The idea-generation half (stages 1-3) holds on first
-contact: variety is real, quality tier lifts novelty, friction develops and tests
-ideas, and the honesty rule survives throughout. Still untested: config C (persona x
-model swap, the ventriloquism control) and the record-producing half (stages 4-6:
-sources, stage-5 YAML + validator, stage-6 verification), along with decisions D1-D3.
+**Validated / still open.** The idea-generation half (stages 1-3) held on first
+contact: variety was real, quality tier lifted novelty, friction developed and tested
+ideas, and the honesty rule survived throughout. The pilot then exercised record
+production and verification manually: three schema-valid Donne drafts, deterministic
+text checks, a strict verifier, a corrected status-aware verifier, and human
+adjudication. General source gathering was not built, and config C (persona x model
+swap, the ventriloquism control) remains untested. Decisions D1-D3 also remain open.
 
 **Roster finding.** Weight toward the strong idea-generators (Opus led; gpt-5.5
 strong), but keep >= 2 models so the shared-vs-singular split still works; Gemini
 earns a place for coverage/confirmation, not novelty.
+
+### 7.2 Outcome after verification and human selection
+
+The manual pipeline did not establish that generative authoring should become a
+supported production workflow.
+
+Two interpretive candidates (`strain-as-tell` and `circle-no-progress`) survived
+status-aware verification as defensible but contested editorial proposals. They remain
+unpublished drafts pending novelty/attribution research, prose work, selectors, and a
+human decision that they add enough value.
+
+The factual abab rhyme-scheme note was corrected, verified, promoted, and then retired
+one hour later. Its description was accurate after correction, but the feature was
+uniform across all nine stanzas, so a note attached to the compass passage was
+mis-scoped and without editorial payoff. This is the pilot's load-bearing negative
+result: verification can establish accuracy and defensibility, but not salience,
+scope, or whether a note helps a reader.
+
+The published compass-instrument gloss was hand-authored after a close-reading
+discussion and is not a generative-track product. No generated pilot note is currently
+published.
+
+A later Ecclesiastes run tested blind divergence and produced an unreviewed preview,
+but did not proceed through sources, record production, verification, edit, or human
+selection. The 1611 witness mock is separate presentation research, not evidence that
+the generative pipeline was completed on Ecclesiastes.
+
+## 8. Diverse-text evidence gate
+
+Do not build a production runner merely because the Donne drafts validated. Before
+productionization, run the complete pipeline on at least three additional, diverse
+texts:
+
+1. Complete Ecclesiastes through source gathering, record production, verification,
+   edit, and human selection.
+2. Run the existing Yeats corpus through the complete track, using its mature
+   source-first annotations as a comparison set.
+3. Choose one structurally different text -- longer prose, drama, or a translated or
+   non-English work -- before that future phase begins.
+
+For each text, record:
+
+- novelty relative to existing annotations and consulted criticism;
+- candidate survival through human selection and actual promotion;
+- confabulation and unverifiable-world-fact rate;
+- salience and scope rejection rate, not only factual verification;
+- the human "sends me back to the text" judgment;
+- cost, latency, and model/provider variability;
+- the persona-versus-model diversity control, including the unrun config C swap.
+
+Productionization requires useful human-selected output across the matrix, acceptable
+provenance failure rates, and evidence that the workflow adds value beyond ordinary
+source-first editorial work. A high validation pass rate alone is insufficient.
+
+## 9. Productionization roadmap
+
+This is a prerequisite list, not approved implementation work.
+
+1. Replace hardcoded passages, prompts, model IDs, paths, and output directories with
+   explicit per-text configuration and a corpus-neutral runner.
+2. Generalize blind divergence while preserving prompt/model provenance, cost, and a
+   deterministic output layout.
+3. Extract domain-free components into Toolkit only when Reference Corpus qualifies as
+   a real second consumer: critic, divergence comparison, discussion/argue loop,
+   independent judge pattern, and cached/retrying document fetch.
+4. Keep corpus-specific behavior here: deterministic target and quotation checks,
+   epistemic-status-aware rubrics, reading/fact disposition routing, source-span
+   matching, frozen-field checks, and canonical JSON-compatible YAML writing.
+5. Reuse existing `toolkit.structured_llm.structured_call`,
+   `toolkit.cost_accountant.CostAccountant`, `toolkit.source_ingestion.normalization`,
+   `toolkit.prompt_regression`, and the existing `reference_corpus` identifiers,
+   targets, validator, and YAML loader rather than rebuilding them.
+6. Resolve D1-D3, D7, and D8 before accepting a supported write path or publishing a
+   controlled generated-provenance vocabulary.
+7. Add hermetic unit tests, prompt-regression cases, multi-corpus acceptance tests,
+   frozen-field tests, and an explicit human promotion workflow before calling the
+   track production-ready.

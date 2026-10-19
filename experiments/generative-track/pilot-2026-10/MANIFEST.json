@@ -1,0 +1,383 @@
+{
+  "schema_version": 1,
+  "source_root": "P:/shared/_scratch/genpipe",
+  "destination_root": "P:/shared/reference-corpus-template/experiments/generative-track/pilot-2026-10",
+  "captured_on": "2026-10-18",
+  "source_file_count": 41,
+  "retained_file_count": 36,
+  "deleted_file_count": 5,
+  "files": [
+    {
+      "source_path": "apply_verdicts.py",
+      "destination_path": "scripts/apply_verdicts.py",
+      "bytes": 7353,
+      "sha256": "bcc339743ef930c7591ba546365b9d65dc017b85402bde58fae650c3c1f9c2d6",
+      "destination_sha256": "bcc339743ef930c7591ba546365b9d65dc017b85402bde58fae650c3c1f9c2d6",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "author_gloss.py",
+      "destination_path": "scripts/author_gloss.py",
+      "bytes": 6376,
+      "sha256": "9f288262ce4c47b53e3d36b43bd9f015e0ee288673c9adefcad2e1f8f4f499fd",
+      "destination_sha256": "9f288262ce4c47b53e3d36b43bd9f015e0ee288673c9adefcad2e1f8f4f499fd",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "build_ecc_poc.py",
+      "destination_path": "scripts/build_ecc_poc.py",
+      "bytes": 7536,
+      "sha256": "6ce9417befa36c72bfd4f2c755be146e5bf58cf6f66c8da7518714ce01e2027a",
+      "destination_sha256": "6ce9417befa36c72bfd4f2c755be146e5bf58cf6f66c8da7518714ce01e2027a",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "check_env.py",
+      "destination_path": null,
+      "bytes": 695,
+      "sha256": "f46dd18bb274711bed92e043fa3fbb0cd89ce346fafd7aed5469a4660a576599",
+      "destination_sha256": null,
+      "disposition": "deleted-with-reason",
+      "reason": "Throwaway environment-presence probe."
+    },
+    {
+      "source_path": "ecc_step1.py",
+      "destination_path": "scripts/ecc_step1.py",
+      "bytes": 5171,
+      "sha256": "44e10201c70f02e2983135d65142ca9f4b511fc516b5b71d44dadfb8482f0306",
+      "destination_sha256": "44e10201c70f02e2983135d65142ca9f4b511fc516b5b71d44dadfb8482f0306",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "find_keys.py",
+      "destination_path": null,
+      "bytes": 1435,
+      "sha256": "1f4354e9882ddda0663847d79feb8064ff69be8b18446877706e4541d39c7b36",
+      "destination_sha256": null,
+      "disposition": "deleted-with-reason",
+      "reason": "Throwaway API-key-location probe."
+    },
+    {
+      "source_path": "find_models.py",
+      "destination_path": null,
+      "bytes": 1017,
+      "sha256": "3e493c6527863796f1ec056ada54b88334c5f0732d701e0325b9256cc8f5b6a5",
+      "destination_sha256": null,
+      "disposition": "deleted-with-reason",
+      "reason": "Throwaway model-ID discovery probe."
+    },
+    {
+      "source_path": "out/ecc_step1/anthropic.md",
+      "destination_path": "evidence/ecc_step1/anthropic.md",
+      "bytes": 3899,
+      "sha256": "9c98306fd1e9526536436867028e24bc78fbde18d1c3021b2139243fc4d01e29",
+      "destination_sha256": "9c98306fd1e9526536436867028e24bc78fbde18d1c3021b2139243fc4d01e29",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/ecc_step1/google.md",
+      "destination_path": "evidence/ecc_step1/google.md",
+      "bytes": 2999,
+      "sha256": "41fc62696e57acb3edf4d8fd530b453f8268365577e576a347f0c7801b013b39",
+      "destination_sha256": "41fc62696e57acb3edf4d8fd530b453f8268365577e576a347f0c7801b013b39",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/ecc_step1/openai.md",
+      "destination_path": "evidence/ecc_step1/openai.md",
+      "bytes": 1845,
+      "sha256": "dc5607a49a4bf16f7d440ecb5c388e3e8c8789a99cb9f0e41598fdc45ce8420a",
+      "destination_sha256": "dc5607a49a4bf16f7d440ecb5c388e3e8c8789a99cb9f0e41598fdc45ce8420a",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/ecc_step1/poc.html",
+      "destination_path": "evidence/ecc_step1/poc.html",
+      "bytes": 15727,
+      "sha256": "f43a1a2531aa91c4d10731a61847ab919533a075c171aca2dd6eb178b07dbdd3",
+      "destination_sha256": "4d532496f843cd5bc66a047410d68ac7f7dc8847e778b782caec5c76b56ef131",
+      "disposition": "retained",
+      "reason": null,
+      "destination_bytes": 15638,
+      "normalization": "CRLF-to-LF after byte-preserving migration, required by repository text-file policy."
+    },
+    {
+      "source_path": "out/ecc_step1/results.md",
+      "destination_path": "evidence/ecc_step1/results.md",
+      "bytes": 8862,
+      "sha256": "866f895422bc45fdf5470a22be9e5a1f0e71f0c1239322a7d062288fbba6f786",
+      "destination_sha256": "866f895422bc45fdf5470a22be9e5a1f0e71f0c1239322a7d062288fbba6f786",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1_quality/anthropic_claude-opus-4-6.md",
+      "destination_path": "evidence/step1_quality/anthropic_claude-opus-4-6.md",
+      "bytes": 3245,
+      "sha256": "e4d23663ca43bfae65580b3a0a37429772ebf6ee9b418d381212c61898229ae2",
+      "destination_sha256": "e4d23663ca43bfae65580b3a0a37429772ebf6ee9b418d381212c61898229ae2",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1_quality/google_gemini-2-5-flash.md",
+      "destination_path": "evidence/step1_quality/google_gemini-2-5-flash.md",
+      "bytes": 270,
+      "sha256": "b18963e7905d337aa96d6b6040c7124b5c22e59e028ee7ab176b4121bcfad946",
+      "destination_sha256": "b18963e7905d337aa96d6b6040c7124b5c22e59e028ee7ab176b4121bcfad946",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1_quality/google_gemini-2-5-pro.md",
+      "destination_path": "evidence/step1_quality/google_gemini-2-5-pro.md",
+      "bytes": 2404,
+      "sha256": "bebb75041f8feec2be0b662b14b709039e5b77bf7043a5e41cf4f298fdcad886",
+      "destination_sha256": "bebb75041f8feec2be0b662b14b709039e5b77bf7043a5e41cf4f298fdcad886",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1_quality/openai_gpt-5-5.md",
+      "destination_path": "evidence/step1_quality/openai_gpt-5-5.md",
+      "bytes": 2011,
+      "sha256": "0a6a964264817fb18e8b975d9a71e87572aeb1b2dd874a03715fcfb63a8f80fa",
+      "destination_sha256": "0a6a964264817fb18e8b975d9a71e87572aeb1b2dd874a03715fcfb63a8f80fa",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1_quality/results.md",
+      "destination_path": "evidence/step1_quality/results.md",
+      "bytes": 7794,
+      "sha256": "5b3103e93def6e8533d7c5a878b8a5e261e6629db13d3a0a457611baa548ca7b",
+      "destination_sha256": "5b3103e93def6e8533d7c5a878b8a5e261e6629db13d3a0a457611baa548ca7b",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1/anthropic_claude-sonnet-4-6.md",
+      "destination_path": "evidence/step1/anthropic_claude-sonnet-4-6.md",
+      "bytes": 2954,
+      "sha256": "de6bb81578b61b4b52648a0215f5a2ea283a4f848bbb5f02d67a9d1a7b73958b",
+      "destination_sha256": "de6bb81578b61b4b52648a0215f5a2ea283a4f848bbb5f02d67a9d1a7b73958b",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1/google_gemini-2-5-flash-lite.md",
+      "destination_path": "evidence/step1/google_gemini-2-5-flash-lite.md",
+      "bytes": 1625,
+      "sha256": "f24cb59d55aa18677688dc467d84f577f321bf92398ed705839fe9c41cd5eb66",
+      "destination_sha256": "f24cb59d55aa18677688dc467d84f577f321bf92398ed705839fe9c41cd5eb66",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1/openai_gpt-4-1-mini.md",
+      "destination_path": "evidence/step1/openai_gpt-4-1-mini.md",
+      "bytes": 2044,
+      "sha256": "ab27a6f0c917b97f49d1b845b70c5699bbb746bf58d241a7d6fb92162873a09c",
+      "destination_sha256": "ab27a6f0c917b97f49d1b845b70c5699bbb746bf58d241a7d6fb92162873a09c",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step1/results.md",
+      "destination_path": "evidence/step1/results.md",
+      "bytes": 6738,
+      "sha256": "15dce906899685494389ab8e426cc3d1a31d37919bdf9bf64c968e3c02a46ded",
+      "destination_sha256": "15dce906899685494389ab8e426cc3d1a31d37919bdf9bf64c968e3c02a46ded",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step3/a1.md",
+      "destination_path": "evidence/step3/a1.md",
+      "bytes": 4613,
+      "sha256": "6b60d565e896124a5a659cd63d9c6901cd7d3870ea806b64cfbdb6a82fd8b4f2",
+      "destination_sha256": "6b60d565e896124a5a659cd63d9c6901cd7d3870ea806b64cfbdb6a82fd8b4f2",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step3/a2.md",
+      "destination_path": "evidence/step3/a2.md",
+      "bytes": 7339,
+      "sha256": "d3cf15de15ec21128e19c89d55b053647b116861beb104d23b32e3adb19176e1",
+      "destination_sha256": "d3cf15de15ec21128e19c89d55b053647b116861beb104d23b32e3adb19176e1",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step3/b1.md",
+      "destination_path": "evidence/step3/b1.md",
+      "bytes": 3360,
+      "sha256": "17bc753366235a5d89d4fb2bc42c61fa46563076444e27405d6add18a2d79209",
+      "destination_sha256": "17bc753366235a5d89d4fb2bc42c61fa46563076444e27405d6add18a2d79209",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step3/b2.md",
+      "destination_path": "evidence/step3/b2.md",
+      "bytes": 4384,
+      "sha256": "bf833fa8f0eaf1880a55d1a5c458bc6800730cbc50bb77dddd2c111f61598bb8",
+      "destination_sha256": "bf833fa8f0eaf1880a55d1a5c458bc6800730cbc50bb77dddd2c111f61598bb8",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step3/obs.md",
+      "destination_path": "evidence/step3/obs.md",
+      "bytes": 2868,
+      "sha256": "3fccae2346709f6ddeb36c760edb2bddda1866db928d74601524add0bab7a4fc",
+      "destination_sha256": "3fccae2346709f6ddeb36c760edb2bddda1866db928d74601524add0bab7a4fc",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step3/transcript.md",
+      "destination_path": "evidence/step3/transcript.md",
+      "bytes": 22844,
+      "sha256": "605038dd1e27f299d45f6b4fbea6422ac1fbefd0867c0a93495669285c802f01",
+      "destination_sha256": "605038dd1e27f299d45f6b4fbea6422ac1fbefd0867c0a93495669285c802f01",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step6_v2/verify_report.md",
+      "destination_path": "evidence/step6_v2/verify_report.md",
+      "bytes": 1990,
+      "sha256": "cba4ef10fb406622442bddfe4edc5ec92d8d3e6e24d84c50dc8262e35c6fca78",
+      "destination_sha256": "cba4ef10fb406622442bddfe4edc5ec92d8d3e6e24d84c50dc8262e35c6fca78",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step6_v2/verify_results.json",
+      "destination_path": "evidence/step6_v2/verify_results.json",
+      "bytes": 2435,
+      "sha256": "9493d509625e797600afe10c1b6c46c9b7ef55db4e0ba75388cc75634b216371",
+      "destination_sha256": "9493d509625e797600afe10c1b6c46c9b7ef55db4e0ba75388cc75634b216371",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step6/verify_report.md",
+      "destination_path": "evidence/step6/verify_report.md",
+      "bytes": 2683,
+      "sha256": "e5c61a83a7f07b4affe7873b9f09b13fedecb68c3a481944a7b9bda3079c3af9",
+      "destination_sha256": "e5c61a83a7f07b4affe7873b9f09b13fedecb68c3a481944a7b9bda3079c3af9",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "out/step6/verify_results.json",
+      "destination_path": "evidence/step6/verify_results.json",
+      "bytes": 3083,
+      "sha256": "514f4a18e12a222917688b131b03452ac8c0407595016991659c9e2aefe9e1a6",
+      "destination_sha256": "514f4a18e12a222917688b131b03452ac8c0407595016991659c9e2aefe9e1a6",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "preflight.py",
+      "destination_path": null,
+      "bytes": 1080,
+      "sha256": "ad933bcdf6fea52d15fcd1235afc2910762a13213033e0c246b960551cd45462",
+      "destination_sha256": null,
+      "disposition": "deleted-with-reason",
+      "reason": "Throwaway dependency/model preflight."
+    },
+    {
+      "source_path": "promote_abab.py",
+      "destination_path": "scripts/promote_abab.py",
+      "bytes": 3262,
+      "sha256": "264d76261d04fd54c6c338f916c4ca9358653ebf4050a22f977d63117a491f13",
+      "destination_sha256": "264d76261d04fd54c6c338f916c4ca9358653ebf4050a22f977d63117a491f13",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "stage45.py",
+      "destination_path": "scripts/stage45.py",
+      "bytes": 10794,
+      "sha256": "ff314d0ffa58560004ac8bd41359f80bf6c5cb2919533dab70652bafc55b2844",
+      "destination_sha256": "ff314d0ffa58560004ac8bd41359f80bf6c5cb2919533dab70652bafc55b2844",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "stage6a_deterministic.py",
+      "destination_path": "scripts/stage6a_deterministic.py",
+      "bytes": 3002,
+      "sha256": "5ecd8e075beb16350ed35ff8e0155ed43668a6c30e6028577f4ff2d9055f0a97",
+      "destination_sha256": "5ecd8e075beb16350ed35ff8e0155ed43668a6c30e6028577f4ff2d9055f0a97",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "stage6b_statusaware.py",
+      "destination_path": "scripts/stage6b_statusaware.py",
+      "bytes": 6568,
+      "sha256": "e11801953d16a51340efbe8879aae6d8341c4459bcd688ac6df204134d6391ea",
+      "destination_sha256": "e11801953d16a51340efbe8879aae6d8341c4459bcd688ac6df204134d6391ea",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "stage6b_verify.py",
+      "destination_path": "scripts/stage6b_verify.py",
+      "bytes": 5460,
+      "sha256": "c52d31bf92b0ba0ee2fc244559cb9c73c5d7d2012ff25b2c1e08e6bf91fcea07",
+      "destination_sha256": "c52d31bf92b0ba0ee2fc244559cb9c73c5d7d2012ff25b2c1e08e6bf91fcea07",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "step1_diverge.py",
+      "destination_path": "scripts/step1_diverge.py",
+      "bytes": 4452,
+      "sha256": "18d0b449056868fb5fd8761a2921a540d944ec63d3af45c54c13abbdb232b827",
+      "destination_sha256": "18d0b449056868fb5fd8761a2921a540d944ec63d3af45c54c13abbdb232b827",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "step1_quality.py",
+      "destination_path": "scripts/step1_quality.py",
+      "bytes": 4904,
+      "sha256": "da1e1e01b3c817b05aa550ae38814835525308211d1af61ebf4eb790b88e1ab5",
+      "destination_sha256": "da1e1e01b3c817b05aa550ae38814835525308211d1af61ebf4eb790b88e1ab5",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "step3_argue.py",
+      "destination_path": "scripts/step3_argue.py",
+      "bytes": 7447,
+      "sha256": "7986e4e0c472a032947a1f28984ffd0d34ebd1094b9d8e80853f1a12b65257de",
+      "destination_sha256": "7986e4e0c472a032947a1f28984ffd0d34ebd1094b9d8e80853f1a12b65257de",
+      "disposition": "retained",
+      "reason": null
+    },
+    {
+      "source_path": "verify_input.json",
+      "destination_path": null,
+      "bytes": 4223,
+      "sha256": "76081fbbac77a9da80519a4c378c60728c1f631b9ca27f2175518bbf4fa2112d",
+      "destination_sha256": null,
+      "disposition": "deleted-with-reason",
+      "reason": "Regenerable stage-6 intermediate handoff."
+    }
+  ],
+  "preservation_note": "All retained files matched source hashes before source deletion. evidence/ecc_step1/poc.html was then normalized from CRLF to LF; source and destination hashes are both recorded."
+}

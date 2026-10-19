@@ -63,6 +63,7 @@ corpora/                     Self-contained poem corpora and their reading views
 schemas/                     Shared JSON Schema Draft 2020-12 contracts
 templates/                   Copyable YAML starters
 examples/valid/              Fictional contract examples
+experiments/                 Non-production research pilots and retained evidence
 scripts/refresh-review.py    Refreshes the embedded data in a hand-authored review.html
 src/reference_corpus/        Shared read-only validator, ID derivation, and renderer
 tests/                       Contract, renderer, failure-mode, and real-corpus tests
@@ -91,6 +92,44 @@ block scalar (`>-`) or it will be misparsed as a quoted string.
 The internal Python package is still named `reference_corpus`, with the console commands
 `reference-corpus-validate` and `reference-corpus-render`. Renaming the package is deferred;
 it is invisible to the published pages.
+
+## Experimental Work
+
+Marginalia is source-first, but the repository also preserves a **non-production
+generative authoring experiment**. The experiment asked whether several models could
+generate broader candidate readings, argue over the strongest ones, and then pass the
+same sourcing, evidence, validation, and human-selection standards as source-first work.
+It does not relax the editorial contract and is not a supported annotation-writing tool.
+
+Cold start with:
+
+- [`DESIGN_generative_track_v1.md`](DESIGN_generative_track_v1.md) for the formal
+  design, open decisions, evidence gate, and productionization roadmap;
+- [`experiments/generative-track/pilot-2026-10/README.md`](experiments/generative-track/pilot-2026-10/README.md)
+  for the preserved October 2026 pilot, actual outcomes, scripts, evidence, and known
+  limitations.
+
+| Track | Current state | Next gate |
+|---|---|---|
+| Donne | One manual end-to-end pilot; two proposals remain drafts and no generated pilot note remains published | Retain as the baseline and negative-selection evidence |
+| Ecclesiastes | Blind divergence and an unreviewed preview only | Complete sources, records, verification, edit, and human selection |
+| Yeats | Not tested | Run the complete track against its mature source-first corpus |
+| Structurally different text | Not selected | Choose and run prose, drama, or a translated/non-English work |
+| Reusable tooling | Not built | Blocked on cross-text evidence that the approach adds editorial value |
+
+There are two distinct MVP boundaries:
+
+1. **Research MVP:** complete the full pipeline on at least three additional diverse
+   texts and measure novelty, human-selection survival, confabulation, salience/scope
+   failures, reader value, cost, and model/persona variability. This MVP is incomplete.
+2. **Tooling MVP:** only after the research gate passes, build a configurable
+   corpus-neutral runner, source-fetch and source-span verification, deterministic and
+   status-aware checks, frozen-field enforcement, resolved provenance decisions, and
+   hermetic tests. This MVP has not started.
+
+The preserved pilot scripts contain hardcoded passages, model IDs, filesystem paths, and
+runtime assumptions. Do not run them as production commands or start paid experiments
+without an explicit plan and budget.
 
 ## Two Presentation Views
 

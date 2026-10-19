@@ -33,19 +33,27 @@ were restored defensively; ids were derived with `reference_corpus.identifiers`;
 each record was validated against the real `annotation.schema.json` + registry
 (Draft 2020-12). Confabulation in this run: none.
 
-## What remains before any of these could be promoted
+## What remains before the surviving proposals could be promoted
+
+Stage-6 verification is complete. Deterministic checks passed, and the status-aware
+verifier found both surviving editorial proposals defensible but contested. Human
+adjudication folded each competing reading into the draft. The factual abab note was
+corrected, promoted, and then retired as accurate but mis-scoped and without editorial
+payoff.
+
+The two remaining proposals still need:
 
 1. **Display selectors.** The Donne corpus has a modernized derived text view, so each
-   annotation needs `target.display_selectors` for it before it can enter the manifest
-   and pass full `reference-corpus-validate`. (These drafts were validated against the
-   schema only, not the full corpus cross-checks.)
-2. **Stage-6 verification.** An independent model should check each quotation and claim
-   against the source text -- e.g. the `documented-fact` says the rhymes are "exact,"
-   which is borderline on period pronunciation and should be verified.
-3. **Novelty / attribution check.** `strain-as-tell` and `circle-no-progress` echo
+   annotation needs `target.display_selectors` before it can enter the manifest and
+   pass full `reference-corpus-validate`.
+2. **Novelty / attribution research.** `strain-as-tell` and `circle-no-progress` echo
    existing Donne criticism; if a named critic is found, they become
    `attributed-interpretation` rather than `editorial-proposal`.
-4. **Prose / edit pass.** Mid-tier prose; a stage-7 edit (evidence frozen) would lift it.
+3. **Prose / edit pass.** Their evidence and targets are frozen, but the prose remains
+   draft quality.
+4. **Human selection.** Verification establishes defensibility, not salience. A human
+   editor must decide whether either note materially helps a reader.
 
-The generation harness itself is throwaway and lives outside the repo
-(`_scratch/genpipe/`), not committed.
+The original throwaway generation harness lived outside the repository at
+`_scratch/genpipe/`. Its scripts and evidence are now preserved as a non-production
+pilot under `experiments/generative-track/pilot-2026-10/` at the repository root.

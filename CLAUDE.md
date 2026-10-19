@@ -7,6 +7,29 @@ corpora beneath one shared toolchain. It codifies provenance, citations, epistem
 access limits, rights metadata, and editorial review without treating literary
 interpretation as mechanically decidable.
 
+## Experimental Work
+
+The repository also contains a **non-production generative authoring experiment**. It
+starts from multi-model readings rather than consulted sources, but any surviving record
+must still satisfy the same provenance, evidence, validation, and human-review contract.
+
+Cold-start orientation for that track:
+
+- Read `DESIGN_generative_track_v1.md` for the formal design, open decisions, current
+  evidence, diverse-text gate, and productionization roadmap.
+- Read `experiments/generative-track/pilot-2026-10/README.md` for what was actually run,
+  why the harness was originally external, retained evidence, and known limitations.
+- Donne completed one manual pilot; no generated pilot note remains published.
+- Ecclesiastes reached blind divergence and preview only; Yeats and a structurally
+  different text have not been tested.
+- The **research MVP** is incomplete: complete the full pipeline on at least three
+  additional diverse texts and evaluate human-selected value, not just validation.
+- The **tooling MVP** is not started and is blocked on the research MVP. Do not treat the
+  preserved scripts as supported commands or begin productionization without a separate
+  approved phase.
+- Do not run paid model experiments or preserved pilot scripts without explicit operator
+  direction and a defined budget.
+
 ## Project Rules
 
 - Canonical corpus records are JSON-compatible YAML (`.yaml`, not `.yml`).
