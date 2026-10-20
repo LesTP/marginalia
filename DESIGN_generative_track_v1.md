@@ -127,15 +127,15 @@ disposition turns on one question:
 > Does the claim assert something about the world outside the poem (a fact, date,
 > event, influence, biography), or does it offer a way of *reading the text*?
 
-A world-fact needs an external source. A reading needs only the poem, which is
-always a fully-consulted, public-domain source in the corpus. Three terminal
-dispositions follow:
+A world-fact needs an external source to be presented as established. A reading
+needs only the poem, which is always a fully-consulted, public-domain source in the
+corpus. Three terminal dispositions follow:
 
 | Disposition | When | Epistemic status | Evidence | Where it goes |
 |---|---|---|---|---|
 | **backed -> normal** | A source was consulted that supports the claim as stated | Whatever the evidence warrants (`documented-fact`, `scholarly-consensus`, `attributed-interpretation`, `editorial-synthesis`) | The consulted source, with locator and quoted span | Continues through stages 5-7 |
 | **reading -> proposal** | The claim is a reading/interpretation; no external scholarship, but the text supports it | `editorial-proposal` (or `conjecture` if deliberately speculative) | The base-text lines (`use: direct-evidence`, `relationship: supports`) | Published once a human reclassifies, points evidence at the text, and signs off |
-| **fact -> research-lead** | The claim asserts a world-fact and no reachable source backs it | none assignable; **not published as fact** | none | Retained as a flagged draft in `drafts/generative-track/` (D3), recording the claim, what was searched, and which source would settle it |
+| **fact -> unverified** | The claim asserts an externally checkable world-fact and a recorded search found no reachable source that backs it | `unverified`; **not presented as fact** | No supporting evidence; a required verification note records what was searched and which source would settle it | May be published inline only after human review, with a prominent **Unverified** warning; otherwise retained in `drafts/generative-track/` (D3) |
 
 Notes:
 
@@ -145,17 +145,24 @@ Notes:
   "editorial proposal," never a fact in disguise. Precedent already in the Yeats
   corpus: `light-and-time` and `future-vow` are `editorial-proposal` records whose
   only evidence is the 1899 base text.
-- **`fact -> research-lead` is the guardrail.** "Interesting" can promote a
-  reading, but it cannot make a world-fact true. An unbackable factual claim stays
-  a lead (this is the narrow D1 case), never published prose. This mirrors the
-  *Waste Land* citation brief's rule: report the gap, do not invent a source
-  (section 3, principle on novelty and the "report rather than fix" discipline).
+- **`fact -> unverified` is the guardrail.** "Interesting" can promote a reading,
+  but it cannot make a world-fact true. In the narrow D1 case, an unresolved factual
+  claim may appear inline only with an **Unverified** label and warning that no
+  supporting source was found. The warning must expose the search scope and name the
+  kind of source that would settle the claim. An `unverified` record cannot support
+  another claim, contribute to `scholarly-consensus`, or be paraphrased elsewhere as
+  established. This mirrors the *Waste Land* citation brief's rule: report the gap,
+  do not invent a source (section 3, principle on novelty and the "report rather than
+  fix" discipline).
 - **Mechanical stage-6 failures are not dispositions.** A wrong locator or a
   mistyped quotation against the *right* source loops back to fix the record; only
   a genuine "the source does not support this" or "no source exists" triggers a
   disposition.
 - **Confidence and review state are set by the human** at stage 8 (per
   `CLAUDE.md`: editorial confidence is a human assessment, not model confidence).
+  For `unverified`, publication requires human review of its reader value, wording,
+  warning, and search account, while `editorial_confidence` remains `unassessed`;
+  review of the presentation does not verify the underlying claim.
 
 ### 4.2 Discussion participants (casting stages 2-3)
 
@@ -196,32 +203,53 @@ section 4.1:
 - a defensible reading with no external scholarship -> `editorial-proposal`, the text
   as its evidence, optionally framed as "one way to read this was as a stake in debate
   X";
-- an invented quotation or attribution -> caught at stage 6, demoted to a
-  research-lead or dropped.
+- an unsupported but externally checkable claim -> `unverified` under D1 after a
+  recorded source search; an invented quotation or attribution -> dropped.
 
 **Model diversity and persona diversity are orthogonal.** Different stances
 decorrelate *perspective*; different model families decorrelate *training and error*.
 Cast persona x model where possible, so the debate is not one model ventriloquizing
 every voice (the *Waste Land* "model playing a critic" failure).
 
-## 5. Open decisions
+## 5. Decisions and open questions
 
-- **D1. Unsourced factual background (the `fact -> research-lead` case).** This is
-  now scoped by section 4.1: it covers *only* world-facts that are probably true but
-  that no reachable source supports. Readings and opinions are out of scope for D1 —
-  they are handled by `reading -> proposal` and need no external source. What remains
-  open for the factual case: (a) publish with a new visible status, (b) keep it as a
-  flagged research-lead in `drafts/generative-track/` (the current default), or
-  (c) never let it past stage 5. The schema still has no status that fits a
-  probably-true-but-unbacked fact: `editorial-synthesis` needs recorded evidence and
-  `conjecture` mislabels it.
-- **D2. What counts as "consulted".** If a model read the full source text in
-  context, is that `fully-consulted`? Or does `access` describe what a human
-  editor consulted? This affects every stage 4–6 record.
-- **D3. Where generative-track records live and how they are marked.** The options:
-  mixed into existing corpora, kept as separate corpora, or distinguished by a field
-  (the free-text `provenance.created_by` exists; a controlled vocabulary would make
-  it checkable). Is the origin shown to readers?
+- **D1. Unsourced factual background (resolved 2026-10-19).** Add `unverified` to
+  the controlled `epistemicStatus` vocabulary for the narrow `fact -> unverified`
+  disposition in section 4.1. It covers externally checkable world-claims for which
+  a recorded search found no reachable supporting source; it does not mean "probably
+  true." Readings and opinions remain out of scope because `reading -> proposal`
+  handles them using the text as evidence. An `unverified` record may appear inline
+  only after human selection and with a prominent reader-facing warning; it cannot
+  serve as evidence for another claim. Schema work must add the status, allow no
+  supporting evidence only for that status, and require a verification note recording
+  the search scope and the kind of source that would settle the claim. Renderer and
+  hand-authored reading views must present the warning before the claim rather than
+  relying on color or a metadata drawer.
+- **D2. What counts as "consulted" (resolved 2026-10-19).** Access describes how
+  much source material was actually inspected by the research process, not
+  exclusively by a human. Complete model inspection qualifies as
+  `fully-consulted`. Source records must identify whether consultation was by a
+  model, human, or both through a controlled `access.consulted_by` field. Human
+  source verification is optional and remains a separate annotation review state;
+  `review.state: source-verified` is authoritative, and the interface may render it
+  as an `H` badge. The access state must describe what was actually supplied: a
+  truncated source remains `excerpt-consulted`, and a citation or search snippet
+  remains `citation-only`, regardless of what the model reports having read.
+- **D3. Where generative-track records live and how they are marked (resolved
+  2026-10-19).** Use one corpus and one annotation schema for both tracks. Add a
+  required, immutable `provenance.origin_track` with controlled values
+  `source-first` and `generative-track`. The value records what set the candidate's
+  agenda, not who drafted the final prose: a generated candidate remains
+  `generative-track` after sourcing and human editing, while model assistance on a
+  source-led annotation remains `source-first`. Do not add a `hybrid` value unless
+  real cases show that this rule cannot classify them. Keep free-text
+  `provenance.created_by` for descriptive authorship, and allow an optional future
+  `provenance.process_ref` to link a preserved run or experiment manifest.
+  Published records live in the ordinary corpus and satisfy the same evidence,
+  validation, and review contract. The reading interface exposes `origin_track` in
+  provenance details, not as an epistemic warning or headline badge; claim standing
+  continues to come from evidence, status, confidence, and review, including D2's
+  optional `H` badge.
   - **Finding (2026-09-29, Yeats "irish-identity" pilot).** *Unpublished* drafts must
     live in `corpora/<slug>/drafts/generative-track/`, not in the corpus `records/`
     tree. The validator requires every file under `records/sources/` and
@@ -231,22 +259,34 @@ every voice (the *Waste Land* "model playing a critic" failure).
     `records/`: a draft placed there fails validation and breaks the pinned tests.
     Keeping drafts under `drafts/generative-track/` leaves them beside the poem,
     out of the validator's `records/` scan, and out of the published reading view.
+  - **One-schema boundary.** A file represented as a source or annotation draft must
+    validate against the same record schema used for publication; there is no relaxed
+    generative-record schema. Earlier prompts, candidates, debates, and reports are
+    process evidence rather than corpus records and may use experiment-specific
+    formats.
   - **Validation of a draft in that location.** The corpus validator only checks
     records reachable from the manifest, so a draft in `drafts/generative-track/` is
     not validated in place. To validate it, temporarily add its relative paths to the
     manifest `sources`/`annotations`, run `reference-corpus-validate`, then revert the
-    manifest. (Done for the Yeats pilot: exit 0.)
+    manifest. (Done for the Yeats pilot: exit 0.) A future standalone-record validation
+    path may remove this temporary-manifest step without changing the schema.
   - **Promotion path (verified).** Move the source files into `records/sources/` and
     the annotation into `records/annotations/`, add all three to `corpus.yaml`, set
     `review.state` (e.g. `human-reviewed` with reviewer and date), refresh the reading
-    view (`python scripts\refresh-review.py <corpus.yaml>`), and update the pinned
-    counts in `tests/test_validation.py` and `tests/test_review.py`.
-  - **Still open:** whether *published* generative-track records are marked in a
-    controlled `provenance.created_by` vocabulary (the pilot uses free text,
-    `"Devmate generative-track draft"`), and whether that origin is shown to readers.
-- **D4. Tertiary sources.** Wikipedia and similar: either recorded honestly
-  (`authority: established-reference` or `informal-resource`, context-only), or
-  used as finding aids only, with the underlying source cited instead.
+    view (`python scripts/refresh-review.py <corpus.yaml>`), and update the pinned
+    counts in `tests/test_validation.py` and `tests/test_review.py`. Promotion never
+    erases or changes `provenance.origin_track`.
+- **D4. Tertiary sources (resolved 2026-10-19).** Wikipedia and similar sources
+  may be retained in the source graph rather than hidden as finding aids, but their
+  standing and limits must be explicit. Classify them with the existing
+  `quality.authority` flag (`established-reference` or `informal-resource`), record
+  the applicable `quality.peer_review_status` and an honest `quality.rationale`, and
+  restrict annotation evidence drawn from them to `use: context-only`. They may
+  orient research, surface candidate connections, and point to underlying sources;
+  they do not by themselves support a published factual or scholarly claim. When a
+  claim depends on material encountered through a tertiary source, consult and cite
+  the strongest reachable underlying source. This keeps the actual discovery path
+  visible without silently upgrading tertiary material into scholarship.
 - **D5. Model roster and independence.** Which models fill which roles; blind first
   rounds; which additions need new adapters (for example Grok).
 - **D6. Process records.** Keep every round (the *Waste Land* keeps 198 debate
@@ -425,9 +465,14 @@ After reuse, what truly remains:
 - `toolkit.doc_fetch` fetch+cache+retry module (stage 4);
 - the source-span matcher (stage 6);
 - the frozen-field diff (stage 7);
-- schema decisions D1-D3, especially whether generative drafts validate against
-  `annotation.schema.json` as-is or a relaxed draft schema (ties to the D3
-  `drafts/generative-track/` finding and the section 4.1 dispositions).
+- implementation of resolved D1: the `unverified` status, its conditional
+  evidence/verification-note rules, and the mandatory inline warning;
+- implementation of resolved D2: add controlled `access.consulted_by` values
+  (`model`, `human`, `both`) to source records and derive the optional `H` badge
+  from annotation `review.state: source-verified`;
+- implementation of resolved D3: add and backfill required
+  `provenance.origin_track`, validate generative record drafts against the same schema
+  without publishing them, and expose origin in provenance details.
 
 ## 7. First experiments
 
@@ -507,7 +552,8 @@ ideas, and the honesty rule survived throughout. The pilot then exercised record
 production and verification manually: three schema-valid Donne drafts, deterministic
 text checks, a strict verifier, a corrected status-aware verifier, and human
 adjudication. General source gathering was not built, and config C (persona x model
-swap, the ventriloquism control) remains untested. Decisions D1-D3 also remain open.
+swap, the ventriloquism control) remains untested. D1-D3 were open at the time of
+this pilot; D1-D3 were resolved on 2026-10-19.
 
 **Roster finding.** Weight toward the strong idea-generators (Opus led; gpt-5.5
 strong), but keep >= 2 models so the shared-vs-singular split still works; Gemini
@@ -584,8 +630,10 @@ This is a prerequisite list, not approved implementation work.
    `toolkit.cost_accountant.CostAccountant`, `toolkit.source_ingestion.normalization`,
    `toolkit.prompt_regression`, and the existing `reference_corpus` identifiers,
    targets, validator, and YAML loader rather than rebuilding them.
-6. Resolve D1-D3, D7, and D8 before accepting a supported write path or publishing a
-   controlled generated-provenance vocabulary.
+6. Implement D1's controlled `unverified` status and inline warning, D2's
+   consultation-actor metadata and optional human-verification badge, and D3's
+   immutable origin metadata; resolve D7 and D8 before accepting a supported write
+   path or publishing a controlled generated-provenance vocabulary.
 7. Add hermetic unit tests, prompt-regression cases, multi-corpus acceptance tests,
    frozen-field tests, and an explicit human promotion workflow before calling the
    track production-ready.
